@@ -1,10 +1,7 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
+var req = require.context('.', true, /\.\/[^/]+\/[^/]+\/index\.js$/);
+req.keys().forEach(function (key) {
+    var componentName = key.replace(/^.+\/([^/]+)\/index\.js/, '$1');
+    module.exports[componentName] = req(key).default;
 });
-exports.HelloWorld = undefined;
-
-var _components = require('./components');
-
-exports.HelloWorld = _components.HelloWorld;
