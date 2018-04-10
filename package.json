@@ -5,10 +5,10 @@
   "main": "dist/index.js",
   "scripts": {
     "clean-dist": "rm -rf ./dist",
-    "build": "yarn run clean-dist && set NODE_ENV=production && ./node_modules/.bin/babel ./src --out-dir ./dist",
+    "build": "npm run clean-dist && set NODE_ENV=production && ./node_modules/.bin/babel ./src --out-dir ./dist",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o .out",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "npm run build-storybook && storybook-to-ghpages"
   },
   "keywords": [],
   "author": "Hermann Harris <hermann@krated.com>",
