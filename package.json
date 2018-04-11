@@ -7,7 +7,7 @@
     "clean-dist": "rm -rf ./dist",
     "build": "npm run clean-dist && set NODE_ENV=production && ./node_modules/.bin/babel ./src --out-dir ./dist",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -c .storybook -o .out",
+    "build-storybook": "build-storybook -c .storybook -o app",
     "deploy-storybook": "npm run build-storybook && storybook-to-ghpages"
   },
   "keywords": [],
