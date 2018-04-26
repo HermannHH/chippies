@@ -3,7 +3,16 @@ import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
 import Shevy from 'shevyjs';
 
-const shevy = new Shevy();
+const defaultOptions = {
+  baseFontSize: '18px',
+  baseLineHeight: 1.5,
+  baseFontScale: [3, 2.5, 2, 1.5, 1.25, 1],
+  addMarginBottom: true,
+  proximity: false,
+  proximityFactor: 0.85,
+};
+
+const shevy = new Shevy(defaultOptions);
 const {
   baseSpacing: bs, h1, h2, h3, h4, h5, h6,
 } = shevy;
