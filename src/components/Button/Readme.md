@@ -1,5 +1,11 @@
-Button example:
+Flat Button example:
 
 ```js
-<Button text="🍕" />
+<Button text="Submit" />
+```
+
+Raised Button example:
+
+```js
+<Button text="Submit" raised/>
 ```

@@ -7,6 +7,7 @@ const Block = styled.div`
     width: ${props.width}px;
     height: ${props.width}px;
     background-color: ${props.hex};
+    display: block;
   `};
 `;
 

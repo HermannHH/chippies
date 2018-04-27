@@ -1,19 +1,32 @@
 import React from 'react';
-import { Margin, Padding } from 'styled-components-spacing';
+import PropTypes from 'prop-types';
 
 import ColorBlock from '../ColorBlock';
 import ColorDescription from '../ColorDescription';
+import Pad from '../Pad';
 
-function PaletteBlock() {
+function PaletteBlock({
+  hex,
+  name,
+  inverse,
+}) {
   return (
-    <Padding all={{ mobile: 2, tablet: 4, desktop: 6 }}>
-      <ColorBlock hex="#2A6DE3">
-        <Margin top={6}>
-          <ColorDescription name="Test" hex="#2A6DE3" />
-        </Margin>
-      </ColorBlock>
-    </Padding>
+    <ColorBlock hex={hex}>
+      <Pad all={{ xs: 1 }} top={{ xs: 3 }}>
+        <ColorDescription name={name} hex={hex} inverse={inverse} />
+      </Pad>
+    </ColorBlock>
   );
 }
+
+PaletteBlock.propTypes = {
+  name: PropTypes.string.isRequired,
+  hex: PropTypes.string.isRequired,
+  inverse: PropTypes.bool,
+};
+
+PaletteBlock.defaultProps = {
+  inverse: false,
+};
 
 export default PaletteBlock;

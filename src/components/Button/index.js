@@ -4,44 +4,39 @@ import styled, { withTheme } from 'styled-components';
 import requiredIf from 'react-required-if';
 import Ink from 'react-ink';
 
+import Label from '../Label';
+import Pad from '../Pad';
+
 const ButtonWrapper = styled.button`
-  text-rendering: optimizeLegibility;
-  font-smoothing: antialiased;
   position: relative;
 ${props => `
+    border-radius: ${props.theme.borders.radius}px;
     outline: none;
     border: none;
     cursor: pointer;
     font-family: inherit;
     white-space: nowrap;
     display: inline-block;
-    height: 40px;
-    line-height: 40px;
-    padding: 0  ${props.theme.padding.small}px;
-    box-shadow: ${props.theme.box.shadow.shallow};
-    border-radius: ${props.theme.border.radius}px;
     font-family: ${props.theme.font.family};
     font-weight: ${props.theme.font.weight.standard};
-    background-color: ${props.theme.color.brinkPink.standard};
-    color: ${props.theme.color.white.standard};
     text-transform: uppercase;
-    font-size: 15px;
-    letter-spacing: .025em;
     text-decoration: none;
-    min-width: 184px;
     user-select: none;
     ${props.fill && 'width: 100%'};
-    &:disabled {
-      background-color: ${props.theme.color.grey.lighten};
-      border: ${`thin solid ${props.theme.color.grey.lighten}`};
-      color: ${props.theme.color.grey.standard};
-      box-shadow: none;
-      cursor: not-allowed;
-    }
+    ${props.raised && `box-shadow: ${props.theme.box.shadow.shallow}`};
   `}
 `;
 
-function Button({ theme, handleClick, loadingText, disabled, type, text, fill }) {
+function Button({
+  theme,
+  handleClick,
+  loadingText,
+  disabled,
+  type,
+  text,
+  fill,
+  raised,
+}) {
   return (
     <ButtonWrapper
       theme={theme}
@@ -49,11 +44,14 @@ function Button({ theme, handleClick, loadingText, disabled, type, text, fill })
       disabled={(loadingText || disabled)}
       type={type}
       fill={fill}
+      raised={raised}
     >
-      {!disabled &&
-        <Ink />
-      }
-      { loadingText || text }
+      <Pad vertical={{ xs: 2 }} horizontal={{ xs: 4 }}>
+        {!disabled &&
+          <Ink />
+        }
+        <Label text={loadingText || text} />
+      </Pad>
     </ButtonWrapper>
   );
 };
@@ -69,6 +67,7 @@ Button.propTypes = {
     'button',
   ]),
   fill: PropTypes.bool,
+  raised: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -77,6 +76,7 @@ Button.defaultProps = {
   loadingText: undefined,
   type: 'button',
   fill: false,
+  raised: false,
 };
 
 export default withTheme(Button);

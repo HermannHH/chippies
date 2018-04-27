@@ -3,16 +3,10 @@ import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
 import Shevy from 'shevyjs';
 
-const defaultOptions = {
-  baseFontSize: '18px',
-  baseLineHeight: 1.5,
-  baseFontScale: [3, 2.5, 2, 1.5, 1.25, 1],
-  addMarginBottom: true,
-  proximity: false,
-  proximityFactor: 0.85,
-};
 
-const shevy = new Shevy(defaultOptions);
+import { shevyConfig } from '../../helpers';
+
+const shevy = new Shevy(shevyConfig);
 const {
   h1, h2, h3, h4, h5, h6,
 } = shevy;
@@ -24,6 +18,7 @@ const HTag = styled.h1`
   text-rendering: optimizeLegibility;
   font-smoothing: antialiased;
   ${props => `
+    color: ${props.theme.colors[props.color][props.shade]};
     font-family: ${props.theme.font.family};
   `};
 `;
@@ -63,20 +58,20 @@ const HTagSix = H6.extend`
   margin-bottom: ${h6.marginBottom};
 `;
 
-function Heading({ theme, size, text }) {
+function Heading({ theme, size, text, color, shade }) {
   switch (size) {
     case '2':
-      return <HTagTwo theme={theme}>{text}</HTagTwo>;
+      return <HTagTwo color={color} shade={shade} theme={theme}>{text}</HTagTwo>;
     case '3':
-      return <HTagThree theme={theme}>{text}</HTagThree>;
+      return <HTagThree color={color} shade={shade} theme={theme}>{text}</HTagThree>;
     case '4':
-      return <HTagFour theme={theme}>{text}</HTagFour>;
+      return <HTagFour color={color} shade={shade} theme={theme}>{text}</HTagFour>;
     case '5':
-      return <HTagFive theme={theme}>{text}</HTagFive>;
+      return <HTagFive color={color} shade={shade} theme={theme}>{text}</HTagFive>;
     case '6':
-      return <HTagSix theme={theme}>{text}</HTagSix>;
+      return <HTagSix color={color} shade={shade} theme={theme}>{text}</HTagSix>;
     default:
-      return <HTag theme={theme}>{text}</HTag>;
+      return <HTag color={color} shade={shade} theme={theme}>{text}</HTag>;
   }
 }
 
@@ -84,10 +79,14 @@ Heading.propTypes = {
   theme: PropTypes.shape().isRequired,
   text: PropTypes.string.isRequired,
   size: PropTypes.oneOf(['1', '2', '3', '4', '5', '6']),
+  color: PropTypes.string,
+  shade: PropTypes.number,
 };
 
 Heading.defaultProps = {
   size: '1',
+  color: 'black',
+  shade: 0,
 };
 
 export default withTheme(Heading);

@@ -1,4 +1,4 @@
-Button example:
+Paragraph example:
 
 ```js
 <Paragraph>

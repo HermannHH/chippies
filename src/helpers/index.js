@@ -1,5 +1,8 @@
+import shevyConfig from './shevyConfig';
 import viewPort from './viewPort';
 
 export {
-    viewPort
-}
+  shevyConfig,
+  viewPort,
+};
+
