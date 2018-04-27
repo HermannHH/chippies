@@ -5,7 +5,16 @@ module.exports = {
   styleguideComponents: {
     Wrapper: path.join(__dirname, 'src/styleguide/ThemeWrapper'),
   },
-  ignore: ['src/components/index.js'],
+  template: {
+    head: {
+      links: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css?family=Roboto',
+        },
+      ],
+    },
+  },
   webpackConfig: {
     module: {
       rules: [
