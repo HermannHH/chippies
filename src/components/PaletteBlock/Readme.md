@@ -1,0 +1,5 @@
+PaletteBlock example:
+
+```js
+<PaletteBlock />
+```
