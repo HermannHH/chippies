@@ -23,7 +23,16 @@ ${props => `
     text-decoration: none;
     user-select: none;
     ${props.fill && 'width: 100%'};
-    ${props.raised && `box-shadow: ${props.theme.box.shadow.shallow}`};
+    ${props.raised && `
+      background-color: ${props.theme.colors[props.color][props.shade]};
+      box-shadow: ${props.theme.box.shadow.shallow};
+    `};
+    &:disabled {
+      background-color: ${props.theme.colors.grey['-1']};
+      border: ${`thin solid ${props.theme.colors.grey['-1']}`};
+      box-shadow: none;
+      cursor: not-allowed;
+    }
   `}
 `;
 
@@ -31,26 +40,42 @@ function Button({
   theme,
   handleClick,
   loadingText,
+  isLoading,
   disabled,
   type,
   text,
   fill,
   raised,
+  color,
+  shade,
+  whiteText,
 }) {
+  let labelColor = 'blue';
+  let labelShade = '0';
+  if (disabled || isLoading) {
+    labelColor = 'grey';
+    labelShade = '0';
+  } else if (whiteText) {
+    labelColor = 'white';
+    labelShade = '0';
+  };
+
   return (
     <ButtonWrapper
       theme={theme}
       onClick={handleClick}
-      disabled={(loadingText || disabled)}
+      disabled={isLoading || disabled}
       type={type}
       fill={fill}
       raised={raised}
+      color={color}
+      shade={shade}
     >
       <Pad vertical={{ xs: 2 }} horizontal={{ xs: 4 }}>
         {!disabled &&
           <Ink />
         }
-        <Label text={loadingText || text} />
+        <Label text={isLoading ? loadingText : text} color={labelColor} shade={labelShade} />
       </Pad>
     </ButtonWrapper>
   );
@@ -62,21 +87,29 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   handleClick: requiredIf(PropTypes.func, props => props.type !== 'submit'),
   loadingText: PropTypes.string,
+  isLoading: PropTypes.bool,
   type: PropTypes.oneOf([
     'submit',
     'button',
   ]),
   fill: PropTypes.bool,
   raised: PropTypes.bool,
+  color: PropTypes.string,
+  shade: PropTypes.string,
+  whiteText: PropTypes.bool,
 };
 
 Button.defaultProps = {
   handleClick: undefined,
   disabled: false,
-  loadingText: undefined,
+  loadingText: 'Saving',
+  isLoading: false,
   type: 'button',
   fill: false,
   raised: false,
+  color: 'blue',
+  shade: '0',
+  whiteText: false,
 };
 
 export default withTheme(Button);
