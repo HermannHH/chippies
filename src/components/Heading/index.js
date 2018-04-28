@@ -86,7 +86,7 @@ Heading.propTypes = {
 Heading.defaultProps = {
   size: '1',
   color: 'black',
-  shade: 0,
+  shade: -1,
 };
 
 export default withTheme(Heading);

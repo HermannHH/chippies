@@ -1,29 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+// import styled, { withTheme } from 'styled-components';
 
+import Border from '../Border';
 import Pad from '../Pad';
 
 
-const Container = styled.div`
-  border: thin solid red;
-  ${props => `
-    border-radius: ${props.theme.borders.radius}px;
-  `};
-`;
-
-function Well({ theme, children }) {
+function Well({ children }) {
   return (
-    <Container theme={theme}>
+    <Border all radius>
       <Pad vertical={{ xs: 4 }} horizontal={{ xs: 5 }}>
         {children}
       </Pad>
-    </Container>);
+    </Border>);
 }
 
 Well.propTypes = {
-  theme: PropTypes.shape().isRequired,
+//   theme: PropTypes.shape().isRequired,
   children: PropTypes.string.isRequired,
 };
 
-export default withTheme(Well);
+export default Well;

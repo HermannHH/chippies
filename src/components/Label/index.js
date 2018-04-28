@@ -34,8 +34,8 @@ Label.propTypes = {
 };
 
 Label.defaultProps = {
-  color: 'black',
-  shade: 0,
+  color: 'grey',
+  shade: 2,
 };
 
 export default withTheme(Label);

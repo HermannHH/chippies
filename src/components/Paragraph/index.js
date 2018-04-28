@@ -32,8 +32,8 @@ Paragraph.propTypes = {
 };
 
 Paragraph.defaultProps = {
-  color: 'black',
-  shade: 0,
+  color: 'grey',
+  shade: 2,
 };
 
 export default withTheme(Paragraph);
