@@ -11,17 +11,17 @@ const { content } = shevy;
 const PTag = styled.p`
   font-size: ${content.fontSize};
   line-height: ${content.lineHeight};
-  margin-bottom: ${content.marginBottom};
   text-rendering: optimizeLegibility;
   font-smoothing: antialiased;
   ${props => `
     color: ${props.theme.colors[props.color][props.shade]};
     font-family: ${props.theme.font.family};
+    margin: ${props.withMargin ? `${content.marginBottom} 0px` : '0px'};
   `};
 `;
 
-function Paragraph({ theme, children, color, shade }) {
-  return <PTag color={color} shade={shade} theme={theme}>{children}</PTag>;
+function Paragraph({ theme, children, color, shade, withMargin }) {
+  return <PTag color={color} shade={shade} theme={theme} withMargin={withMargin}>{children}</PTag>;
 }
 
 Paragraph.propTypes = {
@@ -29,11 +29,13 @@ Paragraph.propTypes = {
   children: PropTypes.string.isRequired,
   color: PropTypes.string,
   shade: PropTypes.number,
+  withMargin: PropTypes.bool,
 };
 
 Paragraph.defaultProps = {
   color: 'grey',
   shade: 2,
+  withMargin: true,
 };
 
 export default withTheme(Paragraph);

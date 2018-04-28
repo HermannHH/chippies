@@ -7,8 +7,7 @@
     "clean-dist": "rm -rf ./dist",
     "clean-styleguide": "rm -rf ./styleguide",
     "build-styleguide": "npm run clean-styleguide && npx styleguidist build",
-    "build":
-      "npm run build-styleguide && npm run clean-dist && set NODE_ENV=production && ./node_modules/.bin/babel ./src/components --out-dir ./dist",
+    "build": "npm run build-styleguide && npm run clean-dist && set NODE_ENV=production && ./node_modules/.bin/babel ./src/components --out-dir ./dist",
     "styleguide": "npx styleguidist server"
   },
   "keywords": [],
@@ -55,6 +54,7 @@
   },
   "dependencies": {
     "prop-types": "^15.6.1",
+    "react-switch": "^2.3.2",
     "styled-components-spacing": "^3.0.0"
   }
 }
