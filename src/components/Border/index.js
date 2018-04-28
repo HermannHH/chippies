@@ -38,7 +38,7 @@ Border.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
+  ]),
   all: PropTypes.bool,
   top: PropTypes.bool,
   right: PropTypes.bool,
@@ -50,6 +50,7 @@ Border.propTypes = {
 };
 
 Border.defaultProps = {
+  children: null,
   radius: false,
   all: false,
   top: false,
