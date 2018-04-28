@@ -5,8 +5,10 @@
   "main": "dist/index.js",
   "scripts": {
     "clean-dist": "rm -rf ./dist",
+    "clean-styleguide": "rm -rf ./styleguide",
+    "build-styleguide": "npm run clean-styleguide && npx styleguidist build",
     "build":
-      "npm run clean-dist && set NODE_ENV=production && ./node_modules/.bin/babel ./src/components --out-dir ./dist",
+      "npm run build-styleguide && npm run clean-dist && set NODE_ENV=production && ./node_modules/.bin/babel ./src/components --out-dir ./dist",
     "styleguide": "npx styleguidist server"
   },
   "keywords": [],

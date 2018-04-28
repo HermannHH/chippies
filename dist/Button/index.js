@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  text-rendering: optimizeLegibility;\n  font-smoothing: antialiased;\n  position: relative;\n', '\n'], ['\n  text-rendering: optimizeLegibility;\n  font-smoothing: antialiased;\n  position: relative;\n', '\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n', '\n'], ['\n  position: relative;\n', '\n']);
 
 var _react = require('react');
 
@@ -26,12 +26,20 @@ var _reactInk = require('react-ink');
 
 var _reactInk2 = _interopRequireDefault(_reactInk);
 
+var _Label = require('../Label');
+
+var _Label2 = _interopRequireDefault(_Label);
+
+var _Pad = require('../Pad');
+
+var _Pad2 = _interopRequireDefault(_Pad);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var ButtonWrapper = _styledComponents2.default.button(_templateObject, function (props) {
-  return '\n    outline: none;\n    border: none;\n    cursor: pointer;\n    font-family: inherit;\n    white-space: nowrap;\n    display: inline-block;\n    height: 40px;\n    line-height: 40px;\n    padding: 0  ' + props.theme.padding.small + 'px;\n    box-shadow: ' + props.theme.box.shadow.shallow + ';\n    border-radius: ' + props.theme.border.radius + 'px;\n    font-family: ' + props.theme.font.family + ';\n    font-weight: ' + props.theme.font.weight.standard + ';\n    background-color: ' + props.theme.color.brinkPink.standard + ';\n    color: ' + props.theme.color.white.standard + ';\n    text-transform: uppercase;\n    font-size: 15px;\n    letter-spacing: .025em;\n    text-decoration: none;\n    min-width: 184px;\n    user-select: none;\n    ' + (props.fill && 'width: 100%') + ';\n    &:disabled {\n      background-color: ' + props.theme.color.grey.lighten + ';\n      border: ' + ('thin solid ' + props.theme.color.grey.lighten) + ';\n      color: ' + props.theme.color.grey.standard + ';\n      box-shadow: none;\n      cursor: not-allowed;\n    }\n  ';
+  return '\n    border-radius: ' + props.theme.borders.radius + 'px;\n    outline: none;\n    border: none;\n    cursor: pointer;\n    font-family: inherit;\n    white-space: nowrap;\n    display: inline-block;\n    font-family: ' + props.theme.font.family + ';\n    font-weight: ' + props.theme.font.weight.standard + ';\n    text-transform: uppercase;\n    text-decoration: none;\n    user-select: none;\n    ' + (props.fill && 'width: 100%') + ';\n    ' + (props.raised && 'box-shadow: ' + props.theme.box.shadow.shallow) + ';\n  ';
 });
 
 function Button(_ref) {
@@ -41,7 +49,8 @@ function Button(_ref) {
       disabled = _ref.disabled,
       type = _ref.type,
       text = _ref.text,
-      fill = _ref.fill;
+      fill = _ref.fill,
+      raised = _ref.raised;
 
   return _react2.default.createElement(
     ButtonWrapper,
@@ -50,10 +59,15 @@ function Button(_ref) {
       onClick: handleClick,
       disabled: loadingText || disabled,
       type: type,
-      fill: fill
+      fill: fill,
+      raised: raised
     },
-    !disabled && _react2.default.createElement(_reactInk2.default, null),
-    loadingText || text
+    _react2.default.createElement(
+      _Pad2.default,
+      { vertical: { xs: 2 }, horizontal: { xs: 4 } },
+      !disabled && _react2.default.createElement(_reactInk2.default, null),
+      _react2.default.createElement(_Label2.default, { text: loadingText || text })
+    )
   );
 };
 
@@ -66,7 +80,8 @@ Button.propTypes = {
   }),
   loadingText: _propTypes2.default.string,
   type: _propTypes2.default.oneOf(['submit', 'button']),
-  fill: _propTypes2.default.bool
+  fill: _propTypes2.default.bool,
+  raised: _propTypes2.default.bool
 };
 
 Button.defaultProps = {
@@ -74,7 +89,8 @@ Button.defaultProps = {
   disabled: false,
   loadingText: undefined,
   type: 'button',
-  fill: false
+  fill: false,
+  raised: false
 };
 
 exports.default = (0, _styledComponents.withTheme)(Button);
