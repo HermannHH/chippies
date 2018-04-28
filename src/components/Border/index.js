@@ -45,8 +45,8 @@ Border.propTypes = {
   bottom: PropTypes.bool,
   left: PropTypes.bool,
   radius: PropTypes.bool,
-  color: PropTypes.string.isRequired,
-  shade: PropTypes.number.isRequired,
+  color: PropTypes.string,
+  shade: PropTypes.number,
 };
 
 Border.defaultProps = {
@@ -57,6 +57,8 @@ Border.defaultProps = {
   right: false,
   bottom: false,
   left: false,
+  color: 'grey',
+  shade: -1,
 };
 
 export default withTheme(Border);

@@ -6,7 +6,7 @@ import Border from '../Border';
 
 function Divider() {
   return (
-    <Border bottom color="grey" shade={-1} />
+    <Border bottom />
   );
 }
 
