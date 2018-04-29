@@ -13,7 +13,7 @@ const {
 const LabelTag = styled.label`
     display: block;
     position: relative;
-    padding-left: 35px;
+    padding-left: ${props => (props.labelPosition === 'left' ? '0px' : '35px')};
     cursor: pointer;
     user-select: none;
     font-size: ${content.fontSize};
@@ -36,7 +36,12 @@ const LabelTag = styled.label`
     > span {
         position: absolute;
         top: 2px;
-        left: 0;
+        left:  ${props => (props.labelPosition === 'right' && '0px')};
+        ${props => (props.labelPosition === 'left' && `
+          float: right;
+          margin-left: 10px;
+          top: 4px;
+        `)};
         height: 25px;
         width: 25px;
         border-radius: ${props => props.theme.borders.radius}px;
@@ -84,9 +89,10 @@ function Checkbox({
   theme,
   checked,
   handleChange,
+  labelPosition,
 }) {
   return (
-    <LabelTag onClick={handleChange} theme={theme}>One
+    <LabelTag onClick={handleChange} theme={theme} labelPosition={labelPosition}>One
       <input type="checkbox" checked={checked} />
       <span />
     </LabelTag>
@@ -97,9 +103,14 @@ Checkbox.propTypes = {
   theme: PropTypes.shape().isRequired,
   checked: PropTypes.bool.isRequired,
   handleChange: PropTypes.func.isRequired,
+  labelPosition: PropTypes.oneOf([
+    'left',
+    'right',
+  ]),
 };
 
 Checkbox.defaultProps = {
+  labelPosition: 'left',
 };
 
 export default withTheme(Checkbox);
