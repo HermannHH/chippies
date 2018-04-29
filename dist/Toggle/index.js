@@ -36,7 +36,8 @@ function Toggle(_ref) {
   var theme = _ref.theme,
       id = _ref.id,
       checked = _ref.checked,
-      handleChange = _ref.handleChange;
+      handleChange = _ref.handleChange,
+      label = _ref.label;
 
   return _react2.default.createElement(
     'label',
@@ -48,10 +49,10 @@ function Toggle(_ref) {
       offColor: theme.colors.grey[0],
       onColor: theme.colors.blue[0]
     }),
-    _react2.default.createElement(
+    label && _react2.default.createElement(
       LabelWrapper,
       { onClick: handleChange },
-      _react2.default.createElement(_Label2.default, { text: 'Leave a comment' })
+      _react2.default.createElement(_Label2.default, { text: label })
     )
   );
 }
@@ -60,7 +61,8 @@ Toggle.propTypes = {
   id: _propTypes2.default.string.isRequired,
   theme: _propTypes2.default.shape().isRequired,
   checked: _propTypes2.default.bool.isRequired,
-  handleChange: _propTypes2.default.func.isRequired
+  handleChange: _propTypes2.default.func.isRequired,
+  label: _propTypes2.default.string.isRequired
 };
 
 Toggle.defaultProps = {};

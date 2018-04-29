@@ -60,12 +60,14 @@ function Checkbox(_ref) {
   var theme = _ref.theme,
       checked = _ref.checked,
       handleChange = _ref.handleChange,
-      labelPosition = _ref.labelPosition;
+      labelPosition = _ref.labelPosition,
+      label = _ref.label;
 
+  console.log('i am checked', checked);
   return _react2.default.createElement(
     LabelTag,
     { onClick: handleChange, theme: theme, labelPosition: labelPosition },
-    'One',
+    label,
     _react2.default.createElement('input', { type: 'checkbox', checked: checked }),
     _react2.default.createElement('span', null)
   );
@@ -74,6 +76,7 @@ function Checkbox(_ref) {
 Checkbox.propTypes = {
   theme: _propTypes2.default.shape().isRequired,
   checked: _propTypes2.default.bool.isRequired,
+  label: _propTypes2.default.string.isRequired,
   handleChange: _propTypes2.default.func.isRequired,
   labelPosition: _propTypes2.default.oneOf(['left', 'right'])
 };

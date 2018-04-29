@@ -18,7 +18,7 @@ const LabelWrapper = styled.div`
 
 
 function Toggle({
-  theme, id, checked, handleChange,
+  theme, id, checked, handleChange, label,
 }) {
   return (
     <label htmlFor={id}>
@@ -29,9 +29,11 @@ function Toggle({
         offColor={theme.colors.grey[0]}
         onColor={theme.colors.blue[0]}
       />
-      <LabelWrapper onClick={handleChange}>
-        <Label text="Leave a comment" />
-      </LabelWrapper>
+      {label &&
+        <LabelWrapper onClick={handleChange}>
+          <Label text={label} />
+        </LabelWrapper>
+      }
     </label>
   );
 }
@@ -41,6 +43,7 @@ Toggle.propTypes = {
   theme: PropTypes.shape().isRequired,
   checked: PropTypes.bool.isRequired,
   handleChange: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 Toggle.defaultProps = {

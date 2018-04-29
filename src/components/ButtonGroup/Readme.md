@@ -5,7 +5,7 @@ ButtonGroup left example:
   buttons={[
       <Button text="Submit" />,
       <Button text="Submit" raised whiteText/>,
-      <Button text="Submit" raised whiteText/>
+      <Button text="Submit" raised whiteText color="red"/>
   ]}
   layout="left"
 />
