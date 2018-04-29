@@ -7,10 +7,9 @@ import Pad from '../Pad';
 import Checkbox from '../Checkbox';
 import Mrg from '../Mrg';
 import Divider from '../Divider';
-import ButtonGroup from '../ButtonGroup';
+import FlexPosition from '../FlexPosition';
 import Button from '../Button';
 import HeadingGroup from '../HeadingGroup';
-import LineItems from '../LineItems';
 import TextSection from '../TextSection';
 import Toggle from '../Toggle';
 import TextArea from '../TextArea';
@@ -18,7 +17,6 @@ import Well from '../Well';
 
 
 function RejectQuote({
-  lineItemData,
   referenceNumber,
   handleCommentToggle,
   commentToggled,
@@ -67,7 +65,7 @@ function RejectQuote({
           <Divider />
         </Mrg>
         <Mrg all={{ xs: 5 }}>
-          <ButtonGroup
+          <FlexPosition
             buttons={[
               <Checkbox checked={termsChecked} handleChange={handleTermsChecked} label="I agree to the terms of this quotation" />,
             ]}
@@ -76,8 +74,8 @@ function RejectQuote({
         </Mrg>
         <Mrg vertical={{ xs: 5 }} />
         <Mrg vertical={{ xs: 5 }}>
-          <ButtonGroup
-            buttons={[
+          <FlexPosition
+            comps={[
               <Button text="Accept" disabled={!termsChecked} />,
               <Button text="Reject" raised whiteText disabled={!termsChecked} />,
             ]}
@@ -91,17 +89,6 @@ function RejectQuote({
 
 RejectQuote.propTypes = {
   referenceNumber: PropTypes.string.isRequired,
-  lineItemData: PropTypes.shape({
-    grandTotal: PropTypes.string.isRequired,
-    items: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      sku: PropTypes.string.isRequired,
-      qty: PropTypes.string.isRequired,
-      itemPrice: PropTypes.string.isRequired,
-      subTotal: PropTypes.string.isRequired,
-    })).isRequired,
-  }).isRequired,
   handleCommentToggle: PropTypes.func.isRequired,
   commentToggled: PropTypes.bool.isRequired,
   seller: PropTypes.string.isRequired,

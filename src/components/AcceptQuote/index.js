@@ -7,7 +7,7 @@ import Pad from '../Pad';
 import Checkbox from '../Checkbox';
 import Mrg from '../Mrg';
 import Divider from '../Divider';
-import ButtonGroup from '../ButtonGroup';
+import FlexPosition from '../FlexPosition';
 import Button from '../Button';
 import HeadingGroup from '../HeadingGroup';
 import LineItems from '../LineItems';
@@ -70,7 +70,7 @@ function AcceptQuote({
           <Divider />
         </Mrg>
         <Mrg all={{ xs: 5 }}>
-          <ButtonGroup
+          <FlexPosition
             buttons={[
               <Checkbox checked={termsChecked} handleChange={handleTermsChecked} label="I agree to the terms of this quotation" />,
             ]}
@@ -79,8 +79,8 @@ function AcceptQuote({
         </Mrg>
         <Mrg vertical={{ xs: 5 }} />
         <Mrg vertical={{ xs: 5 }}>
-          <ButtonGroup
-            buttons={[
+          <FlexPosition
+            comps={[
               <Button text="Reject" disabled={!termsChecked} />,
               <Button text="Accept" raised whiteText disabled={!termsChecked} />,
             ]}

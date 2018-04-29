@@ -1,8 +1,8 @@
-ButtonGroup left example:
+FlexPosition left example:
 
 ```js
-<ButtonGroup
-  buttons={[
+<FlexPosition
+  comps={[
       <Button text="Submit" />,
       <Button text="Submit" raised whiteText/>,
       <Button text="Submit" raised whiteText color="red"/>
@@ -12,11 +12,11 @@ ButtonGroup left example:
 ```
 
 
-ButtonGroup right example:
+FlexPosition right example:
 
 ```js
-<ButtonGroup
-  buttons={[
+<FlexPosition
+  comps={[
       <Button text="Submit" />,
       <Button text="Submit" raised whiteText/>
   ]}
@@ -24,11 +24,11 @@ ButtonGroup right example:
 />
 ```
 
-ButtonGroup spread example:
+FlexPosition spread example:
 
 ```js
-<ButtonGroup
-  buttons={[
+<FlexPosition
+  comps={[
       <Button text="Submit" />,
       <Button text="Submit" raised whiteText/>
   ]}

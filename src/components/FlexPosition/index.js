@@ -16,9 +16,10 @@ const Wrapper = styled.div`
   ${props => props.layout === 'right' && 'justify-content: flex-end'};
   ${props => props.layout === 'spread' && 'justify-content: space-between'};
   ${props => props.layout === 'left' && 'justify-content: flex-start'};
+  ${props => props.layout === 'center' && 'justify-content: center'};
 `;
 
-const ButtonContainer = styled.div`
+const CompContainer = styled.div`
   margin: 0 ${bs(0.5)};
   &:first-child {
       margin-left: 0px;
@@ -28,27 +29,28 @@ const ButtonContainer = styled.div`
   };
 `;
 
-function ButtonGroup({ buttons, layout }) {
+function FlexPosition({ comps, layout }) {
   return (
     <Wrapper layout={layout}>
-      {buttons.map((x, i) => (
-        <ButtonContainer key={i}>{x}</ButtonContainer>
+      {comps.map((x, i) => (
+        <CompContainer key={i}>{x}</CompContainer>
         ))}
     </Wrapper>
   );
 }
 
-ButtonGroup.propTypes = {
-  buttons: PropTypes.arrayOf(PropTypes.element).isRequired,
+FlexPosition.propTypes = {
+  comps: PropTypes.arrayOf(PropTypes.element).isRequired,
   layout: PropTypes.oneOf([
     'spread',
     'left',
     'right',
+    'center',
   ]),
 };
 
-ButtonGroup.defaultProps = {
+FlexPosition.defaultProps = {
   layout: 'right',
 };
 
-export default withTheme(ButtonGroup);
+export default withTheme(FlexPosition);
