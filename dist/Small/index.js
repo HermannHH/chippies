@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  font-size: ', ';\n  line-height: ', ';\n  text-rendering: optimizeLegibility;\n  font-smoothing: antialiased;\n  ', ';\n'], ['\n  font-size: ', ';\n  line-height: ', ';\n  text-rendering: optimizeLegibility;\n  font-smoothing: antialiased;\n  ', ';\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  font-size: ', ';\n  line-height: ', ';\n  margin-bottom: ', ';\n  text-rendering: optimizeLegibility;\n  font-smoothing: antialiased;\n  ', ';\n'], ['\n  font-size: ', ';\n  line-height: ', ';\n  margin-bottom: ', ';\n  text-rendering: optimizeLegibility;\n  font-smoothing: antialiased;\n  ', ';\n']);
 
 var _react = require('react');
 
@@ -32,33 +32,33 @@ var shevy = new _shevyjs2.default(_helpers.shevyConfig);
 var content = shevy.content;
 
 
-var LabelTag = _styledComponents2.default.label(_templateObject, content.fontSize, content.lineHeight, function (props) {
-  return '\n    color: ' + props.theme.colors[props.color][props.shade] + ';\n    font-weight: ' + props.theme.font.weight.bold + ';\n    font-family: ' + props.theme.font.family + ';\n  ';
+var SmallTag = _styledComponents2.default.small(_templateObject, content.fontSize - 4, content.lineHeight, content.marginBottom, function (props) {
+  return '\n    color: ' + props.theme.colors[props.color][props.shade] + ';\n    font-family: ' + props.theme.font.family + ';\n  ';
 });
 
-function Label(_ref) {
+function Small(_ref) {
   var theme = _ref.theme,
-      text = _ref.text,
+      children = _ref.children,
       color = _ref.color,
       shade = _ref.shade;
 
   return _react2.default.createElement(
-    LabelTag,
+    SmallTag,
     { color: color, shade: shade, theme: theme },
-    text
+    children
   );
 }
 
-Label.propTypes = {
+Small.propTypes = {
   theme: _propTypes2.default.shape().isRequired,
-  text: _propTypes2.default.string.isRequired,
+  children: _propTypes2.default.string.isRequired,
   color: _propTypes2.default.string,
   shade: _propTypes2.default.number
 };
 
-Label.defaultProps = {
+Small.defaultProps = {
   color: 'grey',
   shade: 2
 };
 
-exports.default = (0, _styledComponents.withTheme)(Label);
+exports.default = (0, _styledComponents.withTheme)(Small);

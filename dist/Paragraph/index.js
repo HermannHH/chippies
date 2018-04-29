@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  font-size: ', ';\n  line-height: ', ';\n  margin-bottom: ', ';\n  text-rendering: optimizeLegibility;\n  font-smoothing: antialiased;\n  ', ';\n'], ['\n  font-size: ', ';\n  line-height: ', ';\n  margin-bottom: ', ';\n  text-rendering: optimizeLegibility;\n  font-smoothing: antialiased;\n  ', ';\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  font-size: ', ';\n  line-height: ', ';\n  text-rendering: optimizeLegibility;\n  font-smoothing: antialiased;\n  ', ';\n'], ['\n  font-size: ', ';\n  line-height: ', ';\n  text-rendering: optimizeLegibility;\n  font-smoothing: antialiased;\n  ', ';\n']);
 
 var _react = require('react');
 
@@ -32,19 +32,20 @@ var shevy = new _shevyjs2.default(_helpers.shevyConfig);
 var content = shevy.content;
 
 
-var PTag = _styledComponents2.default.p(_templateObject, content.fontSize, content.lineHeight, content.marginBottom, function (props) {
-  return '\n    color: ' + props.theme.colors[props.color][props.shade] + ';\n    font-family: ' + props.theme.font.family + ';\n  ';
+var PTag = _styledComponents2.default.p(_templateObject, content.fontSize, content.lineHeight, function (props) {
+  return '\n    color: ' + props.theme.colors[props.color][props.shade] + ';\n    font-family: ' + props.theme.font.family + ';\n    margin: ' + (props.withMargin ? content.marginBottom + ' 0px' : '0px') + ';\n  ';
 });
 
 function Paragraph(_ref) {
   var theme = _ref.theme,
       children = _ref.children,
       color = _ref.color,
-      shade = _ref.shade;
+      shade = _ref.shade,
+      withMargin = _ref.withMargin;
 
   return _react2.default.createElement(
     PTag,
-    { color: color, shade: shade, theme: theme },
+    { color: color, shade: shade, theme: theme, withMargin: withMargin },
     children
   );
 }
@@ -53,12 +54,14 @@ Paragraph.propTypes = {
   theme: _propTypes2.default.shape().isRequired,
   children: _propTypes2.default.string.isRequired,
   color: _propTypes2.default.string,
-  shade: _propTypes2.default.number
+  shade: _propTypes2.default.number,
+  withMargin: _propTypes2.default.bool
 };
 
 Paragraph.defaultProps = {
   color: 'grey',
-  shade: 2
+  shade: 2,
+  withMargin: true
 };
 
 exports.default = (0, _styledComponents.withTheme)(Paragraph);
