@@ -46,7 +46,8 @@ function ImageBlock(_ref) {
   var width = _ref.width,
       height = _ref.height,
       src = _ref.src,
-      position = _ref.position;
+      position = _ref.position,
+      children = _ref.children;
 
   return _react2.default.createElement(
     PositionContainer,
@@ -58,7 +59,7 @@ function ImageBlock(_ref) {
           xs: 3
         }
       },
-      _react2.default.createElement(_Image2.default, { width: width, height: height, src: src })
+      children || _react2.default.createElement(_Image2.default, { width: width, height: height, src: src })
     )
   );
 }
@@ -66,14 +67,17 @@ function ImageBlock(_ref) {
 ImageBlock.propTypes = {
   width: _propTypes2.default.number,
   height: _propTypes2.default.number,
-  src: _propTypes2.default.string.isRequired,
-  position: _propTypes2.default.oneOf(['center', 'left', 'right'])
+  src: _propTypes2.default.string,
+  position: _propTypes2.default.oneOf(['center', 'left', 'right']),
+  children: _propTypes2.default.element
 };
 
 ImageBlock.defaultProps = {
   width: null,
   height: null,
-  position: 'center'
+  position: 'center',
+  children: null,
+  src: null
 };
 
 exports.default = ImageBlock;
