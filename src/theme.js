@@ -31,6 +31,7 @@ export default {
     },
     white: {
       0: '#FFFFFF',
+      1: '#FAFAFA',
     },
     blue: {
       '-1': '#CDDDFF',
