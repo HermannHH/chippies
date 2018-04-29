@@ -25,7 +25,7 @@ const PositionContainer = styled.div`
  */
 
 function ImageBlock({
-  width, height, src, position,
+  width, height, src, position, children,
 }) {
   return (
     <PositionContainer position={position}>
@@ -34,7 +34,7 @@ function ImageBlock({
             xs: 3,
           }}
       >
-        <Image width={width} height={height} src={src} />
+        {children || <Image width={width} height={height} src={src} />}
       </Pad>
     </PositionContainer>
   );
@@ -43,18 +43,21 @@ function ImageBlock({
 ImageBlock.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
   position: PropTypes.oneOf([
     'center',
     'left',
     'right',
   ]),
+  children: PropTypes.element,
 };
 
 ImageBlock.defaultProps = {
   width: null,
   height: null,
   position: 'center',
+  children: null,
+  src: null,
 };
 
 export default ImageBlock;

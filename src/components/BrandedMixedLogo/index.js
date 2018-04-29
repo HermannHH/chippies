@@ -6,16 +6,6 @@ import Src from './branded_mixed_logo.svg';
 
 import Image from '../Image';
 
-const ImageTag = styled.img`
-  ${props => `
-    width: ${props.width ? `${props.width}px` : 'auto'};
-    height: ${props.height ? `${props.height}px` : 'auto'};
-  `};
-`;
-
-/**
- * Used for normal images. Will not be progressive
- */
 
 function BrandedMixedLogo({
   size,
@@ -31,7 +21,7 @@ function BrandedMixedLogo({
 }
 
 BrandedMixedLogo.propTypes = {
-  size: PropTypes.oneOf(['1', '2', '3', '4', '5', '6']),
+  size: PropTypes.oneOf(['1', '2', '3']),
 };
 
 BrandedMixedLogo.defaultProps = {
