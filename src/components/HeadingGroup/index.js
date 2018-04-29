@@ -6,7 +6,10 @@ import Shevy from 'shevyjs';
 import Heading from '../Heading';
 import Paragraph from '../Paragraph';
 
-const shevy = new Shevy();
+
+import { shevyConfig } from '../../helpers';
+
+const shevy = new Shevy(shevyConfig);
 const {
   h1, h2, h3, h4, h5, h6,
 } = shevy;

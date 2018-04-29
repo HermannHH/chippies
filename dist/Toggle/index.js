@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _templateObject = _taggedTemplateLiteral(['\n  padding-left: 10px;\n  display: inline-block;\n  position: relative;\n  top: -5px;\n\n  > label {\n    cursor: pointer;\n  }\n'], ['\n  padding-left: 10px;\n  display: inline-block;\n  position: relative;\n  top: -5px;\n\n  > label {\n    cursor: pointer;\n  }\n']);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -20,7 +22,15 @@ var _reactSwitch = require('react-switch');
 
 var _reactSwitch2 = _interopRequireDefault(_reactSwitch);
 
+var _Label = require('../Label');
+
+var _Label2 = _interopRequireDefault(_Label);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var LabelWrapper = _styledComponents2.default.div(_templateObject);
 
 function Toggle(_ref) {
   var theme = _ref.theme,
@@ -37,7 +47,12 @@ function Toggle(_ref) {
       id: id,
       offColor: theme.colors.grey[0],
       onColor: theme.colors.blue[0]
-    })
+    }),
+    _react2.default.createElement(
+      LabelWrapper,
+      { onClick: handleChange },
+      _react2.default.createElement(_Label2.default, { text: 'Leave a comment' })
+    )
   );
 }
 

@@ -30,11 +30,13 @@ var _Paragraph = require('../Paragraph');
 
 var _Paragraph2 = _interopRequireDefault(_Paragraph);
 
+var _helpers = require('../../helpers');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var shevy = new _shevyjs2.default();
+var shevy = new _shevyjs2.default(_helpers.shevyConfig);
 var h1 = shevy.h1,
     h2 = shevy.h2,
     h3 = shevy.h3,

@@ -26,22 +26,22 @@ const RowTag = styled.tr`
 `;
 
 const HeaderTag = styled.th`
-  padding: ${bs(0.5)};
+  padding: ${bs(0.25)};
   border-collapse: collapse;
   text-align: left;
   ${props => `
     color: ${props.theme.colors.black['-1']};
-    border: 1px solid ${props.theme.colors.grey[0]};
+    border: 1px solid ${props.theme.colors.grey['-1']};
     font-weight: ${props.theme.font.weight.bold};
   `};
 `;
 
 const DataTag = styled.td`
-  padding: ${bs(0.5)};
+  padding: ${bs(0.25)};
   border-collapse: collapse;
   ${props => `
     color: ${props.theme.colors.grey['2']};
-    ${!props.noBorder && `border: 1px solid ${props.theme.colors.grey[0]}`};
+    ${!props.noBorder && `border: 1px solid ${props.theme.colors.grey['-1']}`};
     ${props.right ? 'text-align: right' : 'text-align: left'};
     font-weight: ${props.bold ? `${props.theme.font.weight.bold}` : `${props.theme.font.weight.standard}`};
   `};

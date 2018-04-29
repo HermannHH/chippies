@@ -42,12 +42,12 @@ var TableTag = _styledComponents2.default.table(_templateObject, content.fontSiz
 
 var RowTag = _styledComponents2.default.tr(_templateObject2);
 
-var HeaderTag = _styledComponents2.default.th(_templateObject3, bs(0.5), function (props) {
-  return '\n    color: ' + props.theme.colors.black['-1'] + ';\n    border: 1px solid ' + props.theme.colors.grey[0] + ';\n    font-weight: ' + props.theme.font.weight.bold + ';\n  ';
+var HeaderTag = _styledComponents2.default.th(_templateObject3, bs(0.25), function (props) {
+  return '\n    color: ' + props.theme.colors.black['-1'] + ';\n    border: 1px solid ' + props.theme.colors.grey['-1'] + ';\n    font-weight: ' + props.theme.font.weight.bold + ';\n  ';
 });
 
-var DataTag = _styledComponents2.default.td(_templateObject4, bs(0.5), function (props) {
-  return '\n    color: ' + props.theme.colors.grey['2'] + ';\n    ' + (!props.noBorder && 'border: 1px solid ' + props.theme.colors.grey[0]) + ';\n    ' + (props.right ? 'text-align: right' : 'text-align: left') + ';\n    font-weight: ' + (props.bold ? '' + props.theme.font.weight.bold : '' + props.theme.font.weight.standard) + ';\n  ';
+var DataTag = _styledComponents2.default.td(_templateObject4, bs(0.25), function (props) {
+  return '\n    color: ' + props.theme.colors.grey['2'] + ';\n    ' + (!props.noBorder && 'border: 1px solid ' + props.theme.colors.grey['-1']) + ';\n    ' + (props.right ? 'text-align: right' : 'text-align: left') + ';\n    font-weight: ' + (props.bold ? '' + props.theme.font.weight.bold : '' + props.theme.font.weight.standard) + ';\n  ';
 });
 
 /**
