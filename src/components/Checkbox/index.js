@@ -87,16 +87,19 @@ const LabelTag = styled.label`
 
 function Checkbox({
   theme,
-  checked,
+  isChecked,
   handleChange,
   labelPosition,
   label,
 }) {
-  console.log('i am checked', checked)
+  console.log('inner', handleChange, isChecked)
   return (
     <LabelTag onClick={handleChange} theme={theme} labelPosition={labelPosition}>
       { label }
-      <input type="checkbox" checked={checked} />
+      <input
+        type="checkbox"
+        checked={isChecked}
+      />
       <span />
     </LabelTag>
   );
@@ -104,7 +107,7 @@ function Checkbox({
 
 Checkbox.propTypes = {
   theme: PropTypes.shape().isRequired,
-  checked: PropTypes.bool.isRequired,
+  isChecked: PropTypes.bool.isRequired,
   label: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   labelPosition: PropTypes.oneOf([

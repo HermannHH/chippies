@@ -1,25 +1,30 @@
 Checkbox checked example:
 
 ```js
-<Checkbox checked handleChange={() => alert('needs action')} label="Hello world"/>
+
+initialState = {
+    isChecked: true
+}
+;
+<Checkbox isChecked={state.isChecked} handleChange={() => setState({ isChecked: !state.isChecked})} label="Hello world"/>
 ```
 
 
 Checkbox unchecked example:
 
 ```js
-<Checkbox checked={false} handleChange={() => alert('needs action')} label="Hello world" />
+<Checkbox isChecked={false} handleChange={() => alert('needs action')} label="Hello world" />
 ```
 
 Checkbox checked with label on right example:
 
 ```js
-<Checkbox checked handleChange={() => alert('needs action')} labelPosition="right" label="Hello world"/>
+<Checkbox isChecked handleChange={() => alert('needs action')} labelPosition="right" label="Hello world"/>
 ```
 
 
 Checkbox unchecked with label on right example:
 
 ```js
-<Checkbox checked={false} handleChange={() => alert('needs action')} labelPosition="right" label="Hello world" />
+<Checkbox isChecked={false} handleChange={() => alert('needs action')} labelPosition="right" label="Hello world" />
 ```

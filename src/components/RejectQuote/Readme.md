@@ -1,4 +1,4 @@
-AcceptQuote default example:
+RejectQuote default example:
 
 ```js
 
@@ -18,7 +18,7 @@ initialState = {
     termsChecked: false,
 }
 ;
-<AcceptQuote
+<RejectQuote
   referenceNumber="1234"
   buyer="Buyer Company ABC"
   buyerAddress="123 Main Road, Cape Town"
