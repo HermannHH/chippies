@@ -33,7 +33,7 @@ var content = shevy.content;
 
 
 var PTag = _styledComponents2.default.p(_templateObject, content.fontSize, content.lineHeight, function (props) {
-  return '\n    color: ' + props.theme.colors[props.color][props.shade] + ';\n    font-family: ' + props.theme.font.family + ';\n    margin: ' + (props.withMargin ? content.marginBottom + ' 0px' : '0px') + ';\n  ';
+  return '\n    color: ' + props.theme.colors[props.color][props.shade] + ';\n    font-family: ' + props.theme.font.family + ';\n    margin: ' + (props.withMargin ? content.marginBottom + ' 0px' : '0px') + ';\n    font-weight: ' + props.theme.font.weight.standard + ';\n  ';
 });
 
 function Paragraph(_ref) {

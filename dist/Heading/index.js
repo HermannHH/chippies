@@ -39,7 +39,7 @@ var h1 = shevy.h1,
 
 
 var HTag = _styledComponents2.default.h1(_templateObject, h1.fontSize, h1.lineHeight, function (props) {
-  return '\n    color: ' + props.theme.colors[props.color][props.shade] + ';\n    font-family: ' + props.theme.font.family + ';\n    margin: ' + (props.withMargin ? h1.marginBottom + ' 0px' : '0px') + ';\n  ';
+  return '\n    color: ' + props.theme.colors[props.color][props.shade] + ';\n    font-family: ' + props.theme.font.family + ';\n    font-weight: ' + props.theme.font.weight.bold + ';\n    margin: ' + (props.withMargin ? h1.marginBottom + ' 0px' : '0px') + ';\n  ';
 });
 
 var H2 = HTag.withComponent('h2');

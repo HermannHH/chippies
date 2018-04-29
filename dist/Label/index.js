@@ -33,7 +33,7 @@ var content = shevy.content;
 
 
 var LabelTag = _styledComponents2.default.label(_templateObject, content.fontSize, content.lineHeight, function (props) {
-  return '\n    color: ' + props.theme.colors[props.color][props.shade] + ';\n    font-weight: ' + props.theme.font.weight.bold + ';\n    font-family: ' + props.theme.font.family + ';\n  ';
+  return '\n    color: ' + props.theme.colors[props.color][props.shade] + ';\n    font-weight: ' + props.theme.font.weight.semiBold + ';\n    font-family: ' + props.theme.font.family + ';\n  ';
 });
 
 function Label(_ref) {

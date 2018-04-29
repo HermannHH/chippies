@@ -33,7 +33,7 @@ var content = shevy.content;
 
 
 var SmallTag = _styledComponents2.default.small(_templateObject, content.fontSize - 4, content.lineHeight, content.marginBottom, function (props) {
-  return '\n    color: ' + props.theme.colors[props.color][props.shade] + ';\n    font-family: ' + props.theme.font.family + ';\n  ';
+  return '\n    color: ' + props.theme.colors[props.color][props.shade] + ';\n    font-family: ' + props.theme.font.family + ';\n    font-weight: ' + props.theme.font.weight.standard + ';\n  ';
 });
 
 function Small(_ref) {

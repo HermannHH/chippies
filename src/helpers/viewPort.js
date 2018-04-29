@@ -19,11 +19,18 @@ export default function viewPort(WrappedComponent) {
       device = 'landscape_phone';
     }
 
+    const tabletAndUp = ['tablet', 'desktop', 'large_desktop'].includes(device);
+    const desktopAndUp = ['desktop', 'large_desktop'].includes(device);
+    const phone = ['landscape_phone', 'phone'].includes(device);
+
     return (
       {
         width,
         height,
         device,
+        tabletAndUp,
+        desktopAndUp,
+        phone,
       }
     );
   };
@@ -38,7 +45,10 @@ export default function viewPort(WrappedComponent) {
     ]).isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
-  }
+    tabletAndUp: PropTypes.bool.isRequired,
+    desktopAndUp: PropTypes.bool.isRequired,
+    phone: PropTypes.bool.isRequired,
+  };
 
   return withSizes(mapSizesToProps)(ViewPort);
 }
