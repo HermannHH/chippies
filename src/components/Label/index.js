@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
 import Shevy from 'shevyjs';
 
-const shevy = new Shevy();
+import { shevyConfig } from '../../helpers';
+
+const shevy = new Shevy(shevyConfig);
 const {
   content,
 } = shevy;
