@@ -17,7 +17,7 @@ function QuoteOnboard({}) {
   return (
     <div>
       <Pad horizontal={{ xs: 4 }}>
-        <BrandHeader size="2" position="left" />
+        <BrandHeader size="1" position="center" />
       </Pad>
       <Pad horizontal={{ xs: 3, md: 5 }}>
         <Mrg vertical={{ xs: 5 }}>
@@ -35,7 +35,7 @@ function QuoteOnboard({}) {
         <Mrg vertical={{ xs: 5 }}>
           <FlexPosition
             comps={[
-              <Button text="Accept" raised whiteText color="red" />,
+              <Button text="Yes please" raised whiteText color="red" />,
             ]}
             layout="center"
           />

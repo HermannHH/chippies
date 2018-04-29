@@ -32,7 +32,7 @@ const CompContainer = styled.div`
 function FlexPosition({ comps, layout }) {
   return (
     <Wrapper layout={layout}>
-      {comps.map((x, i) => (
+      {comps && comps.map((x, i) => (
         <CompContainer key={i}>{x}</CompContainer>
         ))}
     </Wrapper>

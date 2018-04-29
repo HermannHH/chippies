@@ -58,24 +58,27 @@ var LabelTag = _styledComponents2.default.label(_templateObject, function (props
 
 function Checkbox(_ref) {
   var theme = _ref.theme,
-      checked = _ref.checked,
+      isChecked = _ref.isChecked,
       handleChange = _ref.handleChange,
       labelPosition = _ref.labelPosition,
       label = _ref.label;
 
-  console.log('i am checked', checked);
+  console.log('inner', handleChange, isChecked);
   return _react2.default.createElement(
     LabelTag,
     { onClick: handleChange, theme: theme, labelPosition: labelPosition },
     label,
-    _react2.default.createElement('input', { type: 'checkbox', checked: checked }),
+    _react2.default.createElement('input', {
+      type: 'checkbox',
+      checked: isChecked
+    }),
     _react2.default.createElement('span', null)
   );
 }
 
 Checkbox.propTypes = {
   theme: _propTypes2.default.shape().isRequired,
-  checked: _propTypes2.default.bool.isRequired,
+  isChecked: _propTypes2.default.bool.isRequired,
   label: _propTypes2.default.string.isRequired,
   handleChange: _propTypes2.default.func.isRequired,
   labelPosition: _propTypes2.default.oneOf(['left', 'right'])

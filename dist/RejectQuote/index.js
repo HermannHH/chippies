@@ -48,10 +48,6 @@ var _HeadingGroup = require('../HeadingGroup');
 
 var _HeadingGroup2 = _interopRequireDefault(_HeadingGroup);
 
-var _LineItems = require('../LineItems');
-
-var _LineItems2 = _interopRequireDefault(_LineItems);
-
 var _TextSection = require('../TextSection');
 
 var _TextSection2 = _interopRequireDefault(_TextSection);
@@ -70,9 +66,8 @@ var _Well2 = _interopRequireDefault(_Well);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function AcceptQuote(_ref) {
-  var lineItemData = _ref.lineItemData,
-      referenceNumber = _ref.referenceNumber,
+function RejectQuote(_ref) {
+  var referenceNumber = _ref.referenceNumber,
       handleCommentToggle = _ref.handleCommentToggle,
       commentToggled = _ref.commentToggled,
       seller = _ref.seller,
@@ -86,12 +81,7 @@ function AcceptQuote(_ref) {
     _react2.default.createElement(
       _Pad2.default,
       { horizontal: { xs: 3, md: 5 } },
-      _react2.default.createElement(_HeadingGroup2.default, { mainText: 'Accept quotation', subText: 'Below is a summary of quotation #' + referenceNumber }),
-      _react2.default.createElement(
-        _Mrg2.default,
-        { vertical: { xs: 5 } },
-        _react2.default.createElement(_LineItems2.default, { data: lineItemData })
-      ),
+      _react2.default.createElement(_HeadingGroup2.default, { mainText: 'Reject quotation', subText: 'Please confirm the details below in order to reject quotation #' + referenceNumber }),
       _react2.default.createElement(
         _Mrg2.default,
         { vertical: { xs: 5 } },
@@ -144,7 +134,7 @@ function AcceptQuote(_ref) {
         _Mrg2.default,
         { vertical: { xs: 5 } },
         _react2.default.createElement(_FlexPosition2.default, {
-          comps: [_react2.default.createElement(_Button2.default, { text: 'Reject', disabled: !termsChecked }), _react2.default.createElement(_Button2.default, { text: 'Accept', raised: true, whiteText: true, disabled: !termsChecked })],
+          comps: [_react2.default.createElement(_Button2.default, { text: 'Accept', disabled: !termsChecked }), _react2.default.createElement(_Button2.default, { text: 'Reject', raised: true, whiteText: true, disabled: !termsChecked })],
           layout: 'right'
         })
       )
@@ -152,19 +142,8 @@ function AcceptQuote(_ref) {
   );
 }
 
-AcceptQuote.propTypes = {
+RejectQuote.propTypes = {
   referenceNumber: _propTypes2.default.string.isRequired,
-  lineItemData: _propTypes2.default.shape({
-    grandTotal: _propTypes2.default.string.isRequired,
-    items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
-      id: _propTypes2.default.string.isRequired,
-      name: _propTypes2.default.string.isRequired,
-      sku: _propTypes2.default.string.isRequired,
-      qty: _propTypes2.default.string.isRequired,
-      itemPrice: _propTypes2.default.string.isRequired,
-      subTotal: _propTypes2.default.string.isRequired
-    })).isRequired
-  }).isRequired,
   handleCommentToggle: _propTypes2.default.func.isRequired,
   commentToggled: _propTypes2.default.bool.isRequired,
   seller: _propTypes2.default.string.isRequired,
@@ -172,6 +151,6 @@ AcceptQuote.propTypes = {
   handleTermsChecked: _propTypes2.default.func.isRequired
 };
 
-AcceptQuote.defaultProps = {};
+RejectQuote.defaultProps = {};
 
-exports.default = AcceptQuote;
+exports.default = RejectQuote;

@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  ', ';\n  ', ';\n  ', ';\n'], ['\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  ', ';\n  ', ';\n  ', ';\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  ', ';\n  ', ';\n  ', ';\n  ', ';\n'], ['\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  ', ';\n  ', ';\n  ', ';\n  ', ';\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  margin: 0 ', ';\n  &:first-child {\n      margin-left: 0px;\n  };\n  &:last-child {\n      margin-right: 0px;\n  };\n'], ['\n  margin: 0 ', ';\n  &:first-child {\n      margin-left: 0px;\n  };\n  &:last-child {\n      margin-right: 0px;\n  };\n']);
 
 var _react = require('react');
@@ -39,20 +39,22 @@ var Wrapper = _styledComponents2.default.div(_templateObject, function (props) {
   return props.layout === 'spread' && 'justify-content: space-between';
 }, function (props) {
   return props.layout === 'left' && 'justify-content: flex-start';
+}, function (props) {
+  return props.layout === 'center' && 'justify-content: center';
 });
 
-var ButtonContainer = _styledComponents2.default.div(_templateObject2, bs(0.5));
+var CompContainer = _styledComponents2.default.div(_templateObject2, bs(0.5));
 
-function ButtonGroup(_ref) {
-  var buttons = _ref.buttons,
+function FlexPosition(_ref) {
+  var comps = _ref.comps,
       layout = _ref.layout;
 
   return _react2.default.createElement(
     Wrapper,
     { layout: layout },
-    buttons.map(function (x, i) {
+    comps && comps.map(function (x, i) {
       return _react2.default.createElement(
-        ButtonContainer,
+        CompContainer,
         { key: i },
         x
       );
@@ -60,13 +62,13 @@ function ButtonGroup(_ref) {
   );
 }
 
-ButtonGroup.propTypes = {
-  buttons: _propTypes2.default.arrayOf(_propTypes2.default.element).isRequired,
-  layout: _propTypes2.default.oneOf(['spread', 'left', 'right'])
+FlexPosition.propTypes = {
+  comps: _propTypes2.default.arrayOf(_propTypes2.default.element).isRequired,
+  layout: _propTypes2.default.oneOf(['spread', 'left', 'right', 'center'])
 };
 
-ButtonGroup.defaultProps = {
+FlexPosition.defaultProps = {
   layout: 'right'
 };
 
-exports.default = (0, _styledComponents.withTheme)(ButtonGroup);
+exports.default = (0, _styledComponents.withTheme)(FlexPosition);
