@@ -51,7 +51,7 @@ const DataTag = styled.td`
  * Used to LineItems line items on a quotation or order
  */
 
-function LineItems({ theme, content }) {
+function LineItems({ theme, data }) {
   return (
     <TableTag theme={theme}>
       <RowTag theme={theme}>
@@ -61,7 +61,7 @@ function LineItems({ theme, content }) {
         <HeaderTag theme={theme}>Item Price</HeaderTag>
         <HeaderTag theme={theme}>Sub-Total</HeaderTag>
       </RowTag>
-      {content.data.map(x => (
+      {data.items.map(x => (
         <RowTag theme={theme} key={x.id}>
           <DataTag theme={theme}>{x.name}</DataTag>
           <DataTag theme={theme}>{x.sku}</DataTag>
@@ -76,7 +76,7 @@ function LineItems({ theme, content }) {
         <DataTag theme={theme} noBorder />
         <DataTag theme={theme} noBorder />
         <DataTag theme={theme} right bold>Sub-Total</DataTag>
-        <DataTag theme={theme} right bold>1234</DataTag>
+        <DataTag theme={theme} right bold>{data.grandTotal}</DataTag>
       </RowTag>
     </TableTag>
   );
@@ -84,8 +84,9 @@ function LineItems({ theme, content }) {
 
 LineItems.propTypes = {
   theme: PropTypes.shape().isRequired,
-  content: PropTypes.shape({
-    data: PropTypes.arrayOf(PropTypes.shape({
+  data: PropTypes.shape({
+    grandTotal: PropTypes.string.isRequired,
+    items: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       sku: PropTypes.string.isRequired,

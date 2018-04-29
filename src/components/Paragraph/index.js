@@ -17,6 +17,7 @@ const PTag = styled.p`
     color: ${props.theme.colors[props.color][props.shade]};
     font-family: ${props.theme.font.family};
     margin: ${props.withMargin ? `${content.marginBottom} 0px` : '0px'};
+    font-weight: ${props.theme.font.weight.standard};
   `};
 `;
 

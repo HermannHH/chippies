@@ -17,7 +17,7 @@ const LabelTag = styled.label`
   font-smoothing: antialiased;
   ${props => `
     color: ${props.theme.colors[props.color][props.shade]};
-    font-weight: ${props.theme.font.weight.bold};
+    font-weight: ${props.theme.font.weight.semiBold};
     font-family: ${props.theme.font.family};
   `};
 `;

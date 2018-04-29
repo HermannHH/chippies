@@ -17,6 +17,7 @@ const SmallTag = styled.small`
   ${props => `
     color: ${props.theme.colors[props.color][props.shade]};
     font-family: ${props.theme.font.family};
+    font-weight: ${props.theme.font.weight.standard};
   `};
 `;
 

@@ -19,6 +19,7 @@ const HTag = styled.h1`
   ${props => `
     color: ${props.theme.colors[props.color][props.shade]};
     font-family: ${props.theme.font.family};
+    font-weight: ${props.theme.font.weight.bold};
     margin: ${props.withMargin ? `${h1.marginBottom} 0px` : '0px'};
   `};
 `;

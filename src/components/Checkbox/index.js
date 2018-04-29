@@ -23,7 +23,7 @@ const LabelTag = styled.label`
     margin-bottom: 0px;
     ${props => `
       color: ${props.theme.colors.grey['2']};
-      font-weight: ${props.theme.font.weight.bold};
+      font-weight: ${props.theme.font.weight.standard};
       font-family: ${props.theme.font.family};
     `};
 
