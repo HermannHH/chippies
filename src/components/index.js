@@ -6,4 +6,15 @@ import PaletteBlock from './PaletteBlock';
 import Paragraph from './Paragraph';
 import Pad from './Pad';
 
-export { Button, ColorBlock, ColorDescription, PaletteBlock, Heading, Paragraph, Pad };
+import theme from './helpers/theme';
+
+export {
+  Button,
+  ColorBlock,
+  ColorDescription,
+  PaletteBlock,
+  Heading,
+  Paragraph,
+  Pad,
+  theme,
+};

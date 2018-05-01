@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Pad = exports.Paragraph = exports.Heading = exports.PaletteBlock = exports.ColorDescription = exports.ColorBlock = exports.Button = undefined;
+exports.theme = exports.Pad = exports.Paragraph = exports.Heading = exports.PaletteBlock = exports.ColorDescription = exports.ColorBlock = exports.Button = undefined;
 
 var _Button = require('./Button');
 
@@ -33,6 +33,10 @@ var _Pad = require('./Pad');
 
 var _Pad2 = _interopRequireDefault(_Pad);
 
+var _theme = require('./helpers/theme');
+
+var _theme2 = _interopRequireDefault(_theme);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Button = _Button2.default;
@@ -42,3 +46,4 @@ exports.PaletteBlock = _PaletteBlock2.default;
 exports.Heading = _Heading2.default;
 exports.Paragraph = _Paragraph2.default;
 exports.Pad = _Pad2.default;
+exports.theme = _theme2.default;
