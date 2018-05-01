@@ -30,7 +30,7 @@ var _Paragraph = require('../Paragraph');
 
 var _Paragraph2 = _interopRequireDefault(_Paragraph);
 
-var _helpers = require('../../helpers');
+var _helpers = require('../helpers');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

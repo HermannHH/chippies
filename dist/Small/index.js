@@ -22,7 +22,7 @@ var _shevyjs = require('shevyjs');
 
 var _shevyjs2 = _interopRequireDefault(_shevyjs);
 
-var _helpers = require('../../helpers');
+var _helpers = require('../helpers');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

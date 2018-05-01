@@ -19,7 +19,7 @@ var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _helpers = require('../../helpers');
+var _helpers = require('../helpers');
 
 var _Pad = require('../Pad');
 

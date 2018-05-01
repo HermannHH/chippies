@@ -24,7 +24,7 @@ var _shevyjs = require('shevyjs');
 
 var _shevyjs2 = _interopRequireDefault(_shevyjs);
 
-var _helpers = require('../../helpers');
+var _helpers = require('../helpers');
 
 var _Label = require('../Label');
 
