@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
 import requiredIf from 'react-required-if';
 import Ink from 'react-ink';
+import theme from 'krated-theme';
 
 import Label from '../Label';
 import Pad from '../Pad';
@@ -58,7 +59,7 @@ function Button({
   } else if (whiteText) {
     labelColor = 'white';
     labelShade = '0';
-  };
+  }
   return (
     <ButtonWrapper
       theme={theme}
@@ -78,10 +79,10 @@ function Button({
       </Pad>
     </ButtonWrapper>
   );
-};
+}
 
 Button.propTypes = {
-  theme: PropTypes.shape().isRequired,
+  theme: PropTypes.shape(),
   text: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
   handleClick: requiredIf(PropTypes.func, props => props.type !== 'submit'),
@@ -99,6 +100,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  theme,
   handleClick: undefined,
   disabled: false,
   loadingText: 'Saving',
@@ -111,4 +113,4 @@ Button.defaultProps = {
   whiteText: false,
 };
 
-export default withTheme(Button);
+export default Button;

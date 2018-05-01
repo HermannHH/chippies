@@ -26,6 +26,10 @@ var _reactInk = require('react-ink');
 
 var _reactInk2 = _interopRequireDefault(_reactInk);
 
+var _kratedTheme = require('krated-theme');
+
+var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
+
 var _Label = require('../Label');
 
 var _Label2 = _interopRequireDefault(_Label);
@@ -64,7 +68,7 @@ function Button(_ref) {
   } else if (whiteText) {
     labelColor = 'white';
     labelShade = '0';
-  };
+  }
   return _react2.default.createElement(
     ButtonWrapper,
     {
@@ -84,10 +88,10 @@ function Button(_ref) {
       _react2.default.createElement(_Label2.default, { text: isLoading ? loadingText : text, color: labelColor, shade: labelShade })
     )
   );
-};
+}
 
 Button.propTypes = {
-  theme: _propTypes2.default.shape().isRequired,
+  theme: _propTypes2.default.shape(),
   text: _propTypes2.default.string.isRequired,
   disabled: _propTypes2.default.bool,
   handleClick: (0, _reactRequiredIf2.default)(_propTypes2.default.func, function (props) {
@@ -104,6 +108,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  theme: _kratedTheme2.default,
   handleClick: undefined,
   disabled: false,
   loadingText: 'Saving',
@@ -116,4 +121,4 @@ Button.defaultProps = {
   whiteText: false
 };
 
-exports.default = (0, _styledComponents.withTheme)(Button);
+exports.default = Button;
