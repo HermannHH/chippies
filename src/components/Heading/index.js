@@ -4,7 +4,7 @@ import styled, { withTheme } from 'styled-components';
 import Shevy from 'shevyjs';
 
 
-import { shevyConfig } from '../../helpers';
+import { shevyConfig } from '../helpers';
 
 const shevy = new Shevy(shevyConfig);
 const {

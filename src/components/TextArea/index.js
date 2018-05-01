@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
 import Shevy from 'shevyjs';
 
-import { shevyConfig } from '../../helpers';
+import { shevyConfig } from '../helpers';
 
 import Label from '../Label';
 import InputErrors from '../InputErrors';

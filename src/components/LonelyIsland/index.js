@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
 
 
-import { viewPort } from '../../helpers';
+import { viewPort } from '../helpers';
 
 import Pad from '../Pad';
 

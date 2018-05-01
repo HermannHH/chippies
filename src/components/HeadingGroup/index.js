@@ -7,7 +7,7 @@ import Heading from '../Heading';
 import Paragraph from '../Paragraph';
 
 
-import { shevyConfig } from '../../helpers';
+import { shevyConfig } from '../helpers';
 
 const shevy = new Shevy(shevyConfig);
 const {
