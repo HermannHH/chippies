@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTheme } from 'styled-components';
+
+import kratedTheme from 'krated-theme';
 
 import Display from '../Display';
 import PaletteBlock from '../PaletteBlock';
@@ -22,7 +23,11 @@ function ColorPalette({
 }
 
 ColorPalette.propTypes = {
-  theme: PropTypes.shape().isRequired,
+  theme: PropTypes.shape(),
 };
 
-export default withTheme(ColorPalette);
+ColorPalette.defaultProps = {
+  theme: kratedTheme,
+}
+
+export default ColorPalette;

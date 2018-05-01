@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import Shevy from 'shevyjs';
+import kratedTheme from 'krated-theme';
 
 import { shevyConfig } from '../helpers';
 
@@ -29,15 +30,16 @@ function Label({ theme, text, color, shade }) {
 }
 
 Label.propTypes = {
-  theme: PropTypes.shape().isRequired,
+  theme: PropTypes.shape(),
   text: PropTypes.string.isRequired,
   color: PropTypes.string,
   shade: PropTypes.number,
 };
 
 Label.defaultProps = {
+  theme: kratedTheme,
   color: 'grey',
   shade: 2,
 };
 
-export default withTheme(Label);
+export default Label;

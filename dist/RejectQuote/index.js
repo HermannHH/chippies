@@ -12,10 +12,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _styledComponents = require('styled-components');
-
-var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
 var _BrandHeader = require('../BrandHeader');
 
 var _BrandHeader2 = _interopRequireDefault(_BrandHeader);

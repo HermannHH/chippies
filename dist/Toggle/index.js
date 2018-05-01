@@ -22,6 +22,10 @@ var _reactSwitch = require('react-switch');
 
 var _reactSwitch2 = _interopRequireDefault(_reactSwitch);
 
+var _kratedTheme = require('krated-theme');
+
+var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
+
 var _Label = require('../Label');
 
 var _Label2 = _interopRequireDefault(_Label);
@@ -59,12 +63,14 @@ function Toggle(_ref) {
 
 Toggle.propTypes = {
   id: _propTypes2.default.string.isRequired,
-  theme: _propTypes2.default.shape().isRequired,
+  theme: _propTypes2.default.shape(),
   checked: _propTypes2.default.bool.isRequired,
   handleChange: _propTypes2.default.func.isRequired,
   label: _propTypes2.default.string.isRequired
 };
 
-Toggle.defaultProps = {};
+Toggle.defaultProps = {
+  theme: _kratedTheme2.default
+};
 
-exports.default = (0, _styledComponents.withTheme)(Toggle);
+exports.default = Toggle;

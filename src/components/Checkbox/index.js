@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import Shevy from 'shevyjs';
+import kratedTheme from 'krated-theme';
 
 import { shevyConfig } from '../helpers';
 
@@ -106,7 +107,7 @@ function Checkbox({
 }
 
 Checkbox.propTypes = {
-  theme: PropTypes.shape().isRequired,
+  theme: PropTypes.shape(),
   isChecked: PropTypes.bool.isRequired,
   label: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
@@ -118,6 +119,7 @@ Checkbox.propTypes = {
 
 Checkbox.defaultProps = {
   labelPosition: 'left',
+  theme: kratedTheme,
 };
 
-export default withTheme(Checkbox);
+export default Checkbox;

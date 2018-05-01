@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
+import kratedTheme from 'krated-theme';
 
 
 import { viewPort } from '../helpers';
@@ -91,13 +92,14 @@ LonelyIsland.propTypes = {
     landscape_phone: PropTypes.number.isRequired,
   }),
   children: PropTypes.element,
-  theme: PropTypes.shape().isRequired,
+  theme: PropTypes.shape(),
 };
 
 LonelyIsland.defaultProps = {
+  theme: kratedTheme,
   compressed: false,
   topCoords: null,
   children: null,
 };
 
-export default viewPort(withTheme(LonelyIsland));
+export default viewPort(LonelyIsland);

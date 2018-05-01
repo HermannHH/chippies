@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
 import BrandHeader from '../BrandHeader';
 import Pad from '../Pad';
@@ -13,7 +12,7 @@ import FlexPosition from '../FlexPosition';
  * Shown to users after they accept/reject a quote as non-signed in user
  */
 
-function QuoteOnboard({}) {
+function QuoteOnboard() {
   return (
     <div>
       <Pad horizontal={{ xs: 4 }}>

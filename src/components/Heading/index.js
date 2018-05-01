@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import Shevy from 'shevyjs';
-
+import kratedTheme from 'krated-theme';
 
 import { shevyConfig } from '../helpers';
 
@@ -87,7 +87,7 @@ function Heading({ theme, size, text, color, shade, withMargin }) {
 }
 
 Heading.propTypes = {
-  theme: PropTypes.shape().isRequired,
+  theme: PropTypes.shape(),
   text: PropTypes.string.isRequired,
   size: PropTypes.oneOf(['1', '2', '3', '4', '5', '6']),
   color: PropTypes.string,
@@ -96,10 +96,11 @@ Heading.propTypes = {
 };
 
 Heading.defaultProps = {
+  theme: kratedTheme,
   size: '1',
   color: 'black',
   shade: -1,
   withMargin: true,
 };
 
-export default withTheme(Heading);
+export default Heading;

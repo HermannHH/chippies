@@ -71,4 +71,4 @@ FlexPosition.defaultProps = {
   layout: 'right'
 };
 
-exports.default = (0, _styledComponents.withTheme)(FlexPosition);
+exports.default = FlexPosition;

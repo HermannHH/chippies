@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import Switch from 'react-switch';
+import kratedTheme from 'krated-theme';
 
 import Label from '../Label';
 
@@ -40,13 +41,14 @@ function Toggle({
 
 Toggle.propTypes = {
   id: PropTypes.string.isRequired,
-  theme: PropTypes.shape().isRequired,
+  theme: PropTypes.shape(),
   checked: PropTypes.bool.isRequired,
   handleChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
 };
 
 Toggle.defaultProps = {
+  theme: kratedTheme,
 };
 
-export default withTheme(Toggle);
+export default Toggle;

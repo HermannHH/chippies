@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import Shevy from 'shevyjs';
+import kratedTheme from 'krated-theme';
 
 import { shevyConfig } from '../helpers';
 
@@ -26,7 +27,7 @@ function Paragraph({ theme, children, color, shade, withMargin }) {
 }
 
 Paragraph.propTypes = {
-  theme: PropTypes.shape().isRequired,
+  theme: PropTypes.shape(),
   children: PropTypes.string.isRequired,
   color: PropTypes.string,
   shade: PropTypes.number,
@@ -34,9 +35,10 @@ Paragraph.propTypes = {
 };
 
 Paragraph.defaultProps = {
+  theme: kratedTheme,
   color: 'grey',
   shade: 2,
   withMargin: true,
 };
 
-export default withTheme(Paragraph);
+export default Paragraph;

@@ -19,6 +19,10 @@ var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
+var _kratedTheme = require('krated-theme');
+
+var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
+
 var _helpers = require('../helpers');
 
 var _Pad = require('../Pad');
@@ -88,13 +92,14 @@ LonelyIsland.propTypes = {
     landscape_phone: _propTypes2.default.number.isRequired
   }),
   children: _propTypes2.default.element,
-  theme: _propTypes2.default.shape().isRequired
+  theme: _propTypes2.default.shape()
 };
 
 LonelyIsland.defaultProps = {
+  theme: _kratedTheme2.default,
   compressed: false,
   topCoords: null,
   children: null
 };
 
-exports.default = (0, _helpers.viewPort)((0, _styledComponents.withTheme)(LonelyIsland));
+exports.default = (0, _helpers.viewPort)(LonelyIsland);

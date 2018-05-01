@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
+import kratedTheme from 'krated-theme';
 
 
 const Container = styled.div`
@@ -34,7 +35,7 @@ function Border({
 }
 
 Border.propTypes = {
-  theme: PropTypes.shape().isRequired,
+  theme: PropTypes.shape(),
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
@@ -50,6 +51,7 @@ Border.propTypes = {
 };
 
 Border.defaultProps = {
+  theme: kratedTheme,
   children: null,
   radius: false,
   all: false,
@@ -61,4 +63,4 @@ Border.defaultProps = {
   shade: -1,
 };
 
-export default withTheme(Border);
+export default Border;

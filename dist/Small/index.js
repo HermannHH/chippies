@@ -57,13 +57,13 @@ Small.propTypes = {
   theme: _propTypes2.default.shape(),
   children: _propTypes2.default.string.isRequired,
   color: _propTypes2.default.string,
-  shade: _propTypes2.default.number
+  shade: _propTypes2.default.string
 };
 
 Small.defaultProps = {
   theme: _kratedTheme2.default,
   color: 'grey',
-  shade: 2
+  shade: '2'
 };
 
 exports.default = Small;

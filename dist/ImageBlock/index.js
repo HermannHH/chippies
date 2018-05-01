@@ -18,10 +18,6 @@ var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _Display = require('../Display');
-
-var _Display2 = _interopRequireDefault(_Display);
-
 var _Image = require('../Image');
 
 var _Image2 = _interopRequireDefault(_Image);

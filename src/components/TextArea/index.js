@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import Shevy from 'shevyjs';
+import kratedTheme from 'krated-theme';
 
 import { shevyConfig } from '../helpers';
 
@@ -94,7 +95,7 @@ function TextArea({
 }
 
 TextArea.propTypes = {
-  theme: PropTypes.shape().isRequired,
+  theme: PropTypes.shape(),
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
@@ -105,6 +106,7 @@ TextArea.propTypes = {
 };
 
 TextArea.defaultProps = {
+  theme: kratedTheme,
   placeholder: undefined,
   handleFocus: undefined,
   handleBlur: undefined,
@@ -112,4 +114,4 @@ TextArea.defaultProps = {
   errors: [],
 };
 
-export default withTheme(TextArea);
+export default TextArea;

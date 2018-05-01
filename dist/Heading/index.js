@@ -23,6 +23,10 @@ var _shevyjs = require('shevyjs');
 
 var _shevyjs2 = _interopRequireDefault(_shevyjs);
 
+var _kratedTheme = require('krated-theme');
+
+var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
+
 var _helpers = require('../helpers');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -116,7 +120,7 @@ function Heading(_ref) {
 }
 
 Heading.propTypes = {
-  theme: _propTypes2.default.shape().isRequired,
+  theme: _propTypes2.default.shape(),
   text: _propTypes2.default.string.isRequired,
   size: _propTypes2.default.oneOf(['1', '2', '3', '4', '5', '6']),
   color: _propTypes2.default.string,
@@ -125,10 +129,11 @@ Heading.propTypes = {
 };
 
 Heading.defaultProps = {
+  theme: _kratedTheme2.default,
   size: '1',
   color: 'black',
   shade: -1,
   withMargin: true
 };
 
-exports.default = (0, _styledComponents.withTheme)(Heading);
+exports.default = Heading;

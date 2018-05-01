@@ -24,6 +24,10 @@ var _shevyjs = require('shevyjs');
 
 var _shevyjs2 = _interopRequireDefault(_shevyjs);
 
+var _kratedTheme = require('krated-theme');
+
+var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
+
 var _helpers = require('../helpers');
 
 var _Label = require('../Label');
@@ -91,7 +95,7 @@ function TextArea(_ref) {
 }
 
 TextArea.propTypes = {
-  theme: _propTypes2.default.shape().isRequired,
+  theme: _propTypes2.default.shape(),
   placeholder: _propTypes2.default.string,
   value: _propTypes2.default.string.isRequired,
   handleChange: _propTypes2.default.func.isRequired,
@@ -102,6 +106,7 @@ TextArea.propTypes = {
 };
 
 TextArea.defaultProps = {
+  theme: _kratedTheme2.default,
   placeholder: undefined,
   handleFocus: undefined,
   handleBlur: undefined,
@@ -109,4 +114,4 @@ TextArea.defaultProps = {
   errors: []
 };
 
-exports.default = (0, _styledComponents.withTheme)(TextArea);
+exports.default = TextArea;

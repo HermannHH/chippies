@@ -18,6 +18,10 @@ var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
+var _kratedTheme = require('krated-theme');
+
+var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
@@ -56,7 +60,7 @@ function Border(_ref) {
 }
 
 Border.propTypes = {
-  theme: _propTypes2.default.shape().isRequired,
+  theme: _propTypes2.default.shape(),
   children: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.arrayOf(_propTypes2.default.element)]),
   all: _propTypes2.default.bool,
   top: _propTypes2.default.bool,
@@ -69,6 +73,7 @@ Border.propTypes = {
 };
 
 Border.defaultProps = {
+  theme: _kratedTheme2.default,
   children: null,
   radius: false,
   all: false,
@@ -80,4 +85,4 @@ Border.defaultProps = {
   shade: -1
 };
 
-exports.default = (0, _styledComponents.withTheme)(Border);
+exports.default = Border;

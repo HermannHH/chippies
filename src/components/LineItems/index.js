@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import Shevy from 'shevyjs';
+import kratedTheme from 'krated-theme';
 
 import { shevyConfig } from '../helpers';
 
@@ -83,7 +84,7 @@ function LineItems({ theme, data }) {
 }
 
 LineItems.propTypes = {
-  theme: PropTypes.shape().isRequired,
+  theme: PropTypes.shape(),
   data: PropTypes.shape({
     grandTotal: PropTypes.string.isRequired,
     items: PropTypes.arrayOf(PropTypes.shape({
@@ -98,4 +99,8 @@ LineItems.propTypes = {
 
 };
 
-export default withTheme(LineItems);
+LineItems.defaultProps = {
+  theme: kratedTheme,
+}
+
+export default LineItems;

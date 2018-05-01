@@ -12,10 +12,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _styledComponents = require('styled-components');
-
-var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
 var _BrandHeader = require('../BrandHeader');
 
 var _BrandHeader2 = _interopRequireDefault(_BrandHeader);
@@ -42,15 +38,11 @@ var _FlexPosition2 = _interopRequireDefault(_FlexPosition);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
-
 /**
  * Shown to users after they accept/reject a quote as non-signed in user
  */
 
-function QuoteOnboard(_ref) {
-  _objectDestructuringEmpty(_ref);
-
+function QuoteOnboard() {
   return _react2.default.createElement(
     'div',
     null,

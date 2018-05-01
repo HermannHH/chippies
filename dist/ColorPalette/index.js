@@ -12,7 +12,9 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _styledComponents = require('styled-components');
+var _kratedTheme = require('krated-theme');
+
+var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
 
 var _Display = require('../Display');
 
@@ -44,7 +46,11 @@ function ColorPalette(_ref) {
 }
 
 ColorPalette.propTypes = {
-  theme: _propTypes2.default.shape().isRequired
+  theme: _propTypes2.default.shape()
 };
 
-exports.default = (0, _styledComponents.withTheme)(ColorPalette);
+ColorPalette.defaultProps = {
+  theme: _kratedTheme2.default
+};
+
+exports.default = ColorPalette;

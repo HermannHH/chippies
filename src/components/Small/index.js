@@ -30,13 +30,13 @@ Small.propTypes = {
   theme: PropTypes.shape(),
   children: PropTypes.string.isRequired,
   color: PropTypes.string,
-  shade: PropTypes.number,
+  shade: PropTypes.string,
 };
 
 Small.defaultProps = {
   theme: kratedTheme,
   color: 'grey',
-  shade: 2,
+  shade: '2',
 };
 
 export default Small;
