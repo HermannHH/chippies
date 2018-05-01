@@ -7,7 +7,7 @@
     "clean-dist": "rm -rf ./dist",
     "clean-styleguide": "rm -rf ./styleguide",
     "build-styleguide": "npm run clean-styleguide && npx styleguidist build",
-    "build": "npm run build-styleguide && npm run clean-dist && set NODE_ENV=production && ./node_modules/.bin/babel ./src/components --out-dir ./dist",
+    "build": "npm run build-styleguide && npm run clean-dist && set NODE_ENV=production && ./node_modules/.bin/babel ./src/components --out-dir ./dist --copy-files",
     "styleguide": "npx styleguidist server"
   },
   "keywords": [],
