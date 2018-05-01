@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Padding } from 'styled-components-spacing';
+import kratedTheme from 'krated-theme';
 
 /**
  * Adds responsive padding around child / children
@@ -24,6 +25,7 @@ function Pad({
       right={right}
       bottom={bottom}
       left={left}
+      theme={kratedTheme}
     >
       {children}
     </Padding>

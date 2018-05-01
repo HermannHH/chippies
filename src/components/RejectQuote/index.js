@@ -22,6 +22,8 @@ function RejectQuote({
   seller,
   termsChecked,
   handleTermsChecked,
+  handleAccept,
+  handleReject,
 
 }) {
   return (
@@ -65,8 +67,8 @@ function RejectQuote({
         </Mrg>
         <Mrg all={{ xs: 5 }}>
           <FlexPosition
-            buttons={[
-              <Checkbox checked={termsChecked} handleChange={handleTermsChecked} label="I agree to the terms of this quotation" />,
+            comps={[
+              <Checkbox isChecked={termsChecked} handleChange={handleTermsChecked} label="I agree to the terms of this quotation" />,
             ]}
             layout="right"
           />
@@ -75,8 +77,8 @@ function RejectQuote({
         <Mrg vertical={{ xs: 5 }}>
           <FlexPosition
             comps={[
-              <Button text="Accept" disabled={!termsChecked} />,
-              <Button text="Reject" raised whiteText disabled={!termsChecked} />,
+              <Button text="Reject" disabled={!termsChecked} handleClick={handleAccept} />,
+              <Button text="Accept" raised whiteText disabled={!termsChecked} handleClick={handleReject} />,
             ]}
             layout="right"
           />
@@ -93,6 +95,8 @@ RejectQuote.propTypes = {
   seller: PropTypes.string.isRequired,
   termsChecked: PropTypes.bool.isRequired,
   handleTermsChecked: PropTypes.func.isRequired,
+  handleAccept: PropTypes.func.isRequired,
+  handleReject: PropTypes.func.isRequired,
 };
 
 RejectQuote.defaultProps = {

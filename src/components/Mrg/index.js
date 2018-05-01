@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Margin } from 'styled-components-spacing';
+import kratedTheme from 'krated-theme';
 
 /**
  * Adds responsive margin around child / children
@@ -24,6 +25,7 @@ function Mrg({
       right={right}
       bottom={bottom}
       left={left}
+      theme={kratedTheme}
     >
       {children}
     </Margin>

@@ -93,13 +93,13 @@ function Checkbox({
   labelPosition,
   label,
 }) {
-  console.log('inner', handleChange, isChecked)
   return (
     <LabelTag onClick={handleChange} theme={theme} labelPosition={labelPosition}>
       { label }
       <input
         type="checkbox"
         checked={isChecked}
+        onChange={handleChange}
       />
       <span />
     </LabelTag>

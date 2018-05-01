@@ -35,5 +35,7 @@ initialState = {
   handleCommentToggle={() => setState({ commentToggled: !state.commentToggled})}
   termsChecked={state.termsChecked}
   handleTermsChecked={() => setState({ termsChecked: !state.termsChecked})}
+  handleAccept={()=>alert('accepted')}
+  handleReject={()=>alert('rejected')}
 />
 ```

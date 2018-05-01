@@ -6,7 +6,7 @@ import kratedTheme from 'krated-theme';
 
 const Container = styled.div`
   ${props => `
-    ${props.radius && `border-radius: ${props.theme.borders.radius}px`};
+    ${props.rad && `border-radius: ${props.theme.borders.radius}px`};
     ${props.all && `border: thin solid ${props.theme.colors[props.color][props.shade]}`};
     ${props.top && `border-top: thin solid ${props.theme.colors[props.color][props.shade]}`};
     ${props.right && `border-right: thin solid ${props.theme.colors[props.color][props.shade]}`};
@@ -16,7 +16,7 @@ const Container = styled.div`
 `;
 
 function Border({
-  theme, children, all, top, right, bottom, left, radius, color, shade,
+  theme, children, all, top, right, bottom, left, rad, color, shade,
 }) {
   return (
     <Container
@@ -26,7 +26,7 @@ function Border({
       right={right}
       bottom={bottom}
       left={left}
-      radius={radius}
+      rad={rad}
       color={color}
       shade={shade}
     >
@@ -45,22 +45,22 @@ Border.propTypes = {
   right: PropTypes.bool,
   bottom: PropTypes.bool,
   left: PropTypes.bool,
-  radius: PropTypes.bool,
+  rad: PropTypes.bool,
   color: PropTypes.string,
-  shade: PropTypes.number,
+  shade: PropTypes.string,
 };
 
 Border.defaultProps = {
   theme: kratedTheme,
   children: null,
-  radius: false,
+  rad: false,
   all: false,
   top: false,
   right: false,
   bottom: false,
   left: false,
   color: 'grey',
-  shade: -1,
+  shade: '-1',
 };
 
 export default Border;

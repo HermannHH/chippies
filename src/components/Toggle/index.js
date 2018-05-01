@@ -44,11 +44,12 @@ Toggle.propTypes = {
   theme: PropTypes.shape(),
   checked: PropTypes.bool.isRequired,
   handleChange: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
 };
 
 Toggle.defaultProps = {
   theme: kratedTheme,
+  label: null,
 };
 
 export default Toggle;

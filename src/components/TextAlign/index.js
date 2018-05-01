@@ -18,6 +18,7 @@ function TextAlign({ children, align }) {
 
 TextAlign.propTypes = {
   children: PropTypes.oneOfType([
+    PropTypes.string,
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,

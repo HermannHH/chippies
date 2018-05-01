@@ -22,6 +22,14 @@ const TableTag = styled.table`
   `};
 `;
 
+const HeadTag = styled.thead`
+
+`;
+
+const BodyTag = styled.tbody`
+
+`;
+
 const RowTag = styled.tr`
 
 `;
@@ -55,30 +63,34 @@ const DataTag = styled.td`
 function LineItems({ theme, data }) {
   return (
     <TableTag theme={theme}>
-      <RowTag theme={theme}>
-        <HeaderTag theme={theme}>Name</HeaderTag>
-        <HeaderTag theme={theme}>SKU</HeaderTag>
-        <HeaderTag theme={theme}>QTY</HeaderTag>
-        <HeaderTag theme={theme}>Item Price</HeaderTag>
-        <HeaderTag theme={theme}>Sub-Total</HeaderTag>
-      </RowTag>
-      {data.items.map(x => (
-        <RowTag theme={theme} key={x.id}>
-          <DataTag theme={theme}>{x.name}</DataTag>
-          <DataTag theme={theme}>{x.sku}</DataTag>
-          <DataTag theme={theme} right>{x.qty}</DataTag>
-          <DataTag theme={theme} right>{x.itemPrice}</DataTag>
-          <DataTag theme={theme} right>{x.subTotal}</DataTag>
+      <HeadTag>
+        <RowTag theme={theme}>
+          <HeaderTag theme={theme}>Name</HeaderTag>
+          <HeaderTag theme={theme}>SKU</HeaderTag>
+          <HeaderTag theme={theme}>QTY</HeaderTag>
+          <HeaderTag theme={theme}>Item Price</HeaderTag>
+          <HeaderTag theme={theme}>Sub-Total</HeaderTag>
         </RowTag>
+      </HeadTag>
+      <BodyTag>
+        {data.items.map(x => (
+          <RowTag theme={theme} key={x.id}>
+            <DataTag theme={theme}>{x.name}</DataTag>
+            <DataTag theme={theme}>{x.sku}</DataTag>
+            <DataTag theme={theme} right>{x.qty}</DataTag>
+            <DataTag theme={theme} right>{x.itemPrice}</DataTag>
+            <DataTag theme={theme} right>{x.subTotal}</DataTag>
+          </RowTag>
 
-      ))}
-      <RowTag>
-        <DataTag theme={theme} noBorder />
-        <DataTag theme={theme} noBorder />
-        <DataTag theme={theme} noBorder />
-        <DataTag theme={theme} right bold>Sub-Total</DataTag>
-        <DataTag theme={theme} right bold>{data.grandTotal}</DataTag>
-      </RowTag>
+        ))}
+        <RowTag>
+          <DataTag theme={theme} noBorder />
+          <DataTag theme={theme} noBorder />
+          <DataTag theme={theme} noBorder />
+          <DataTag theme={theme} right bold>Sub-Total</DataTag>
+          <DataTag theme={theme} right bold>{data.grandTotal}</DataTag>
+        </RowTag>
+      </BodyTag>
     </TableTag>
   );
 }
@@ -91,7 +103,7 @@ LineItems.propTypes = {
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       sku: PropTypes.string.isRequired,
-      qty: PropTypes.string.isRequired,
+      qty: PropTypes.number.isRequired,
       itemPrice: PropTypes.string.isRequired,
       subTotal: PropTypes.string.isRequired,
     })).isRequired,

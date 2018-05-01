@@ -23,7 +23,7 @@ ${props => `
     text-transform: uppercase;
     text-decoration: none;
     user-select: none;
-    ${props.fill && 'width: 100%'};
+    ${props.fluid && 'width: 100%'};
     ${props.raised && `
       background-color: ${props.theme.colors[props.color][props.shade]};
       box-shadow: ${props.theme.box.shadow.shallow};
@@ -45,7 +45,7 @@ function Button({
   disabled,
   type,
   text,
-  fill,
+  fluid,
   raised,
   color,
   shade,
@@ -66,7 +66,7 @@ function Button({
       onClick={handleClick}
       disabled={isLoading || disabled}
       type={type}
-      fill={fill}
+      fluid={fluid}
       raised={raised}
       color={color}
       shade={shade}
@@ -92,7 +92,7 @@ Button.propTypes = {
     'submit',
     'button',
   ]),
-  fill: PropTypes.bool,
+  fluid: PropTypes.bool,
   raised: PropTypes.bool,
   color: PropTypes.string,
   shade: PropTypes.string,
@@ -106,7 +106,7 @@ Button.defaultProps = {
   loadingText: 'Saving',
   isLoading: false,
   type: 'button',
-  fill: false,
+  fluid: false,
   raised: false,
   color: 'blue',
   shade: '0',

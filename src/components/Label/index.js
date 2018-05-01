@@ -33,13 +33,13 @@ Label.propTypes = {
   theme: PropTypes.shape(),
   text: PropTypes.string.isRequired,
   color: PropTypes.string,
-  shade: PropTypes.number,
+  shade: PropTypes.string,
 };
 
 Label.defaultProps = {
   theme: kratedTheme,
   color: 'grey',
-  shade: 2,
+  shade: '2',
 };
 
 export default Label;

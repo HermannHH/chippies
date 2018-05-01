@@ -16,8 +16,11 @@ function Well({ children }) {
 }
 
 Well.propTypes = {
-//   theme: PropTypes.shape().isRequired,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
 };
 
 export default Well;

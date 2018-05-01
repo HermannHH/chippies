@@ -12,7 +12,9 @@ import FlexPosition from '../FlexPosition';
  * Shown to users after they accept/reject a quote as non-signed in user
  */
 
-function QuoteOnboard() {
+function QuoteOnboard({
+  handleClick,
+}) {
   return (
     <div>
       <Pad horizontal={{ xs: 4 }}>
@@ -34,7 +36,7 @@ function QuoteOnboard() {
         <Mrg vertical={{ xs: 5 }}>
           <FlexPosition
             comps={[
-              <Button text="Yes please" raised whiteText color="red" />,
+              <Button text="Yes please" raised whiteText color="red" handleClick={handleClick}/>,
             ]}
             layout="center"
           />
@@ -45,14 +47,10 @@ function QuoteOnboard() {
 }
 
 QuoteOnboard.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  src: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 QuoteOnboard.defaultProps = {
-  width: null,
-  height: null,
 };
 
 export default QuoteOnboard;
