@@ -6,7 +6,7 @@ import PaletteBlock from './PaletteBlock';
 import Paragraph from './Paragraph';
 import Pad from './Pad';
 
-import theme from './helpers/theme';
+import helpers from './helpers';
 
 export {
   Button,
@@ -16,5 +16,5 @@ export {
   Heading,
   Paragraph,
   Pad,
-  theme,
+  helpers,
 };
