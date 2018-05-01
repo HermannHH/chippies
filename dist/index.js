@@ -3,12 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Button = undefined;
+exports.Small = undefined;
 
-var _Button = require('./Button');
+var _Small = require('./Small');
 
-var _Button2 = _interopRequireDefault(_Button);
+var _Small2 = _interopRequireDefault(_Small);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.Button = _Button2.default;
+exports.Small = _Small2.default;

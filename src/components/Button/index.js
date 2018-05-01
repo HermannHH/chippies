@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import requiredIf from 'react-required-if';
 import Ink from 'react-ink';
-import theme from 'krated-theme';
+import kratedTheme from 'krated-theme';
 
 import Label from '../Label';
 import Pad from '../Pad';
@@ -100,7 +100,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  theme,
+  theme: kratedTheme,
   handleClick: undefined,
   disabled: false,
   loadingText: 'Saving',

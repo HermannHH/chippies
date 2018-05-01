@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import Shevy from 'shevyjs';
+import kratedTheme from 'krated-theme';
 
 import { shevyConfig } from '../helpers';
 
@@ -26,15 +27,16 @@ function Small({ theme, children, color, shade }) {
 }
 
 Small.propTypes = {
-  theme: PropTypes.shape().isRequired,
+  theme: PropTypes.shape(),
   children: PropTypes.string.isRequired,
   color: PropTypes.string,
   shade: PropTypes.number,
 };
 
 Small.defaultProps = {
+  theme: kratedTheme,
   color: 'grey',
   shade: 2,
 };
 
-export default withTheme(Small);
+export default Small;

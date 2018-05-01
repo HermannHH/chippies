@@ -22,6 +22,10 @@ var _shevyjs = require('shevyjs');
 
 var _shevyjs2 = _interopRequireDefault(_shevyjs);
 
+var _kratedTheme = require('krated-theme');
+
+var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
+
 var _helpers = require('../helpers');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -50,15 +54,16 @@ function Small(_ref) {
 }
 
 Small.propTypes = {
-  theme: _propTypes2.default.shape().isRequired,
+  theme: _propTypes2.default.shape(),
   children: _propTypes2.default.string.isRequired,
   color: _propTypes2.default.string,
   shade: _propTypes2.default.number
 };
 
 Small.defaultProps = {
+  theme: _kratedTheme2.default,
   color: 'grey',
   shade: 2
 };
 
-exports.default = (0, _styledComponents.withTheme)(Small);
+exports.default = Small;
