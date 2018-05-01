@@ -59,7 +59,6 @@ function Button({
     labelColor = 'white';
     labelShade = '0';
   };
-
   return (
     <ButtonWrapper
       theme={theme}

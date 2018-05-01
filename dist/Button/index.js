@@ -65,7 +65,6 @@ function Button(_ref) {
     labelColor = 'white';
     labelShade = '0';
   };
-
   return _react2.default.createElement(
     ButtonWrapper,
     {
