@@ -24,6 +24,8 @@ function RejectQuote({
   handleTermsChecked,
   handleAccept,
   handleReject,
+  handleCommentChange,
+  commentValue,
 
 }) {
   return (
@@ -59,6 +61,8 @@ function RejectQuote({
           <TextArea
             placeholder={`Provide ${seller} with any additional details that will make it easier for them to provide the best quotation experience possible`}
             label="Additional comments"
+            handleChange={handleCommentChange}
+            value={commentValue}
           />
         </Mrg>
         }
@@ -77,8 +81,8 @@ function RejectQuote({
         <Mrg vertical={{ xs: 5 }}>
           <FlexPosition
             comps={[
-              <Button text="Reject" disabled={!termsChecked} handleClick={handleAccept} />,
-              <Button text="Accept" raised whiteText disabled={!termsChecked} handleClick={handleReject} />,
+              <Button text="I want to accept this quote" disabled={!termsChecked} handleClick={handleAccept} />,
+              <Button text="Reject" raised whiteText disabled={!termsChecked} handleClick={handleReject} />,
             ]}
             layout="right"
           />
@@ -97,6 +101,8 @@ RejectQuote.propTypes = {
   handleTermsChecked: PropTypes.func.isRequired,
   handleAccept: PropTypes.func.isRequired,
   handleReject: PropTypes.func.isRequired,
+  handleCommentChange: PropTypes.func.isRequired,
+  commentValue: PropTypes.string.isRequired,
 };
 
 RejectQuote.defaultProps = {

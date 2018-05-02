@@ -26,6 +26,8 @@ function AcceptQuote({
   handleTermsChecked,
   handleAccept,
   handleReject,
+  handleCommentChange,
+  commentValue,
 
 }) {
   return (
@@ -64,6 +66,8 @@ function AcceptQuote({
             <TextArea
               placeholder={`Provide ${seller} with any additional details that will make it easier for them to provide the best quotation experience possible`}
               label="Additional comments"
+              handleChange={handleCommentChange}
+              value={commentValue}
             />
           </Mrg>
         }
@@ -82,8 +86,8 @@ function AcceptQuote({
         <Mrg vertical={{ xs: 5 }}>
           <FlexPosition
             comps={[
-              <Button text="Reject" disabled={!termsChecked} handleClick={handleAccept} />,
-              <Button text="Accept" raised whiteText disabled={!termsChecked} handleClick={handleReject} />,
+              <Button text="Reject" disabled={!termsChecked} handleClick={handleReject} />,
+              <Button text="Accept" raised whiteText disabled={!termsChecked} handleClick={handleAccept} />,
             ]}
             layout="right"
           />
@@ -113,6 +117,8 @@ AcceptQuote.propTypes = {
   handleTermsChecked: PropTypes.func.isRequired,
   handleAccept: PropTypes.func.isRequired,
   handleReject: PropTypes.func.isRequired,
+  handleCommentChange: PropTypes.func.isRequired,
+  commentValue: PropTypes.string.isRequired,
 };
 
 AcceptQuote.defaultProps = {
