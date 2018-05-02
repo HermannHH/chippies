@@ -94,7 +94,7 @@ function Checkbox({
   label,
 }) {
   return (
-    <LabelTag onClick={handleChange} theme={theme} labelPosition={labelPosition}>
+    <LabelTag theme={theme} labelPosition={labelPosition}>
       { label }
       <input
         type="checkbox"
