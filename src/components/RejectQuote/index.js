@@ -81,10 +81,10 @@ function RejectQuote({
         <Mrg vertical={{ xs: 5 }}>
           <FlexPosition
             comps={[
-              <Button text="I want to accept this quote" disabled={!termsChecked} handleClick={handleAccept} />,
-              <Button text="Reject" raised whiteText disabled={!termsChecked} handleClick={handleReject} />,
+              <Button text="I want to accept this quotation" handleClick={handleAccept} upcase={false} />,
+              <Button text="Reject" raised whiteText disabled={!termsChecked} handleClick={handleReject} color="red" />,
             ]}
-            layout="right"
+            layout="spread"
           />
         </Mrg>
       </Pad>

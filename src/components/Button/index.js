@@ -20,7 +20,7 @@ ${props => `
     display: inline-block;
     font-family: ${props.theme.font.family};
     font-weight: ${props.theme.font.weight.standard};
-    text-transform: uppercase;
+    ${props.upcase && 'text-transform: uppercase'};
     text-decoration: none;
     user-select: none;
     ${props.fluid && 'width: 100%'};
@@ -50,6 +50,7 @@ function Button({
   color,
   shade,
   whiteText,
+  upcase,
 }) {
   let labelColor = 'blue';
   let labelShade = '0';
@@ -70,6 +71,7 @@ function Button({
       raised={raised}
       color={color}
       shade={shade}
+      upcase={upcase}
     >
       <Pad vertical={{ xs: 2 }} horizontal={{ xs: 4 }}>
         {!disabled &&
@@ -83,6 +85,7 @@ function Button({
 
 Button.propTypes = {
   theme: PropTypes.shape(),
+  upcase: PropTypes.bool,
   text: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
   handleClick: requiredIf(PropTypes.func, props => props.type !== 'submit'),
@@ -111,6 +114,7 @@ Button.defaultProps = {
   color: 'blue',
   shade: '0',
   whiteText: false,
+  upcase: true,
 };
 
 export default Button;

@@ -1,5 +1,5 @@
 export default {
-  baseFontSize: '20px',
+  baseFontSize: '18px',
   baseLineHeight: 1.6666,
   baseFontScale: [3, 2.5, 2, 1.5, 1.25, 1],
   addMarginBottom: true,
