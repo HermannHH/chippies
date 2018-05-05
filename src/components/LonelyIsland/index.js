@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import kratedTheme from 'krated-theme';
 
-
 import { viewPort } from '../helpers';
 
-import Pad from '../Pad';
+import Scroller from '../Scroller';
 
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
   ${props => !props.topCoords && `
     display: flex;
     justify-content: center;
@@ -24,10 +22,8 @@ const Wrapper = styled.div`
 
 
 const Container = styled.div`
-  ${props => !props.topCoords && `
-    display: block;
-    margin: 0 auto;
-  `};
+  display: block;
+  margin: 0 auto;
   width: 90%;
   ${props => !props.compressed && `
     ${props.device === 'tablet' && 'width: 80%'};
@@ -39,38 +35,43 @@ const Container = styled.div`
     ${props.device === 'desktop' && 'width: 50%'};
     ${props.device === 'large_desktop' && 'width: 50%'};
   `};
+  ${props => props.topCoords && `
+    margin-top: ${props.topCoords.phone}px;
+    ${props.device === 'landscape_phone' && `margin-top: ${props.topCoords.landscape_phone}px`};
+    ${props.device === 'tablet' && `margin-top: ${props.topCoords.tablet}px`};
+    ${props.device === 'desktop' && `margin-top: ${props.topCoords.desktop}px`};
+    ${props.device === 'large_desktop' && `margin-top: ${props.topCoords.large_desktop}px`};
+  `};
   ${props => !props.hasContent && `
      background-color: ${props.theme.colors.blue['0']};
-     height: 10%;
-  `};
-
-  ${props => props.topCoords && `
-    display: block;
-    margin: 0 auto;
-    margin-top: ${props.topCoords.phone}px;
-    height: 400px;
+     height: 100px;
   `};
 
 `;
 
 /**
- * Used for normal LonelyIslands. Will not be progressive
+ * Used for normal LonelyIslands
  */
 
 function LonelyIsland({
-  device, compressed, topCoords, children, theme,
+  device, compressed, topCoords, children, theme, height,
 }) {
   return (
     <Wrapper topCoords={topCoords} hasContent={children} theme={theme}>
-      <Pad
-        all={{
-            xs: 1,
-        }}
+      <Scroller
+        height={100}
       >
-        <Container device={device} compressed={compressed} hasContent={children} theme={theme} topCoords={topCoords}>
-            {children}
+        <Container
+          device={device}
+          compressed={compressed}
+          hasContent={children}
+          theme={theme}
+          topCoords={topCoords}
+          height={height}
+        >
+          {children}
         </Container>
-      </Pad>
+      </Scroller>
     </Wrapper>
   );
 }
@@ -93,6 +94,7 @@ LonelyIsland.propTypes = {
   }),
   children: PropTypes.element,
   theme: PropTypes.shape(),
+  height: PropTypes.number.isRequired,
 };
 
 LonelyIsland.defaultProps = {
