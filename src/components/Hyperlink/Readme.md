@@ -1,5 +1,5 @@
 Hyperlink example:
 
 ```js
-<Hyperlink text="Button Hyperlink" handleClick={()=>alert('Hello Hyperlink')} />
+<Hyperlink text="I am Hyperlink" handleClick={()=>alert('Hello Hyperlink')} />
 ```
