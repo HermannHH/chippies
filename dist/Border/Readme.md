@@ -15,7 +15,7 @@ Border radius example:
 
 ```js
 <Border
-    radius
+    rad
     all
 >
     <Paragraph>
@@ -30,7 +30,7 @@ Border selected parts with custom color example:
 ```js
 <Border
     color="blue"
-    shade={0}
+    shade="0"
     top
     right
 >

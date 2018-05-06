@@ -14,6 +14,10 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _styledComponentsSpacing = require('styled-components-spacing');
 
+var _kratedTheme = require('krated-theme');
+
+var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
@@ -38,7 +42,8 @@ function Mrg(_ref) {
       top: top,
       right: right,
       bottom: bottom,
-      left: left
+      left: left,
+      theme: _kratedTheme2.default
     },
     children
   );

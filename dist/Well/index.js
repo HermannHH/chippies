@@ -39,8 +39,7 @@ function Well(_ref) {
 }
 
 Well.propTypes = {
-  //   theme: PropTypes.shape().isRequired,
-  children: _propTypes2.default.string.isRequired
+  children: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.element, _propTypes2.default.arrayOf(_propTypes2.default.element)]).isRequired
 };
 
 exports.default = Well;

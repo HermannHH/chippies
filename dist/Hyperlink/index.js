@@ -26,6 +26,10 @@ var _kratedTheme = require('krated-theme');
 
 var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
 
+var _reactRequiredIf = require('react-required-if');
+
+var _reactRequiredIf2 = _interopRequireDefault(_reactRequiredIf);
+
 var _helpers = require('../helpers');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -36,34 +40,36 @@ var shevy = new _shevyjs2.default(_helpers.shevyConfig);
 var content = shevy.content;
 
 
-var LabelTag = _styledComponents2.default.label(_templateObject, content.fontSize, content.lineHeight, function (props) {
-  return '\n    color: ' + props.theme.colors[props.color][props.shade] + ';\n    font-weight: ' + props.theme.font.weight.semiBold + ';\n    font-family: ' + props.theme.font.family + ';\n  ';
+var AnchorTag = _styledComponents2.default.a(_templateObject, content.fontSize, content.lineHeight, function (props) {
+  return '\n    color: ' + props.theme.colors.blue['0'] + ';\n    font-weight: ' + props.theme.font.weight.standard + ';\n    font-family: ' + props.theme.font.family + ';\n\n    &:hover {\n      cursor: pointer;\n      color: ' + props.theme.colors.grey['2'] + ';\n    };\n  ';
 });
 
-function Label(_ref) {
+function Hyperlink(_ref) {
   var theme = _ref.theme,
       text = _ref.text,
-      color = _ref.color,
-      shade = _ref.shade;
+      href = _ref.href,
+      handleClick = _ref.handleClick;
 
   return _react2.default.createElement(
-    LabelTag,
-    { color: color, shade: shade, theme: theme },
+    AnchorTag,
+    { onClick: handleClick, href: href, theme: theme },
     text
   );
 }
 
-Label.propTypes = {
+Hyperlink.propTypes = {
   theme: _propTypes2.default.shape(),
   text: _propTypes2.default.string.isRequired,
-  color: _propTypes2.default.string,
-  shade: _propTypes2.default.string
+  href: _propTypes2.default.string,
+  handleClick: (0, _reactRequiredIf2.default)(_propTypes2.default.func, function (props) {
+    return !props.href;
+  })
 };
 
-Label.defaultProps = {
+Hyperlink.defaultProps = {
   theme: _kratedTheme2.default,
-  color: 'grey',
-  shade: '2'
+  href: undefined,
+  handleClick: undefined
 };
 
-exports.default = Label;
+exports.default = Hyperlink;

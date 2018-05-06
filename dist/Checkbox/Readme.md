@@ -13,7 +13,11 @@ initialState = {
 Checkbox unchecked example:
 
 ```js
-<Checkbox isChecked={false} handleChange={() => alert('needs action')} label="Hello world" />
+initialState = {
+    isChecked: false
+}
+;
+<Checkbox isChecked={false} handleChange={() => setState({ isChecked: !state.isChecked })} label="Hello world" />
 ```
 
 Checkbox checked with label on right example:

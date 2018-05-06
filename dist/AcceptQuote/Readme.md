@@ -16,6 +16,7 @@ const data = {
 initialState = {
     commentToggled: false,
     termsChecked: false,
+    commentValue: '',
 }
 ;
 <AcceptQuote
@@ -33,7 +34,11 @@ initialState = {
   lineItemData={data}
   commentToggled={state.commentToggled}
   handleCommentToggle={() => setState({ commentToggled: !state.commentToggled})}
+  handleCommentChange={(e) => setState({ commentValue: e.target.value })}
+  commentValue={state.commentValue}
   termsChecked={state.termsChecked}
   handleTermsChecked={() => setState({ termsChecked: !state.termsChecked})}
+  handleAccept={()=>alert('accepted')}
+  handleReject={()=>alert('rejected')}
 />
 ```

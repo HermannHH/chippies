@@ -42,7 +42,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Shown to users after they accept/reject a quote as non-signed in user
  */
 
-function QuoteOnboard() {
+function QuoteOnboard(_ref) {
+  var handleClick = _ref.handleClick;
+
   return _react2.default.createElement(
     'div',
     null,
@@ -69,7 +71,7 @@ function QuoteOnboard() {
         _Mrg2.default,
         { vertical: { xs: 5 } },
         _react2.default.createElement(_FlexPosition2.default, {
-          comps: [_react2.default.createElement(_Button2.default, { text: 'Yes please', raised: true, whiteText: true, color: 'red' })],
+          comps: [_react2.default.createElement(_Button2.default, { text: 'Yes please', raised: true, whiteText: true, color: 'red', handleClick: handleClick })],
           layout: 'center'
         })
       )
@@ -78,14 +80,9 @@ function QuoteOnboard() {
 }
 
 QuoteOnboard.propTypes = {
-  width: _propTypes2.default.number,
-  height: _propTypes2.default.number,
-  src: _propTypes2.default.string.isRequired
+  handleClick: _propTypes2.default.func.isRequired
 };
 
-QuoteOnboard.defaultProps = {
-  width: null,
-  height: null
-};
+QuoteOnboard.defaultProps = {};
 
 exports.default = QuoteOnboard;

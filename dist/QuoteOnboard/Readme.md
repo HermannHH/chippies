@@ -1,5 +1,7 @@
 QuoteOnboard default example:
 
 ```js
-<QuoteOnboard />
+<QuoteOnboard
+  handleClick={() => alert('handleClick')}
+/>
 ```

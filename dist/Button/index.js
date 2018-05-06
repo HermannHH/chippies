@@ -43,7 +43,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var ButtonWrapper = _styledComponents2.default.button(_templateObject, function (props) {
-  return '\n    border-radius: ' + props.theme.borders.radius + 'px;\n    outline: none;\n    border: none;\n    cursor: pointer;\n    font-family: inherit;\n    white-space: nowrap;\n    display: inline-block;\n    font-family: ' + props.theme.font.family + ';\n    font-weight: ' + props.theme.font.weight.standard + ';\n    text-transform: uppercase;\n    text-decoration: none;\n    user-select: none;\n    ' + (props.fill && 'width: 100%') + ';\n    ' + (props.raised && '\n      background-color: ' + props.theme.colors[props.color][props.shade] + ';\n      box-shadow: ' + props.theme.box.shadow.shallow + ';\n    ') + ';\n    &:disabled {\n      background-color: ' + props.theme.colors.grey['-1'] + ';\n      border: ' + ('thin solid ' + props.theme.colors.grey['-1']) + ';\n      box-shadow: none;\n      cursor: not-allowed;\n    }\n  ';
+  return '\n    border-radius: ' + props.theme.borders.radius + 'px;\n    outline: none;\n    border: none;\n    cursor: pointer;\n    font-family: inherit;\n    white-space: nowrap;\n    display: inline-block;\n    font-family: ' + props.theme.font.family + ';\n    font-weight: ' + props.theme.font.weight.standard + ';\n    ' + (props.upcase && 'text-transform: uppercase') + ';\n    text-decoration: none;\n    user-select: none;\n    ' + (props.fluid && 'width: 100%') + ';\n    ' + (props.raised && '\n      background-color: ' + props.theme.colors[props.color][props.shade] + ';\n      box-shadow: ' + props.theme.box.shadow.shallow + ';\n    ') + ';\n    &:disabled {\n      background-color: ' + props.theme.colors.grey['-1'] + ';\n      border: ' + ('thin solid ' + props.theme.colors.grey['-1']) + ';\n      box-shadow: none;\n      cursor: not-allowed;\n    }\n  ';
 });
 
 function Button(_ref) {
@@ -54,11 +54,12 @@ function Button(_ref) {
       disabled = _ref.disabled,
       type = _ref.type,
       text = _ref.text,
-      fill = _ref.fill,
+      fluid = _ref.fluid,
       raised = _ref.raised,
       color = _ref.color,
       shade = _ref.shade,
-      whiteText = _ref.whiteText;
+      whiteText = _ref.whiteText,
+      upcase = _ref.upcase;
 
   var labelColor = 'blue';
   var labelShade = '0';
@@ -76,10 +77,11 @@ function Button(_ref) {
       onClick: handleClick,
       disabled: isLoading || disabled,
       type: type,
-      fill: fill,
+      fluid: fluid,
       raised: raised,
       color: color,
-      shade: shade
+      shade: shade,
+      upcase: upcase
     },
     _react2.default.createElement(
       _Pad2.default,
@@ -92,6 +94,7 @@ function Button(_ref) {
 
 Button.propTypes = {
   theme: _propTypes2.default.shape(),
+  upcase: _propTypes2.default.bool,
   text: _propTypes2.default.string.isRequired,
   disabled: _propTypes2.default.bool,
   handleClick: (0, _reactRequiredIf2.default)(_propTypes2.default.func, function (props) {
@@ -100,7 +103,7 @@ Button.propTypes = {
   loadingText: _propTypes2.default.string,
   isLoading: _propTypes2.default.bool,
   type: _propTypes2.default.oneOf(['submit', 'button']),
-  fill: _propTypes2.default.bool,
+  fluid: _propTypes2.default.bool,
   raised: _propTypes2.default.bool,
   color: _propTypes2.default.string,
   shade: _propTypes2.default.string,
@@ -114,11 +117,12 @@ Button.defaultProps = {
   loadingText: 'Saving',
   isLoading: false,
   type: 'button',
-  fill: false,
+  fluid: false,
   raised: false,
   color: 'blue',
   shade: '0',
-  whiteText: false
+  whiteText: false,
+  upcase: true
 };
 
 exports.default = Button;

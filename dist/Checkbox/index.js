@@ -67,14 +67,14 @@ function Checkbox(_ref) {
       labelPosition = _ref.labelPosition,
       label = _ref.label;
 
-  console.log('inner', handleChange, isChecked);
   return _react2.default.createElement(
     LabelTag,
-    { onClick: handleChange, theme: theme, labelPosition: labelPosition },
+    { theme: theme, labelPosition: labelPosition },
     label,
     _react2.default.createElement('input', {
       type: 'checkbox',
-      checked: isChecked
+      checked: isChecked,
+      onChange: handleChange
     }),
     _react2.default.createElement('span', null)
   );

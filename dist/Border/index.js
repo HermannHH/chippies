@@ -27,7 +27,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var Container = _styledComponents2.default.div(_templateObject, function (props) {
-  return '\n    ' + (props.radius && 'border-radius: ' + props.theme.borders.radius + 'px') + ';\n    ' + (props.all && 'border: thin solid ' + props.theme.colors[props.color][props.shade]) + ';\n    ' + (props.top && 'border-top: thin solid ' + props.theme.colors[props.color][props.shade]) + ';\n    ' + (props.right && 'border-right: thin solid ' + props.theme.colors[props.color][props.shade]) + ';\n    ' + (props.bottom && 'border-bottom: thin solid ' + props.theme.colors[props.color][props.shade]) + ';\n    ' + (props.left && 'border-left: thin solid ' + props.theme.colors[props.color][props.shade]) + ';\n  ';
+  return '\n    ' + (props.rad && 'border-radius: ' + props.theme.borders.radius + 'px') + ';\n    ' + (props.all && 'border: thin solid ' + props.theme.colors[props.color][props.shade]) + ';\n    ' + (props.top && 'border-top: thin solid ' + props.theme.colors[props.color][props.shade]) + ';\n    ' + (props.right && 'border-right: thin solid ' + props.theme.colors[props.color][props.shade]) + ';\n    ' + (props.bottom && 'border-bottom: thin solid ' + props.theme.colors[props.color][props.shade]) + ';\n    ' + (props.left && 'border-left: thin solid ' + props.theme.colors[props.color][props.shade]) + ';\n  ';
 });
 
 function Border(_ref) {
@@ -38,7 +38,7 @@ function Border(_ref) {
       right = _ref.right,
       bottom = _ref.bottom,
       left = _ref.left,
-      radius = _ref.radius,
+      rad = _ref.rad,
       color = _ref.color,
       shade = _ref.shade;
 
@@ -51,7 +51,7 @@ function Border(_ref) {
       right: right,
       bottom: bottom,
       left: left,
-      radius: radius,
+      rad: rad,
       color: color,
       shade: shade
     },
@@ -67,22 +67,22 @@ Border.propTypes = {
   right: _propTypes2.default.bool,
   bottom: _propTypes2.default.bool,
   left: _propTypes2.default.bool,
-  radius: _propTypes2.default.bool,
+  rad: _propTypes2.default.bool,
   color: _propTypes2.default.string,
-  shade: _propTypes2.default.number
+  shade: _propTypes2.default.string
 };
 
 Border.defaultProps = {
   theme: _kratedTheme2.default,
   children: null,
-  radius: false,
+  rad: false,
   all: false,
   top: false,
   right: false,
   bottom: false,
   left: false,
   color: 'grey',
-  shade: -1
+  shade: '-1'
 };
 
 exports.default = Border;

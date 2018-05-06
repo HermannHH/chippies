@@ -44,6 +44,10 @@ var TableTag = _styledComponents2.default.table(_templateObject, content.fontSiz
   return '\n    font-family: ' + props.theme.font.family + ';\n  ';
 });
 
+var HeadTag = _styledComponents2.default.thead(_templateObject2);
+
+var BodyTag = _styledComponents2.default.tbody(_templateObject2);
+
 var RowTag = _styledComponents2.default.tr(_templateObject2);
 
 var HeaderTag = _styledComponents2.default.th(_templateObject3, bs(0.25), function (props) {
@@ -66,80 +70,88 @@ function LineItems(_ref) {
     TableTag,
     { theme: theme },
     _react2.default.createElement(
-      RowTag,
-      { theme: theme },
+      HeadTag,
+      null,
       _react2.default.createElement(
-        HeaderTag,
+        RowTag,
         { theme: theme },
-        'Name'
-      ),
-      _react2.default.createElement(
-        HeaderTag,
-        { theme: theme },
-        'SKU'
-      ),
-      _react2.default.createElement(
-        HeaderTag,
-        { theme: theme },
-        'QTY'
-      ),
-      _react2.default.createElement(
-        HeaderTag,
-        { theme: theme },
-        'Item Price'
-      ),
-      _react2.default.createElement(
-        HeaderTag,
-        { theme: theme },
-        'Sub-Total'
+        _react2.default.createElement(
+          HeaderTag,
+          { theme: theme },
+          'Name'
+        ),
+        _react2.default.createElement(
+          HeaderTag,
+          { theme: theme },
+          'SKU'
+        ),
+        _react2.default.createElement(
+          HeaderTag,
+          { theme: theme },
+          'QTY'
+        ),
+        _react2.default.createElement(
+          HeaderTag,
+          { theme: theme },
+          'Item Price'
+        ),
+        _react2.default.createElement(
+          HeaderTag,
+          { theme: theme },
+          'Sub-Total'
+        )
       )
     ),
-    data.items.map(function (x) {
-      return _react2.default.createElement(
-        RowTag,
-        { theme: theme, key: x.id },
-        _react2.default.createElement(
-          DataTag,
-          { theme: theme },
-          x.name
-        ),
-        _react2.default.createElement(
-          DataTag,
-          { theme: theme },
-          x.sku
-        ),
-        _react2.default.createElement(
-          DataTag,
-          { theme: theme, right: true },
-          x.qty
-        ),
-        _react2.default.createElement(
-          DataTag,
-          { theme: theme, right: true },
-          x.itemPrice
-        ),
-        _react2.default.createElement(
-          DataTag,
-          { theme: theme, right: true },
-          x.subTotal
-        )
-      );
-    }),
     _react2.default.createElement(
-      RowTag,
+      BodyTag,
       null,
-      _react2.default.createElement(DataTag, { theme: theme, noBorder: true }),
-      _react2.default.createElement(DataTag, { theme: theme, noBorder: true }),
-      _react2.default.createElement(DataTag, { theme: theme, noBorder: true }),
+      data.items.map(function (x) {
+        return _react2.default.createElement(
+          RowTag,
+          { theme: theme, key: x.id },
+          _react2.default.createElement(
+            DataTag,
+            { theme: theme },
+            x.name
+          ),
+          _react2.default.createElement(
+            DataTag,
+            { theme: theme },
+            x.sku
+          ),
+          _react2.default.createElement(
+            DataTag,
+            { theme: theme, right: true },
+            x.qty
+          ),
+          _react2.default.createElement(
+            DataTag,
+            { theme: theme, right: true },
+            x.itemPrice
+          ),
+          _react2.default.createElement(
+            DataTag,
+            { theme: theme, right: true },
+            x.subTotal
+          )
+        );
+      }),
       _react2.default.createElement(
-        DataTag,
-        { theme: theme, right: true, bold: true },
-        'Sub-Total'
-      ),
-      _react2.default.createElement(
-        DataTag,
-        { theme: theme, right: true, bold: true },
-        data.grandTotal
+        RowTag,
+        null,
+        _react2.default.createElement(DataTag, { theme: theme, noBorder: true }),
+        _react2.default.createElement(DataTag, { theme: theme, noBorder: true }),
+        _react2.default.createElement(DataTag, { theme: theme, noBorder: true }),
+        _react2.default.createElement(
+          DataTag,
+          { theme: theme, right: true, bold: true },
+          'Sub-Total'
+        ),
+        _react2.default.createElement(
+          DataTag,
+          { theme: theme, right: true, bold: true },
+          data.grandTotal
+        )
       )
     )
   );
@@ -153,7 +165,7 @@ LineItems.propTypes = {
       id: _propTypes2.default.string.isRequired,
       name: _propTypes2.default.string.isRequired,
       sku: _propTypes2.default.string.isRequired,
-      qty: _propTypes2.default.string.isRequired,
+      qty: _propTypes2.default.number.isRequired,
       itemPrice: _propTypes2.default.string.isRequired,
       subTotal: _propTypes2.default.string.isRequired
     })).isRequired

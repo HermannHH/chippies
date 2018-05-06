@@ -68,7 +68,11 @@ function RejectQuote(_ref) {
       commentToggled = _ref.commentToggled,
       seller = _ref.seller,
       termsChecked = _ref.termsChecked,
-      handleTermsChecked = _ref.handleTermsChecked;
+      handleTermsChecked = _ref.handleTermsChecked,
+      handleAccept = _ref.handleAccept,
+      handleReject = _ref.handleReject,
+      handleCommentChange = _ref.handleCommentChange,
+      commentValue = _ref.commentValue;
 
   return _react2.default.createElement(
     'div',
@@ -109,7 +113,9 @@ function RejectQuote(_ref) {
         { vertical: { xs: 5 } },
         _react2.default.createElement(_TextArea2.default, {
           placeholder: 'Provide ' + seller + ' with any additional details that will make it easier for them to provide the best quotation experience possible',
-          label: 'Additional comments'
+          label: 'Additional comments',
+          handleChange: handleCommentChange,
+          value: commentValue
         })
       ),
       _react2.default.createElement(
@@ -121,7 +127,7 @@ function RejectQuote(_ref) {
         _Mrg2.default,
         { all: { xs: 5 } },
         _react2.default.createElement(_FlexPosition2.default, {
-          buttons: [_react2.default.createElement(_Checkbox2.default, { checked: termsChecked, handleChange: handleTermsChecked, label: 'I agree to the terms of this quotation' })],
+          comps: [_react2.default.createElement(_Checkbox2.default, { isChecked: termsChecked, handleChange: handleTermsChecked, label: 'I agree to the terms of this quotation' })],
           layout: 'right'
         })
       ),
@@ -130,8 +136,8 @@ function RejectQuote(_ref) {
         _Mrg2.default,
         { vertical: { xs: 5 } },
         _react2.default.createElement(_FlexPosition2.default, {
-          comps: [_react2.default.createElement(_Button2.default, { text: 'Accept', disabled: !termsChecked }), _react2.default.createElement(_Button2.default, { text: 'Reject', raised: true, whiteText: true, disabled: !termsChecked })],
-          layout: 'right'
+          comps: [_react2.default.createElement(_Button2.default, { text: 'I want to accept this quotation', handleClick: handleAccept, upcase: false }), _react2.default.createElement(_Button2.default, { text: 'Reject', raised: true, whiteText: true, disabled: !termsChecked, handleClick: handleReject, color: 'red' })],
+          layout: 'spread'
         })
       )
     )
@@ -144,7 +150,11 @@ RejectQuote.propTypes = {
   commentToggled: _propTypes2.default.bool.isRequired,
   seller: _propTypes2.default.string.isRequired,
   termsChecked: _propTypes2.default.bool.isRequired,
-  handleTermsChecked: _propTypes2.default.func.isRequired
+  handleTermsChecked: _propTypes2.default.func.isRequired,
+  handleAccept: _propTypes2.default.func.isRequired,
+  handleReject: _propTypes2.default.func.isRequired,
+  handleCommentChange: _propTypes2.default.func.isRequired,
+  commentValue: _propTypes2.default.string.isRequired
 };
 
 RejectQuote.defaultProps = {};

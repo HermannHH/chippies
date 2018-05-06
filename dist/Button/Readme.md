@@ -1,35 +1,35 @@
 Flat Button example:
 
 ```js
-<Button text="Submit" />
+<Button text="Submit" handleClick={() => alert('handleClick')} />
 ```
 
 Disabled flat Button example:
 
 ```js
-<Button text="Submit" disabled/>
+<Button text="Submit" handleClick={() => alert('handleClick')} disabled/>
 ```
 
 Loading flat Button example:
 
 ```js
-<Button text="Submit" isLoading/>
+<Button text="Submit" handleClick={() => alert('handleClick')} isLoading/>
 ```
 
 Raised Button example:
 
 ```js
-<Button text="Submit" raised whiteText/>
+<Button text="Submit" handleClick={() => alert('handleClick')} raised whiteText/>
 ```
 
 Disabled raised Button example:
 
 ```js
-<Button text="Submit" raised whiteText disabled/>
+<Button text="Submit" handleClick={() => alert('handleClick')} raised whiteText disabled/>
 ```
 
 Loading raised Button example:
 
 ```js
-<Button text="Submit" raised whiteText isLoading />
+<Button text="Submit" handleClick={() => alert('handleClick')} raised whiteText isLoading />
 ```

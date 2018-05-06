@@ -4,8 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 100%;\n  overflow-y: scroll;\n  ', ';\n  ', ';\n'], ['\n  width: 100%;\n  height: 100%;\n  overflow-y: scroll;\n  ', ';\n  ', ';\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  ', ';\n  width: 90%;\n  ', ';\n  ', ';\n  ', ';\n\n  ', ';\n\n'], ['\n  ', ';\n  width: 90%;\n  ', ';\n  ', ';\n  ', ';\n\n  ', ';\n\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 100%;\n  ', ';\n  ', ';\n'], ['\n  width: 100%;\n  height: 100%;\n  ', ';\n  ', ';\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  display: block;\n  margin: 0 auto;\n  width: 90%;\n  ', ';\n  ', ';\n  ', ';\n  ', ';\n\n'], ['\n  display: block;\n  margin: 0 auto;\n  width: 90%;\n  ', ';\n  ', ';\n  ', ';\n  ', ';\n\n']);
 
 var _react = require('react');
 
@@ -25,9 +25,9 @@ var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
 
 var _helpers = require('../helpers');
 
-var _Pad = require('../Pad');
+var _Scroller = require('../Scroller');
 
-var _Pad2 = _interopRequireDefault(_Pad);
+var _Scroller2 = _interopRequireDefault(_Scroller);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -40,19 +40,17 @@ var Wrapper = _styledComponents2.default.div(_templateObject, function (props) {
 });
 
 var Container = _styledComponents2.default.div(_templateObject2, function (props) {
-  return !props.topCoords && '\n    display: block;\n    margin: 0 auto;\n  ';
-}, function (props) {
   return !props.compressed && '\n    ' + (props.device === 'tablet' && 'width: 80%') + ';\n    ' + (props.device === 'desktop' && 'width: 80%') + ';\n    ' + (props.device === 'large_desktop' && 'width: 70%') + ';\n  ';
 }, function (props) {
   return props.compressed && '\n    ' + (props.device === 'tablet' && 'width: 60%') + ';\n    ' + (props.device === 'desktop' && 'width: 50%') + ';\n    ' + (props.device === 'large_desktop' && 'width: 50%') + ';\n  ';
 }, function (props) {
-  return !props.hasContent && '\n     background-color: ' + props.theme.colors.blue['0'] + ';\n     height: 10%;\n  ';
+  return props.topCoords && '\n    margin-top: ' + props.topCoords.phone + 'px;\n    ' + (props.device === 'landscape_phone' && 'margin-top: ' + props.topCoords.landscape_phone + 'px') + ';\n    ' + (props.device === 'tablet' && 'margin-top: ' + props.topCoords.tablet + 'px') + ';\n    ' + (props.device === 'desktop' && 'margin-top: ' + props.topCoords.desktop + 'px') + ';\n    ' + (props.device === 'large_desktop' && 'margin-top: ' + props.topCoords.large_desktop + 'px') + ';\n  ';
 }, function (props) {
-  return props.topCoords && '\n    display: block;\n    margin: 0 auto;\n    margin-top: ' + props.topCoords.phone + 'px;\n    height: 400px;\n  ';
+  return !props.hasContent && '\n     background-color: ' + props.theme.colors.blue['0'] + ';\n     height: 100px;\n  ';
 });
 
 /**
- * Used for normal LonelyIslands. Will not be progressive
+ * Used for normal LonelyIslands
  */
 
 function LonelyIsland(_ref) {
@@ -60,21 +58,27 @@ function LonelyIsland(_ref) {
       compressed = _ref.compressed,
       topCoords = _ref.topCoords,
       children = _ref.children,
-      theme = _ref.theme;
+      theme = _ref.theme,
+      height = _ref.height;
 
   return _react2.default.createElement(
     Wrapper,
     { topCoords: topCoords, hasContent: children, theme: theme },
     _react2.default.createElement(
-      _Pad2.default,
+      _Scroller2.default,
       {
-        all: {
-          xs: 1
-        }
+        height: 100
       },
       _react2.default.createElement(
         Container,
-        { device: device, compressed: compressed, hasContent: children, theme: theme, topCoords: topCoords },
+        {
+          device: device,
+          compressed: compressed,
+          hasContent: children,
+          theme: theme,
+          topCoords: topCoords,
+          height: height
+        },
         children
       )
     )
@@ -92,7 +96,8 @@ LonelyIsland.propTypes = {
     landscape_phone: _propTypes2.default.number.isRequired
   }),
   children: _propTypes2.default.element,
-  theme: _propTypes2.default.shape()
+  theme: _propTypes2.default.shape(),
+  height: _propTypes2.default.number.isRequired
 };
 
 LonelyIsland.defaultProps = {
