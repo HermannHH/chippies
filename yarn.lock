@@ -6849,6 +6849,12 @@ react-onclickoutside@^6.5.0:
   version "6.7.1"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
 
+react-placeholder@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-placeholder/-/react-placeholder-3.0.0.tgz#0f52a24610a593153790a5e897dbf3cb7d766257"
+  dependencies:
+    prop-types "^15.6.0"
+
 react-required-if@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/react-required-if/-/react-required-if-1.0.3.tgz#6a40a761b1d54815c1d4e6610910cbf92b5aa987"

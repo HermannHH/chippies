@@ -55,6 +55,7 @@
     "krated-theme": "^0.0.2",
     "prop-types": "^15.6.1",
     "react-ink": "^6.2.0",
+    "react-placeholder": "^3.0.0",
     "react-required-if": "^1.0.3",
     "react-switch": "^2.3.2",
     "shevyjs": "^1.1.0",
