@@ -7,6 +7,7 @@ import requiredIf from 'react-required-if';
 
 import { shevyConfig } from '../helpers';
 import Icon from '../Icon';
+import Pad from '../Pad';
 
 const shevy = new Shevy(shevyConfig);
 const {
@@ -45,9 +46,9 @@ const IconContainer = styled.div`
 `;
 
 
-function Hyperlink({ theme, text, href, handleClick, icon, iconPosition }) {
-  return (
-    <AnchorTag onClick={handleClick} href={href} theme={theme}>
+function Hyperlink({ theme, text, href, handleClick, icon, iconPosition, buttonPad }) {
+  const anchor = (
+    <AnchorTag onClick={handleClick} href={href} theme={theme} buttonPad={buttonPad}>
       {icon && iconPosition === 'left' &&
         <IconContainer iconPosition={iconPosition}>
           <Icon
@@ -69,6 +70,16 @@ function Hyperlink({ theme, text, href, handleClick, icon, iconPosition }) {
       }
     </AnchorTag>
   );
+
+  let body = anchor;
+  if (buttonPad) {
+    body = (
+      <Pad vertical={{ xs: 2 }} horizontal={{ xs: 4 }}>
+        {anchor}
+      </Pad>
+    );
+  }
+  return body;
 }
 
 Hyperlink.propTypes = {
@@ -78,6 +89,7 @@ Hyperlink.propTypes = {
   handleClick: requiredIf(PropTypes.func, props => !props.href),
   icon: PropTypes.element,
   iconPosition: PropTypes.oneOf(['left', 'right']),
+  buttonPad: PropTypes.bool,
 };
 
 Hyperlink.defaultProps = {
@@ -86,6 +98,7 @@ Hyperlink.defaultProps = {
   handleClick: undefined,
   icon: undefined,
   iconPosition: 'left',
+  buttonPad: false,
 };
 
 export default Hyperlink;
