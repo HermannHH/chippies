@@ -14,7 +14,8 @@ import Pad from '../Pad';
 function CardPad({ children }) {
   return (
     <Pad
-      all={{ xs: 1 }}
+      horizontal={{ xs: 3 }}
+      vertical={{ xs: 3 }}
     >
       {children}
     </Pad>

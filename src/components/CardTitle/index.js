@@ -29,9 +29,9 @@ function CardTitle({ text, theme, subText }) {
     <CardTitleWrapper theme={theme}>
       <CardPad>
         {subText ?
-          <HeadingGroup mainText={text} subText={subText} />
+          <HeadingGroup mainText={text} subText={subText} withMargin={false} size="5" />
           :
-          <Heading text={text} size="5" />
+          <Heading text={text} size="5" withMargin={false} />
         }
       </CardPad>
     </CardTitleWrapper>
