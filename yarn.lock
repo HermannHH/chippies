@@ -2,6 +2,35 @@
 # yarn lockfile v1
 
 
+"@fortawesome/fontawesome-common-types@^0.2.0-8":
+  version "0.2.0-8"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.0-8.tgz#50bbcc3d585f2d4423e5269821b6ce6fcca00033"
+
+"@fortawesome/fontawesome-svg-core@^1.2.0-13":
+  version "1.2.0-13"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.0-13.tgz#d772f99de6ae3d59b22861abf5188f02161b30c9"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.0-8"
+
+"@fortawesome/free-regular-svg-icons@^5.1.0-10":
+  version "5.1.0-10"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-5.1.0-10.tgz#d0f41147d7c42a87eeaac54bc75443823976c38b"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.0-8"
+
+"@fortawesome/free-solid-svg-icons@^5.1.0-10":
+  version "5.1.0-10"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.1.0-10.tgz#7bd5292fee95a424d4f734521e592f8f54c25b3f"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.0-8"
+
+"@fortawesome/react-fontawesome@^0.1.0-10":
+  version "0.1.0-10"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.0-10.tgz#e33c487b693db2ee03f4440081192a3eba4848e3"
+  dependencies:
+    humps "^2.0.1"
+    prop-types "^15.5.7"
+
 "@storybook/addon-actions@3.4.2", "@storybook/addon-actions@^3.4.0":
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.4.2.tgz#ab45c37f57027257530577a9c1af6896ffb40156"
@@ -4329,6 +4358,10 @@ http-signature@~1.1.0:
 https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
+
+humps@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/humps/-/humps-2.0.1.tgz#dd02ea6081bd0568dc5d073184463957ba9ef9aa"
 
 hyphenate-style-name@^1.0.1, hyphenate-style-name@^1.0.2:
   version "1.0.2"

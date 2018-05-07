@@ -52,6 +52,10 @@
     "webpack": "^4.6.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-13",
+    "@fortawesome/free-regular-svg-icons": "^5.1.0-10",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0-10",
+    "@fortawesome/react-fontawesome": "^0.1.0-10",
     "krated-theme": "^0.0.2",
     "prop-types": "^15.6.1",
     "react-ink": "^6.2.0",
