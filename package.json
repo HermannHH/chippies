@@ -58,6 +58,7 @@
     "@fortawesome/react-fontawesome": "^0.1.0-10",
     "krated-theme": "^0.0.2",
     "prop-types": "^15.6.1",
+    "react-flexbox-grid": "^2.1.0",
     "react-ink": "^6.2.0",
     "react-placeholder": "^3.0.0",
     "react-required-if": "^1.0.3",

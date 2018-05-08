@@ -19,7 +19,7 @@ function ProductCard({ text, src, handleClick }) {
       />
       <CardActions
         comps={[
-          <Hyperlink text="I am Hyperlink" handleClick={handleClick} icon="faPlus" buttonPad />
+          <Hyperlink text="Add to quote" handleClick={handleClick} icon="faPlus" />
         ]}
         layout="right"
       />

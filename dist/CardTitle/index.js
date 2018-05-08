@@ -59,7 +59,7 @@ function CardTitle(_ref) {
     _react2.default.createElement(
       _CardPad2.default,
       null,
-      subText ? _react2.default.createElement(_HeadingGroup2.default, { mainText: text, subText: subText }) : _react2.default.createElement(_Heading2.default, { text: text, size: '5' })
+      subText ? _react2.default.createElement(_HeadingGroup2.default, { mainText: text, subText: subText, withMargin: false, size: '5' }) : _react2.default.createElement(_Heading2.default, { text: text, size: '5', withMargin: false })
     )
   );
 }
