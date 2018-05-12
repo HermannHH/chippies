@@ -15,7 +15,13 @@ function ColorPalette({
       {Object.keys(theme.colors).map(x => (
               Object.keys(theme.colors[x]).map(y => (
                 <Display key={`${x}_${y}`} type="inline-block">
-                  <PaletteBlock hex={theme.colors[x][y]} name={`${x}(${y})`} inverse={inverteds.includes(x) && true} />
+                  <PaletteBlock
+                    name={`${x}(${y})`}
+                    color={x}
+                    shade={y}
+                    hex={theme.colors[x][y]}
+                    inverse={inverteds.includes(x)}
+                  />
                 </Display>
               ))))}
     </div>
@@ -28,6 +34,6 @@ ColorPalette.propTypes = {
 
 ColorPalette.defaultProps = {
   theme: kratedTheme,
-}
+};
 
 export default ColorPalette;

@@ -38,7 +38,13 @@ function ColorPalette(_ref) {
         return _react2.default.createElement(
           _Display2.default,
           { key: x + '_' + y, type: 'inline-block' },
-          _react2.default.createElement(_PaletteBlock2.default, { hex: theme.colors[x][y], name: x + '(' + y + ')', inverse: inverteds.includes(x) && true })
+          _react2.default.createElement(_PaletteBlock2.default, {
+            name: x + '(' + y + ')',
+            color: x,
+            shade: y,
+            hex: theme.colors[x][y],
+            inverse: inverteds.includes(x)
+          })
         );
       });
     })

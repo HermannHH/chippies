@@ -6,22 +6,24 @@ import ColorDescription from '../ColorDescription';
 import Pad from '../Pad';
 
 function PaletteBlock({
+  color,
   hex,
-  name,
   inverse,
+  shade,
 }) {
   return (
-    <ColorBlock hex={hex}>
+    <ColorBlock color={color} shade={shade}>
       <Pad all={{ xs: 1 }} top={{ xs: 3 }}>
-        <ColorDescription name={name} hex={hex} inverse={inverse} />
+        <ColorDescription name={color} hex={hex} color={color} inverse={inverse} />
       </Pad>
     </ColorBlock>
   );
 }
 
 PaletteBlock.propTypes = {
-  name: PropTypes.string.isRequired,
   hex: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  shade: PropTypes.string.isRequired,
   inverse: PropTypes.bool,
 };
 

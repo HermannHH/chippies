@@ -34,7 +34,7 @@ function CardGrid(_ref) {
       data.map(function (x) {
         return _react2.default.createElement(
           _reactFlexboxGrid.Col,
-          { xs: 12, sm: 12, md: 6, lg: 4, key: x.id },
+          { xs: 12, sm: 12, md: 4, lg: 3, key: x.id },
           _react2.default.createElement(
             _Pad2.default,
             {

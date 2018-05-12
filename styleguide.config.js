@@ -10,6 +10,7 @@ module.exports = {
       ],
     },
   },
+  ignore: ['src/components/Icon/fontawesome.js'],
   webpackConfig: {
     module: {
       rules: [

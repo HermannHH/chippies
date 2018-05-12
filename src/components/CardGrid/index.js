@@ -11,7 +11,7 @@ function CardGrid({ data, el }) {
     <Grid fluid>
       <Row>
         {data.map(x => (
-          <Col xs={12} sm={12} md={6} lg={4} key={x.id}>
+          <Col xs={12} sm={12} md={4} lg={3} key={x.id}>
             <Pad
               horizontal={{ xs: 3 }}
               vertical={{ xs: 3 }}
