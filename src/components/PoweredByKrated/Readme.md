@@ -1,0 +1,5 @@
+PoweredByKrated example:
+
+```js
+<PoweredByKrated/>
+```
