@@ -87,7 +87,7 @@ Hyperlink.propTypes = {
   text: PropTypes.string.isRequired,
   href: PropTypes.string,
   handleClick: requiredIf(PropTypes.func, props => !props.href),
-  icon: PropTypes.element,
+  icon: PropTypes.string,
   iconPosition: PropTypes.oneOf(['left', 'right']),
   buttonPad: PropTypes.bool,
 };

@@ -8,7 +8,7 @@ import ColorBlock from '../ColorBlock';
 
 const SlideInUpAnimation = keyframes`
   from {
-    bottom: -60px;
+    bottom: -80px;
   }
   to {
     transform: 0px;
@@ -20,18 +20,18 @@ const SlideOutDownAnimation = keyframes`
     bottom: 0px;
   }
   to {
-    bottom: -60px;
+    bottom: -80px;
   }
 `;
 
 const Wrapper = styled.div`
   width: 100%;
   ${props => `
-    height: ${props.theme.appBar.height}px;
+    height: ${props.theme.slideBar.height}px;
     box-shadow: ${props.theme.box.shadow.medium};
     position: fixed;
     left: 0px;
-    bottom: ${props.show ? '0px' : '-60px'};
+    bottom: ${props.show ? '0px' : '-80px'};
     animation: ${props.show ? SlideInUpAnimation : SlideOutDownAnimation} 0.5s linear;
     z-index: 1;
     box-sizing: border-box;
@@ -46,7 +46,7 @@ const Container = styled.div`
   z-index: 2;
   box-sizing: border-box;
   ${props => `
-    height: ${props.theme.appBar.height}px;
+    height: ${props.theme.slideBar.height}px;
   `};
 `;
 
@@ -57,7 +57,7 @@ function SlideBar({ children, theme, show }) {
       theme={theme}
       show={show}
     >
-      <ColorBlock color="blue" shade="0" width="100%" height={`${theme.appBar.height}px`} >
+      <ColorBlock color="blue" shade="0" width="100%" height={`${theme.slideBar.height}px`} >
         <Container
           theme={theme}
         >
@@ -69,7 +69,7 @@ function SlideBar({ children, theme, show }) {
 
 SlideBar.propTypes = {
   theme: PropTypes.shape({
-    appBar: PropTypes.shape({
+    slideBar: PropTypes.shape({
       height: PropTypes.number,
     }),
   }),

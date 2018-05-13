@@ -1,5 +1,6 @@
 import {
   faPlus,
+  faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 // import * as tt from '@fortawesome/fontawesome-svg-core';
 // import * as yy from '@fortawesome/free-regular-svg-icons';
@@ -9,4 +10,5 @@ import {
 
 export default {
   faPlus,
+  faTimes,
 };

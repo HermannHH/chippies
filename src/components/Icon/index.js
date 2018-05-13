@@ -31,6 +31,7 @@ Icon.propTypes = {
   theme: PropTypes.shape(),
   icon: PropTypes.oneOf([
     'faPlus',
+    'faTimes',
   ]).isRequired,
   color: PropTypes.string,
   shade: PropTypes.string,

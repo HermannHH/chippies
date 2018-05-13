@@ -15,7 +15,7 @@ const IconContainer = styled.div`
   top: 0px;
   display: inline-block;
   box-sizing: border-box;
-  padding-top: 9px;
+  padding-top: 18px;
   margin: 0px 15px;
 `;
 
@@ -26,7 +26,7 @@ const ActionsContainer = styled.div`
   top: 0px;
   display: inline-block;
   box-sizing: border-box;
-  padding-top: 7px;
+  padding-top: 16px;
   
   > * {
     display: inline;
