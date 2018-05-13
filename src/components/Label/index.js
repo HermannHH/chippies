@@ -9,6 +9,7 @@ import { shevyConfig } from '../helpers';
 const shevy = new Shevy(shevyConfig);
 const {
   content,
+  baseSpacing: bs,
 } = shevy;
 
 const LabelTag = styled.label`
@@ -20,12 +21,25 @@ const LabelTag = styled.label`
     color: ${props.theme.colors[props.color][props.shade]};
     font-weight: ${props.theme.font.weight.semiBold};
     font-family: ${props.theme.font.family};
+    ${(props.backgroundColor && props.backgroundShade) && `
+      background-color: ${props.theme.colors[props.backgroundColor][props.backgroundShade]};
+      border-radius: ${props.theme.borders.radius}px;
+      padding: ${bs(0.2)} ${bs(0.4)};
+    `}
   `};
 `;
 
-function Label({ theme, text, color, shade }) {
+function Label({ theme, text, color, shade, backgroundColor, backgroundShade }) {
   return (
-    <LabelTag color={color} shade={shade} theme={theme}>{text}</LabelTag>
+    <LabelTag
+      color={color}
+      shade={shade}
+      theme={theme}
+      backgroundColor={backgroundColor}
+      backgroundShade={backgroundShade}
+    >
+      {text}
+    </LabelTag>
   );
 }
 
@@ -34,12 +48,16 @@ Label.propTypes = {
   text: PropTypes.string.isRequired,
   color: PropTypes.string,
   shade: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  backgroundShade: PropTypes.string,
 };
 
 Label.defaultProps = {
   theme: kratedTheme,
   color: 'grey',
   shade: '2',
+  backgroundColor: undefined,
+  backgroundShade: undefined,
 };
 
 export default Label;
