@@ -54,7 +54,7 @@ function Icon(_ref) {
 
 Icon.propTypes = {
   theme: _propTypes2.default.shape(),
-  icon: _propTypes2.default.oneOf(['faPlus']).isRequired,
+  icon: _propTypes2.default.oneOf(['faPlus', 'faTimes']).isRequired,
   color: _propTypes2.default.string,
   shade: _propTypes2.default.string,
   size: _propTypes2.default.oneOf(['lg', 'xs', 'sm', '1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x'])

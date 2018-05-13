@@ -111,7 +111,7 @@ Hyperlink.propTypes = {
   handleClick: (0, _reactRequiredIf2.default)(_propTypes2.default.func, function (props) {
     return !props.href;
   }),
-  icon: _propTypes2.default.element,
+  icon: _propTypes2.default.string,
   iconPosition: _propTypes2.default.oneOf(['left', 'right']),
   buttonPad: _propTypes2.default.bool
 };

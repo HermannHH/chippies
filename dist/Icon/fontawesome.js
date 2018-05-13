@@ -13,5 +13,6 @@ var _freeSolidSvgIcons = require('@fortawesome/free-solid-svg-icons');
 // console.log('tttt', tt, yy, xx)
 
 exports.default = {
-  faPlus: _freeSolidSvgIcons.faPlus
+  faPlus: _freeSolidSvgIcons.faPlus,
+  faTimes: _freeSolidSvgIcons.faTimes
 };

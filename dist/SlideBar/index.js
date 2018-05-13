@@ -4,8 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  from {\n    bottom: -60px;\n  }\n  to {\n    transform: 0px;\n  }\n'], ['\n  from {\n    bottom: -60px;\n  }\n  to {\n    transform: 0px;\n  }\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  from {\n    bottom: 0px;\n  }\n  to {\n    bottom: -60px;\n  }\n'], ['\n  from {\n    bottom: 0px;\n  }\n  to {\n    bottom: -60px;\n  }\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  from {\n    bottom: -80px;\n  }\n  to {\n    transform: 0px;\n  }\n'], ['\n  from {\n    bottom: -80px;\n  }\n  to {\n    transform: 0px;\n  }\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  from {\n    bottom: 0px;\n  }\n  to {\n    bottom: -80px;\n  }\n'], ['\n  from {\n    bottom: 0px;\n  }\n  to {\n    bottom: -80px;\n  }\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  width: 100%;\n  ', ';\n'], ['\n  width: 100%;\n  ', ';\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  z-index: 2;\n  box-sizing: border-box;\n  ', ';\n'], ['\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  z-index: 2;\n  box-sizing: border-box;\n  ', ';\n']);
 
@@ -42,11 +42,11 @@ var SlideInUpAnimation = (0, _styledComponents.keyframes)(_templateObject);
 var SlideOutDownAnimation = (0, _styledComponents.keyframes)(_templateObject2);
 
 var Wrapper = _styledComponents2.default.div(_templateObject3, function (props) {
-  return '\n    height: ' + props.theme.appBar.height + 'px;\n    box-shadow: ' + props.theme.box.shadow.medium + ';\n    position: fixed;\n    left: 0px;\n    bottom: ' + (props.show ? '0px' : '-60px') + ';\n    animation: ' + (props.show ? SlideInUpAnimation : SlideOutDownAnimation) + ' 0.5s linear;\n    z-index: 1;\n    box-sizing: border-box;\n  ';
+  return '\n    height: ' + props.theme.slideBar.height + 'px;\n    box-shadow: ' + props.theme.box.shadow.medium + ';\n    position: fixed;\n    left: 0px;\n    bottom: ' + (props.show ? '0px' : '-80px') + ';\n    animation: ' + (props.show ? SlideInUpAnimation : SlideOutDownAnimation) + ' 0.5s linear;\n    z-index: 1;\n    box-sizing: border-box;\n  ';
 });
 
 var Container = _styledComponents2.default.div(_templateObject4, function (props) {
-  return '\n    height: ' + props.theme.appBar.height + 'px;\n  ';
+  return '\n    height: ' + props.theme.slideBar.height + 'px;\n  ';
 });
 
 function SlideBar(_ref) {
@@ -62,7 +62,7 @@ function SlideBar(_ref) {
     },
     _react2.default.createElement(
       _ColorBlock2.default,
-      { color: 'blue', shade: '0', width: '100%', height: theme.appBar.height + 'px' },
+      { color: 'blue', shade: '0', width: '100%', height: theme.slideBar.height + 'px' },
       _react2.default.createElement(
         Container,
         {
@@ -76,7 +76,7 @@ function SlideBar(_ref) {
 
 SlideBar.propTypes = {
   theme: _propTypes2.default.shape({
-    appBar: _propTypes2.default.shape({
+    slideBar: _propTypes2.default.shape({
       height: _propTypes2.default.number
     })
   }),

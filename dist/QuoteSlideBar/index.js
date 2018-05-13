@@ -4,8 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  height: 100%;\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  display: inline-block;\n  box-sizing: border-box;\n  padding-top: 9px;\n  margin: 0px 15px;\n'], ['\n  height: 100%;\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  display: inline-block;\n  box-sizing: border-box;\n  padding-top: 9px;\n  margin: 0px 15px;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  height: 100%;\n  position: absolute;\n  right: 0px;\n  top: 0px;\n  display: inline-block;\n  box-sizing: border-box;\n  padding-top: 7px;\n  \n  > * {\n    display: inline;\n    margin: 0px 20px;\n  }\n'], ['\n  height: 100%;\n  position: absolute;\n  right: 0px;\n  top: 0px;\n  display: inline-block;\n  box-sizing: border-box;\n  padding-top: 7px;\n  \n  > * {\n    display: inline;\n    margin: 0px 20px;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  height: 100%;\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  display: inline-block;\n  box-sizing: border-box;\n  padding-top: 18px;\n  margin: 0px 15px;\n'], ['\n  height: 100%;\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  display: inline-block;\n  box-sizing: border-box;\n  padding-top: 18px;\n  margin: 0px 15px;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  height: 100%;\n  position: absolute;\n  right: 0px;\n  top: 0px;\n  display: inline-block;\n  box-sizing: border-box;\n  padding-top: 16px;\n  \n  > * {\n    display: inline;\n    margin: 0px 20px;\n  }\n'], ['\n  height: 100%;\n  position: absolute;\n  right: 0px;\n  top: 0px;\n  display: inline-block;\n  box-sizing: border-box;\n  padding-top: 16px;\n  \n  > * {\n    display: inline;\n    margin: 0px 20px;\n  }\n']);
 
 var _react = require('react');
 
