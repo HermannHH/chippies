@@ -7,5 +7,5 @@ Label example:
 Label with background example:
 
 ```js
-<Label text="Button Label" backgroundColor="blue" backgroundShade="0" color="white" shade="0" />
+<Label text="Color Label" backgroundColor="blue" backgroundShade="0" color="white" shade="0" />
 ```
