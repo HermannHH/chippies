@@ -7,7 +7,8 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _templateObject = _taggedTemplateLiteral(['\n  ', ';\n'], ['\n  ', ';\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  position: fixed;\n  top: 15px;\n  right: 25px;\n'], ['\n  position: fixed;\n  top: 15px;\n  right: 25px;\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n  position: fixed;\n  top: 15px;\n  right: 25px;\n  z-index: 102;\n  &:hover {\n    cursor: pointer;\n  }\n'], ['\n  position: fixed;\n  top: 15px;\n  right: 25px;\n  z-index: 102;\n  &:hover {\n    cursor: pointer;\n  }\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  width: 100%;\n  box-sizing: border-box;\n  padding: 0px 150px;\n  overflow-y: scroll;\n  position: relative;\n  z-index: 101;\n  height: ', 'px;\n'], ['\n  width: 100%;\n  box-sizing: border-box;\n  padding: 0px 150px;\n  overflow-y: scroll;\n  position: relative;\n  z-index: 101;\n  height: ', 'px;\n']);
 
 var _react = require('react');
 
@@ -41,11 +42,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Container = _styledComponents2.default.div(_templateObject, function (props) {
-  return '\n    background-color: ' + props.theme.colors.white['0'] + ';\n    position: fixed;\n    top: 0px;\n    left: 0px;\n    width: ' + props.width + 'px;\n    height: ' + props.width + 'px;\n    z-index: 100;\n  ';
+var Wrapper = _styledComponents2.default.div(_templateObject, function (props) {
+  return '\n    background-color: ' + props.theme.colors.white['0'] + ';\n    position: fixed;\n    top: 0px;\n    left: 0px;\n    width: ' + props.width + 'px;\n    height: ' + props.height + 'px;\n    z-index: 100;\n    box-sizing: border-box;\n  ';
 });
 
 var EscapeWrapper = _styledComponents2.default.div(_templateObject2);
+
+var Container = _styledComponents2.default.div(_templateObject3, function (props) {
+  return props.height;
+});
 
 var Modal = function (_PureComponent) {
   _inherits(Modal, _PureComponent);
@@ -89,7 +94,7 @@ var Modal = function (_PureComponent) {
           closeModal = _props.closeModal;
 
       return _react2.default.createElement(
-        Container,
+        Wrapper,
         {
           show: show,
           width: width,
@@ -103,7 +108,13 @@ var Modal = function (_PureComponent) {
             handleClick: closeModal
           })
         ),
-        children
+        _react2.default.createElement(
+          Container,
+          {
+            height: height
+          },
+          children
+        )
       );
     }
   }]);

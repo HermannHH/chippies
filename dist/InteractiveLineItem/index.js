@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _templateObject = _taggedTemplateLiteral(['\n  width: 50px;\n  height: 50px;\n  display: inline-block;\n'], ['\n  width: 50px;\n  height: 50px;\n  display: inline-block;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  display: inline-block;\n'], ['\n  display: inline-block;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  display: inline-block;\n  position: absolute;\n  right: 0px;\n  border: thin solid blue;\n'], ['\n  display: inline-block;\n  position: absolute;\n  right: 0px;\n  border: thin solid blue;\n']);
+    _templateObject3 = _taggedTemplateLiteral(['\n  display: inline-block;\n  position: absolute;\n  right: 0px;\n'], ['\n  display: inline-block;\n  position: absolute;\n  right: 0px;\n']);
 
 var _react = require('react');
 
@@ -40,6 +40,10 @@ var _VerticalMiddle = require('../VerticalMiddle');
 
 var _VerticalMiddle2 = _interopRequireDefault(_VerticalMiddle);
 
+var _NumericSpin = require('../NumericSpin');
+
+var _NumericSpin2 = _interopRequireDefault(_NumericSpin);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
@@ -55,8 +59,12 @@ var ActionsContainer = _styledComponents2.default.div(_templateObject3);
  */
 
 function InteractiveLineItem(_ref) {
-  var imgSrc = _ref.imgSrc,
-      title = _ref.title;
+  var id = _ref.id,
+      imgSrc = _ref.imgSrc,
+      title = _ref.title,
+      handleClickChange = _ref.handleClickChange,
+      handleTypingChange = _ref.handleTypingChange,
+      value = _ref.value;
 
   return _react2.default.createElement(
     _Well2.default,
@@ -81,15 +89,24 @@ function InteractiveLineItem(_ref) {
       _react2.default.createElement(
         ActionsContainer,
         null,
-        'Hello'
+        _react2.default.createElement(_NumericSpin2.default, {
+          handleClickChange: handleClickChange,
+          handleTypingChange: handleTypingChange,
+          value: value,
+          id: id
+        })
       )
     )
   );
 }
 
 InteractiveLineItem.propTypes = {
+  id: _propTypes2.default.string.isRequired,
   imgSrc: _propTypes2.default.string.isRequired,
-  title: _propTypes2.default.string.isRequired
+  title: _propTypes2.default.string.isRequired,
+  handleClickChange: _propTypes2.default.func.isRequired,
+  handleTypingChange: _propTypes2.default.func.isRequired,
+  value: _propTypes2.default.number.isRequired
 };
 
 InteractiveLineItem.defaultProps = {};
