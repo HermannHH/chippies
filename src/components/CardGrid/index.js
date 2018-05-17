@@ -10,13 +10,13 @@ function CardGrid({ data, el }) {
   return (
     <Grid fluid>
       <Row>
-        {data.map(x => (
-          <Col xs={12} sm={12} md={4} lg={3} key={x.id}>
+        {Object.keys(data).map(x => (
+          <Col xs={12} sm={12} md={4} lg={3} key={x}>
             <Pad
               horizontal={{ xs: 3 }}
               vertical={{ xs: 3 }}
             >
-              <Card {...x} />
+              <Card {...data[x]} />
             </Pad>
           </Col>
         ))}
@@ -26,9 +26,7 @@ function CardGrid({ data, el }) {
 }
 
 CardGrid.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-  })).isRequired,
+  data: PropTypes.shape().isRequired,
   el: PropTypes.element.isRequired,
 };
 
