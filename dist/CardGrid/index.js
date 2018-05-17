@@ -31,17 +31,17 @@ function CardGrid(_ref) {
     _react2.default.createElement(
       _reactFlexboxGrid.Row,
       null,
-      data.map(function (x) {
+      Object.keys(data).map(function (x) {
         return _react2.default.createElement(
           _reactFlexboxGrid.Col,
-          { xs: 12, sm: 12, md: 4, lg: 3, key: x.id },
+          { xs: 12, sm: 12, md: 4, lg: 3, key: x },
           _react2.default.createElement(
             _Pad2.default,
             {
               horizontal: { xs: 3 },
               vertical: { xs: 3 }
             },
-            _react2.default.createElement(Card, x)
+            _react2.default.createElement(Card, data[x])
           )
         );
       })
@@ -50,9 +50,7 @@ function CardGrid(_ref) {
 }
 
 CardGrid.propTypes = {
-  data: _propTypes2.default.arrayOf(_propTypes2.default.shape({
-    id: _propTypes2.default.string.isRequired
-  })).isRequired,
+  data: _propTypes2.default.shape().isRequired,
   el: _propTypes2.default.element.isRequired
 };
 
