@@ -8,15 +8,16 @@ import { viewPort } from '../helpers';
 
 import EscapeButton from '../EscapeButton';
 
-const Container = styled.div`
+const Wrapper = styled.div`
   ${props => `
     background-color: ${props.theme.colors.white['0']};
     position: fixed;
     top: 0px;
     left: 0px;
     width: ${props.width}px;
-    height: ${props.width}px;
+    height: ${props.height}px;
     z-index: 100;
+    box-sizing: border-box;
   `};
 `;
 
@@ -24,7 +25,22 @@ const EscapeWrapper = styled.div`
   position: fixed;
   top: 15px;
   right: 25px;
+  z-index: 102;
+  &:hover {
+    cursor: pointer;
+  }
 `;
+
+const Container = styled.div`
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 150px;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 101;
+  height: ${props => props.height}px;
+`;
+
 
 class Modal extends PureComponent {
   constructor(props) {
@@ -57,7 +73,7 @@ class Modal extends PureComponent {
       closeModal,
     } = this.props;
     return (
-      <Container
+      <Wrapper
         show={show}
         width={width}
         height={height}
@@ -68,8 +84,12 @@ class Modal extends PureComponent {
             handleClick={closeModal}
           />
         </EscapeWrapper>
-        {children}
-      </Container>
+        <Container
+          height={height}
+        >
+          {children}
+        </Container>
+      </Wrapper>
 
     );
   }

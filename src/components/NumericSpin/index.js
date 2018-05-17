@@ -9,7 +9,6 @@ import { shevyConfig } from '../helpers';
 const shevy = new Shevy(shevyConfig);
 const {
   content,
-  baseSpacing: bs,
 } = shevy;
 const NumericSpinContainer = styled.div`
   position: relative;
@@ -75,23 +74,26 @@ function NumericSpin({
   handleClickChange,
   handleTypingChange,
   value,
+  id,
 }) {
-  console.log('value', value)
   return (
     <NumericSpinContainer>
-      <Decrease theme={theme} onClick={() => handleClickChange(() => value - 1)} />
+      <Decrease theme={theme} onClick={() => handleClickChange({ id, value: () => value - 1 })} />
       <InputContainer
         theme={theme}
         value={value}
         onChange={handleTypingChange}
+        id={id}
+        name={`numericSpin_${id}`}
     />
-      <Increase theme={theme} onClick={() => handleClickChange(() => value + 1)} />
+      <Increase theme={theme} onClick={() => handleClickChange({ id, value: () => value + 1 })} />
     </NumericSpinContainer>
   );
 }
 
 NumericSpin.propTypes = {
   theme: PropTypes.shape(),
+  id: PropTypes.string.isRequired,
   handleClickChange: PropTypes.func.isRequired,
   handleTypingChange: PropTypes.func.isRequired,
   value: PropTypes.number,

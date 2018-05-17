@@ -7,6 +7,7 @@ import ProgressiveImage from '../ProgressiveImage';
 import Heading from '../Heading';
 import Pad from '../Pad';
 import VerticalMiddle from '../VerticalMiddle';
+import NumericSpin from '../NumericSpin';
 
 const ImageContainer = styled.div`
   width: 50px;
@@ -22,7 +23,6 @@ const ActionsContainer = styled.div`
   display: inline-block;
   position: absolute;
   right: 0px;
-  border: thin solid blue;
 `;
 
 /**
@@ -30,8 +30,12 @@ const ActionsContainer = styled.div`
  */
 
 function InteractiveLineItem({
+  id,
   imgSrc,
   title,
+  handleClickChange,
+  handleTypingChange,
+  value,
 }) {
   return (
     <Well>
@@ -45,7 +49,12 @@ function InteractiveLineItem({
           </Pad>
         </HeadingContainer>
         <ActionsContainer>
-            Hello
+          <NumericSpin
+            handleClickChange={handleClickChange}
+            handleTypingChange={handleTypingChange}
+            value={value}
+            id={id}
+          />
         </ActionsContainer>
       </VerticalMiddle>
     </Well>
@@ -53,8 +62,12 @@ function InteractiveLineItem({
 }
 
 InteractiveLineItem.propTypes = {
+  id: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  handleClickChange: PropTypes.func.isRequired,
+  handleTypingChange: PropTypes.func.isRequired,
+  value: PropTypes.number.isRequired,
 };
 
 InteractiveLineItem.defaultProps = {

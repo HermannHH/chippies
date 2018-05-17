@@ -5,6 +5,8 @@ import styled from 'styled-components';
 const VerticalAlign = styled.div`
   display: flex;
   align-items: center;
+  width: 100%;
+  position: relative;
 `;
 
 function VerticalMiddle({

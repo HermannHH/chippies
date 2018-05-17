@@ -1,5 +1,15 @@
 InteractiveLineItem example:
 
 ```js
-<InteractiveLineItem title="I am title" handleClick={()=>alert('Hello Hyperlink')} />
+initialState = {
+    value: 0,
+}
+;
+<InteractiveLineItem
+  title="I am title"
+  handleTypingChange={(e) => setState({ value: e.target.value })}
+  handleClickChange={(v) => setState({ value: v.value()})}
+  value={state.value}
+  id="itc"
+/>
 ```

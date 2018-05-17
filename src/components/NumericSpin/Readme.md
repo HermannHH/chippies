@@ -7,7 +7,8 @@ initialState = {
 ;
 <NumericSpin
   handleTypingChange={(e) => setState({ value: e.target.value })}
-  handleClickChange={(v) => setState({ value: v()})}
+  handleClickChange={(v) => setState({ value: v.value()})}
   value={state.value}
+  id="k"
 />
 ```
