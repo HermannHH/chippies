@@ -31,7 +31,7 @@ const ActionsContainer = styled.div`
 
 function InteractiveLineItem({
   id,
-  imgSrc,
+  src,
   title,
   handleClickChange,
   handleTypingChange,
@@ -41,7 +41,7 @@ function InteractiveLineItem({
     <Well>
       <VerticalMiddle>
         <ImageContainer>
-          <ProgressiveImage src={imgSrc} rounded />
+          <ProgressiveImage src={src} rounded />
         </ImageContainer>
         <HeadingContainer>
           <Pad horizontal={{ xs: 4 }}>
@@ -63,7 +63,7 @@ function InteractiveLineItem({
 
 InteractiveLineItem.propTypes = {
   id: PropTypes.string.isRequired,
-  imgSrc: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   handleClickChange: PropTypes.func.isRequired,
   handleTypingChange: PropTypes.func.isRequired,

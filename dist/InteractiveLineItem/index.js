@@ -60,7 +60,7 @@ var ActionsContainer = _styledComponents2.default.div(_templateObject3);
 
 function InteractiveLineItem(_ref) {
   var id = _ref.id,
-      imgSrc = _ref.imgSrc,
+      src = _ref.src,
       title = _ref.title,
       handleClickChange = _ref.handleClickChange,
       handleTypingChange = _ref.handleTypingChange,
@@ -75,7 +75,7 @@ function InteractiveLineItem(_ref) {
       _react2.default.createElement(
         ImageContainer,
         null,
-        _react2.default.createElement(_ProgressiveImage2.default, { src: imgSrc, rounded: true })
+        _react2.default.createElement(_ProgressiveImage2.default, { src: src, rounded: true })
       ),
       _react2.default.createElement(
         HeadingContainer,
@@ -102,7 +102,7 @@ function InteractiveLineItem(_ref) {
 
 InteractiveLineItem.propTypes = {
   id: _propTypes2.default.string.isRequired,
-  imgSrc: _propTypes2.default.string.isRequired,
+  src: _propTypes2.default.string.isRequired,
   title: _propTypes2.default.string.isRequired,
   handleClickChange: _propTypes2.default.func.isRequired,
   handleTypingChange: _propTypes2.default.func.isRequired,

@@ -56,7 +56,7 @@ function QuoteRequestModal(_ref) {
         _react2.default.createElement(_InteractiveLineItem2.default, {
           id: x,
           title: items[x].text,
-          imgSrc: items[x].src,
+          src: items[x].src,
           handleTypingChange: handleQtyTypingChange,
           handleClickChange: handleQtyClickChange,
           value: items[x].qty

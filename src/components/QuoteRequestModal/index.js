@@ -27,7 +27,7 @@ function QuoteRequestModal({
           <InteractiveLineItem
             id={x}
             title={items[x].text}
-            imgSrc={items[x].src}
+            src={items[x].src}
             handleTypingChange={handleQtyTypingChange}
             handleClickChange={handleQtyClickChange}
             value={items[x].qty}
