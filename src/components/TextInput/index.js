@@ -24,7 +24,7 @@ const InputErrorsContainer = styled.div`
     margin: ${bs(0.25)} 0;
 `;
 
-const TextAreaTag = styled.textarea`
+const InputTag = styled.input`
   box-sizing: border-box;
   border: 2px solid transparent;
   outline: none;
@@ -32,7 +32,6 @@ const TextAreaTag = styled.textarea`
   display: block;
   width: 100%;
   resize: none;
-  height: 220px;
   ${props => `
     background-color: ${props.theme.colors.grey['-1']};
     border-radius: ${props.theme.borders.radius}px;
@@ -55,7 +54,7 @@ const TextAreaTag = styled.textarea`
 `;
 
 
-function TextArea({
+function TextInput({
   theme,
   placeholder,
   value,
@@ -64,6 +63,7 @@ function TextArea({
   handleFocus,
   handleBlur,
   label,
+  type,
   id,
 }) {
   const hasError = errors.length > 0;
@@ -76,7 +76,7 @@ function TextArea({
         <Label text={label} color={labelColor} shade={labelShade} />
       </LabelContainer>
     }
-      <TextAreaTag
+      <InputTag
         placeholder={placeholder}
         theme={theme}
         value={value}
@@ -84,9 +84,10 @@ function TextArea({
         onFocus={handleFocus}
         onBlur={handleBlur}
         hasError={hasError}
+        autoComplete="off"
+        type={type}
         id={id}
         name={id}
-        autoComplete="off"
       />
       { hasError &&
         <InputErrorsContainer>
@@ -97,7 +98,7 @@ function TextArea({
   );
 }
 
-TextArea.propTypes = {
+TextInput.propTypes = {
   theme: PropTypes.shape(),
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
@@ -106,16 +107,22 @@ TextArea.propTypes = {
   handleBlur: PropTypes.func,
   errors: PropTypes.arrayOf(PropTypes.string),
   label: PropTypes.string,
+  type: PropTypes.oneOf([
+    'text',
+    'email',
+    'password',
+  ]),
   id: PropTypes.string.isRequired,
 };
 
-TextArea.defaultProps = {
+TextInput.defaultProps = {
   theme: kratedTheme,
   placeholder: undefined,
   handleFocus: undefined,
   handleBlur: undefined,
   label: undefined,
   errors: [],
+  type: 'text',
 };
 
-export default TextArea;
+export default TextInput;

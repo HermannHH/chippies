@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _templateObject = _taggedTemplateLiteral(['\n    padding-left: ', ';\n    margin: ', ' 0;\n'], ['\n    padding-left: ', ';\n    margin: ', ' 0;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n    margin: ', ' 0;\n'], ['\n    margin: ', ' 0;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  box-sizing: border-box;\n  border: 2px solid transparent;\n  outline: none;\n  text-overflow: ellipses;\n  display: block;\n  width: 100%;\n  resize: none;\n  height: 220px;\n  ', ';\n'], ['\n  box-sizing: border-box;\n  border: 2px solid transparent;\n  outline: none;\n  text-overflow: ellipses;\n  display: block;\n  width: 100%;\n  resize: none;\n  height: 220px;\n  ', ';\n']);
+    _templateObject3 = _taggedTemplateLiteral(['\n  box-sizing: border-box;\n  border: 2px solid transparent;\n  outline: none;\n  text-overflow: ellipses;\n  display: block;\n  width: 100%;\n  resize: none;\n  ', ';\n'], ['\n  box-sizing: border-box;\n  border: 2px solid transparent;\n  outline: none;\n  text-overflow: ellipses;\n  display: block;\n  width: 100%;\n  resize: none;\n  ', ';\n']);
 
 var _react = require('react');
 
@@ -51,11 +51,11 @@ var LabelContainer = _styledComponents2.default.div(_templateObject, bs(0.25), b
 
 var InputErrorsContainer = _styledComponents2.default.div(_templateObject2, bs(0.25));
 
-var TextAreaTag = _styledComponents2.default.textarea(_templateObject3, function (props) {
+var InputTag = _styledComponents2.default.input(_templateObject3, function (props) {
   return '\n    background-color: ' + props.theme.colors.grey['-1'] + ';\n    border-radius: ' + props.theme.borders.radius + 'px;\n    font-size: ' + content.fontSize + ';\n    color: ' + props.theme.colors.grey[2] + ';\n    line-height: ' + content.lineHeight + ';\n    font-family: ' + props.theme.font.family + ';\n    font-weight: ' + props.theme.font.weight.standard + ';\n    padding: ' + bs(0.333) + ';\n    &::placeholder{\n      color: ' + props.theme.colors.grey[1] + ';\n    };\n    &:focus {\n      border-color: ' + props.theme.colors.grey[1] + ';\n      ' + (props.hasError && 'border-color: ' + props.theme.colors.red[0]) + ';\n    }\n    ' + (props.hasError && 'border-color: ' + props.theme.colors.red[0]) + ';\n    ' + (props.hardText && 'padding-right: 90px') + ';\n  ';
 });
 
-function TextArea(_ref) {
+function TextInput(_ref) {
   var theme = _ref.theme,
       placeholder = _ref.placeholder,
       value = _ref.value,
@@ -64,6 +64,7 @@ function TextArea(_ref) {
       handleFocus = _ref.handleFocus,
       handleBlur = _ref.handleBlur,
       label = _ref.label,
+      type = _ref.type,
       id = _ref.id;
 
   var hasError = errors.length > 0;
@@ -77,7 +78,7 @@ function TextArea(_ref) {
       null,
       _react2.default.createElement(_Label2.default, { text: label, color: labelColor, shade: labelShade })
     ),
-    _react2.default.createElement(TextAreaTag, {
+    _react2.default.createElement(InputTag, {
       placeholder: placeholder,
       theme: theme,
       value: value,
@@ -85,9 +86,10 @@ function TextArea(_ref) {
       onFocus: handleFocus,
       onBlur: handleBlur,
       hasError: hasError,
+      autoComplete: 'off',
+      type: type,
       id: id,
-      name: id,
-      autoComplete: 'off'
+      name: id
     }),
     hasError && _react2.default.createElement(
       InputErrorsContainer,
@@ -97,7 +99,7 @@ function TextArea(_ref) {
   );
 }
 
-TextArea.propTypes = {
+TextInput.propTypes = {
   theme: _propTypes2.default.shape(),
   placeholder: _propTypes2.default.string,
   value: _propTypes2.default.string.isRequired,
@@ -106,16 +108,18 @@ TextArea.propTypes = {
   handleBlur: _propTypes2.default.func,
   errors: _propTypes2.default.arrayOf(_propTypes2.default.string),
   label: _propTypes2.default.string,
+  type: _propTypes2.default.oneOf(['text', 'email', 'password']),
   id: _propTypes2.default.string.isRequired
 };
 
-TextArea.defaultProps = {
+TextInput.defaultProps = {
   theme: _kratedTheme2.default,
   placeholder: undefined,
   handleFocus: undefined,
   handleBlur: undefined,
   label: undefined,
-  errors: []
+  errors: [],
+  type: 'text'
 };
 
-exports.default = TextArea;
+exports.default = TextInput;

@@ -22,7 +22,7 @@ initialState = {
       closeModal={() => setState({ show: false})}
       items={state.items}
       handleQtyClickChange={(x) => setState({ [items['1']['qty']] : x.value()})}
-      handleQtyTypingChange={(x) => console.log(x)}
+      handleQtyTypingChange={(x) => setState({ [items['1']['qty']] : x.value()})}
     />
   }
 </div>
