@@ -65,7 +65,8 @@ function TextInput(_ref) {
       handleBlur = _ref.handleBlur,
       label = _ref.label,
       type = _ref.type,
-      id = _ref.id;
+      id = _ref.id,
+      tabIndex = _ref.tabIndex;
 
   var hasError = errors.length > 0;
   var labelColor = hasError ? 'red' : 'grey';
@@ -89,7 +90,8 @@ function TextInput(_ref) {
       autoComplete: 'off',
       type: type,
       id: id,
-      name: id
+      name: id,
+      tabIndex: tabIndex
     }),
     hasError && _react2.default.createElement(
       InputErrorsContainer,
@@ -109,7 +111,8 @@ TextInput.propTypes = {
   errors: _propTypes2.default.arrayOf(_propTypes2.default.string),
   label: _propTypes2.default.string,
   type: _propTypes2.default.oneOf(['text', 'email', 'password']),
-  id: _propTypes2.default.string.isRequired
+  id: _propTypes2.default.string.isRequired,
+  tabIndex: _propTypes2.default.string
 };
 
 TextInput.defaultProps = {
@@ -119,7 +122,8 @@ TextInput.defaultProps = {
   handleBlur: undefined,
   label: undefined,
   errors: [],
-  type: 'text'
+  type: 'text',
+  tabIndex: undefined
 };
 
 exports.default = TextInput;

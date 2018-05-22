@@ -65,6 +65,7 @@ function TextArea({
   handleBlur,
   label,
   id,
+  tabIndex,
 }) {
   const hasError = errors.length > 0;
   const labelColor = hasError ? 'red' : 'grey';
@@ -87,6 +88,7 @@ function TextArea({
         id={id}
         name={id}
         autoComplete="off"
+        tabIndex={tabIndex}
       />
       { hasError &&
         <InputErrorsContainer>
@@ -107,6 +109,7 @@ TextArea.propTypes = {
   errors: PropTypes.arrayOf(PropTypes.string),
   label: PropTypes.string,
   id: PropTypes.string.isRequired,
+  tabIndex: PropTypes.string,
 };
 
 TextArea.defaultProps = {
@@ -116,6 +119,7 @@ TextArea.defaultProps = {
   handleBlur: undefined,
   label: undefined,
   errors: [],
+  tabIndex: undefined,
 };
 
 export default TextArea;

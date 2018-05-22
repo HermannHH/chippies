@@ -65,6 +65,7 @@ function TextInput({
   label,
   type,
   id,
+  tabIndex,
 }) {
   const hasError = errors.length > 0;
   const labelColor = hasError ? 'red' : 'grey';
@@ -88,6 +89,7 @@ function TextInput({
         type={type}
         id={id}
         name={id}
+        tabIndex={tabIndex}
       />
       { hasError &&
         <InputErrorsContainer>
@@ -113,6 +115,7 @@ TextInput.propTypes = {
     'password',
   ]),
   id: PropTypes.string.isRequired,
+  tabIndex: PropTypes.string,
 };
 
 TextInput.defaultProps = {
@@ -123,6 +126,7 @@ TextInput.defaultProps = {
   label: undefined,
   errors: [],
   type: 'text',
+  tabIndex: undefined,
 };
 
 export default TextInput;

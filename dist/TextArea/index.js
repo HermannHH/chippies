@@ -64,7 +64,8 @@ function TextArea(_ref) {
       handleFocus = _ref.handleFocus,
       handleBlur = _ref.handleBlur,
       label = _ref.label,
-      id = _ref.id;
+      id = _ref.id,
+      tabIndex = _ref.tabIndex;
 
   var hasError = errors.length > 0;
   var labelColor = hasError ? 'red' : 'grey';
@@ -87,7 +88,8 @@ function TextArea(_ref) {
       hasError: hasError,
       id: id,
       name: id,
-      autoComplete: 'off'
+      autoComplete: 'off',
+      tabIndex: tabIndex
     }),
     hasError && _react2.default.createElement(
       InputErrorsContainer,
@@ -106,7 +108,8 @@ TextArea.propTypes = {
   handleBlur: _propTypes2.default.func,
   errors: _propTypes2.default.arrayOf(_propTypes2.default.string),
   label: _propTypes2.default.string,
-  id: _propTypes2.default.string.isRequired
+  id: _propTypes2.default.string.isRequired,
+  tabIndex: _propTypes2.default.string
 };
 
 TextArea.defaultProps = {
@@ -115,7 +118,8 @@ TextArea.defaultProps = {
   handleFocus: undefined,
   handleBlur: undefined,
   label: undefined,
-  errors: []
+  errors: [],
+  tabIndex: undefined
 };
 
 exports.default = TextArea;

@@ -7,11 +7,6 @@ initialState = {
                 '1' : { text: "Test", src: "https://picsum.photos/200/300/?random", qty: 1 },
                 '2' : { text: "Test", src: "https://picsum.photos/200/300/?random", qty: 1 },
                 '3' : { text: "Test", src: "https://picsum.photos/200/300/?random", qty: 1 },
-                '4' : { text: "Test", src: "https://picsum.photos/200/300/?random", qty: 1 },
-                '5' : { text: "Test", src: "https://picsum.photos/200/300/?random", qty: 1 },
-                '6' : { text: "Test", src: "https://picsum.photos/200/300/?random", qty: 1 },
-                '7' : { text: "Test", src: "https://picsum.photos/200/300/?random", qty: 1 },
-                '8' : { text: "Test", src: "https://picsum.photos/200/300/?random", qty: 1 }
             },
 }
 ;
