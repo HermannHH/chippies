@@ -18,6 +18,7 @@ initialState = {
       items={state.items}
       handleQtyClickChange={(x) => setState({ [items['1']['qty']] : x.value()})}
       handleQtyTypingChange={(x) => setState({ [items['1']['qty']] : x.value()})}
+      handleSubmit={()=>alert('submit action')}
     />
   }
 </div>

@@ -60,7 +60,8 @@ function QuoteRequestModal(_ref) {
   var closeModal = _ref.closeModal,
       items = _ref.items,
       handleQtyClickChange = _ref.handleQtyClickChange,
-      handleQtyTypingChange = _ref.handleQtyTypingChange;
+      handleQtyTypingChange = _ref.handleQtyTypingChange,
+      handleSubmit = _ref.handleSubmit;
 
   return _react2.default.createElement(
     _Modal2.default,
@@ -231,9 +232,7 @@ function QuoteRequestModal(_ref) {
             _reactFlexboxGrid.Col,
             { xs: 12 },
             _react2.default.createElement(_FormActionContainer2.default, {
-              actions: [_react2.default.createElement(_Button2.default, { text: 'Submit', handleClick: function handleClick() {
-                  return alert('handleClick');
-                }, raised: true, whiteText: true, color: 'red' })]
+              actions: [_react2.default.createElement(_Button2.default, { text: 'handleSubmit', handleClick: handleSubmit, raised: true, whiteText: true, color: 'red' })]
             })
           )
         )
@@ -245,7 +244,8 @@ function QuoteRequestModal(_ref) {
 QuoteRequestModal.propTypes = {
   closeModal: _propTypes2.default.func.isRequired,
   handleQtyClickChange: _propTypes2.default.func.isRequired,
-  handleQtyTypingChange: _propTypes2.default.func.isRequired
+  handleQtyTypingChange: _propTypes2.default.func.isRequired,
+  handleSubmit: _propTypes2.default.func.isRequired
 };
 
 QuoteRequestModal.defaultProps = {};

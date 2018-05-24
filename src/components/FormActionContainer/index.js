@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import Mrg from '../Mrg';
 import FlexPosition from '../FlexPosition';
@@ -10,7 +11,7 @@ import FlexPosition from '../FlexPosition';
 
 function FormActionContainer({ actions, flexType }) {
   return (
-    <Mrg top={{ xs: 5 }} bottom={{ xs: 3 }}>
+    <Mrg vertical={{ xs: 5 }}>
       <FlexPosition
         comps={actions}
         layout={flexType}

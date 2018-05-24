@@ -19,6 +19,7 @@ function QuoteRequestModal({
   items,
   handleQtyClickChange,
   handleQtyTypingChange,
+  handleSubmit,
 }) {
   return (
     <Modal
@@ -135,7 +136,7 @@ function QuoteRequestModal({
             <Col xs={12}>
               <FormActionContainer
                 actions={[
-                  <Button text="Submit" handleClick={() => alert('handleClick')} raised whiteText color="red" />,
+                  <Button text="handleSubmit" handleClick={handleSubmit} raised whiteText color="red" />,
           ]}
               />
             </Col>
@@ -150,6 +151,7 @@ QuoteRequestModal.propTypes = {
   closeModal: PropTypes.func.isRequired,
   handleQtyClickChange: PropTypes.func.isRequired,
   handleQtyTypingChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 QuoteRequestModal.defaultProps = {

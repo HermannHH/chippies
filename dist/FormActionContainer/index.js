@@ -12,6 +12,10 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _styledComponents = require('styled-components');
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
 var _Mrg = require('../Mrg');
 
 var _Mrg2 = _interopRequireDefault(_Mrg);
@@ -32,7 +36,7 @@ function FormActionContainer(_ref) {
 
   return _react2.default.createElement(
     _Mrg2.default,
-    { top: { xs: 5 }, bottom: { xs: 3 } },
+    { vertical: { xs: 5 } },
     _react2.default.createElement(_FlexPosition2.default, {
       comps: actions,
       layout: flexType
