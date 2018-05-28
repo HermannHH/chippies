@@ -86,9 +86,7 @@ function QuoteRequestModal(_ref) {
         bottom: { xs: 6 }
       },
       _react2.default.createElement(_QuoteRequestForm2.default, {
-        handleSubmit: function handleSubmit() {
-          return alert('yaya');
-        }
+        submit: handleSubmit
       })
     )
   );

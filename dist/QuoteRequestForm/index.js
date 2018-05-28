@@ -51,7 +51,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   }
 });
 
-function QuoteRequestForm() {
+function QuoteRequestForm(_ref) {
+  var submit = _ref.submit;
+
   var validationSchema = (0, _yup.object)().shape({
     firstName: (0, _yup.string)().required(),
     lastName: (0, _yup.string)().required(),
@@ -71,21 +73,21 @@ function QuoteRequestForm() {
       comment: ''
     },
     validationSchema: validationSchema,
-    onSubmit: function onSubmit(values, _ref) {
-      var setSubmitting = _ref.setSubmitting,
-          setErrors = _ref.setErrors;
+    onSubmit: function onSubmit(values, _ref2) {
+      var setSubmitting = _ref2.setSubmitting,
+          setErrors = _ref2.setErrors;
 
-      console.log(values);
+      submit(values);
     },
-    render: function render(_ref2) {
-      var values = _ref2.values,
-          errors = _ref2.errors,
-          touched = _ref2.touched,
-          handleChange = _ref2.handleChange,
-          handleBlur = _ref2.handleBlur,
-          handleSubmit = _ref2.handleSubmit,
-          isSubmitting = _ref2.isSubmitting,
-          isValid = _ref2.isValid;
+    render: function render(_ref3) {
+      var values = _ref3.values,
+          errors = _ref3.errors,
+          touched = _ref3.touched,
+          handleChange = _ref3.handleChange,
+          handleBlur = _ref3.handleBlur,
+          handleSubmit = _ref3.handleSubmit,
+          isSubmitting = _ref3.isSubmitting,
+          isValid = _ref3.isValid;
       return _react2.default.createElement(
         _reactFlexboxGrid.Grid,
         null,
@@ -219,7 +221,9 @@ function QuoteRequestForm() {
   });
 }
 
-QuoteRequestForm.propTypes = {};
+QuoteRequestForm.propTypes = {
+  submit: _propTypes2.default.func.isRequired
+};
 
 QuoteRequestForm.defaultProps = {};
 

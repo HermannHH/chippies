@@ -49,7 +49,7 @@ function QuoteRequestModal({
         bottom={{ xs: 6 }}
       >
         <QuoteRequestForm
-          handleSubmit={()=>alert('yaya')}
+          submit={handleSubmit}
         />
       </Pad>
     </Modal>

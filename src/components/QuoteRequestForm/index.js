@@ -21,7 +21,9 @@ setLocale({
   },
 });
 
-function QuoteRequestForm() {
+function QuoteRequestForm({
+  submit,
+}) {
   const validationSchema = object().shape({
     firstName: string().required(),
     lastName: string().required(),
@@ -46,7 +48,7 @@ function QuoteRequestForm() {
           values,
           { setSubmitting, setErrors },
         ) => {
-          console.log(values);
+            submit(values)
         }}
       render={({
           values,
@@ -161,6 +163,7 @@ function QuoteRequestForm() {
 }
 
 QuoteRequestForm.propTypes = {
+  submit: PropTypes.func.isRequired,
 };
 
 QuoteRequestForm.defaultProps = {
