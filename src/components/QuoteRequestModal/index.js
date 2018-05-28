@@ -7,11 +7,7 @@ import InteractiveLineItem from '../InteractiveLineItem';
 import Pad from '../Pad';
 import HeadingGroup from '../HeadingGroup';
 import Divider from '../Divider';
-import FormInputContainer from '../FormInputContainer';
-import Button from '../Button';
-import FormActionContainer from '../FormActionContainer';
-import TextInput from '../TextInput';
-import TextArea from '../TextArea';
+import QuoteRequestForm from '../QuoteRequestForm';
 
 
 function QuoteRequestModal({
@@ -52,96 +48,9 @@ function QuoteRequestModal({
         vertical={{ xs: 3 }}
         bottom={{ xs: 6 }}
       >
-        <Grid fluid>
-          <Row>
-            <Col xs={12} md={6}>
-              <FormInputContainer>
-                <TextInput
-                  placeholder="First Name"
-                  handleChange={() => alert('effew')}
-                  value="Hello world"
-                  label="First Name"
-                  id="firstName"
-                  tabIndex={0}
-                />
-              </FormInputContainer>
-            </Col>
-            <Col xs={12} md={6}>
-              <FormInputContainer>
-                <TextInput
-                  placeholder="Last Name"
-                  handleChange={() => alert('effew')}
-                  value="Hello world"
-                  label="Last Name"
-                  id="lastName"
-                  tabIndex={1}
-                />
-              </FormInputContainer>
-            </Col>
-            <Col xs={12} md={6}>
-              <FormInputContainer>
-                <TextInput
-                  placeholder="Cellphone Number"
-                  handleChange={() => alert('effew')}
-                  value="Hello world"
-                  label="Cellphone Number"
-                  id="cellphoneNumber"
-                />
-              </FormInputContainer>
-            </Col>
-            <Col xs={12} md={6}>
-              <FormInputContainer>
-                <TextInput
-                  placeholder="Email"
-                  handleChange={() => alert('effew')}
-                  value="Hello world"
-                  label="Email"
-                  id="email"
-                />
-              </FormInputContainer>
-            </Col>
-            <Col xs={12} md={6}>
-              <FormInputContainer>
-                <TextInput
-                  placeholder="Company Name"
-                  handleChange={() => alert('effew')}
-                  value="Hello world"
-                  label="Company Name"
-                  id="companyName"
-                />
-              </FormInputContainer>
-            </Col>
-            <Col xs={12} md={6}>
-              <FormInputContainer>
-                <TextInput
-                  placeholder="Business Address"
-                  handleChange={() => alert('effew')}
-                  value="Hello world"
-                  label="Business Address"
-                  id="businessAddress"
-                />
-              </FormInputContainer>
-            </Col>
-            <Col xs={12}>
-              <FormInputContainer>
-                <TextArea
-                  placeholder="Comment"
-                  handleChange={() => alert('effew')}
-                  value="Hello world"
-                  label="Comment"
-                  id="comment"
-                />
-              </FormInputContainer>
-            </Col>
-            <Col xs={12}>
-              <FormActionContainer
-                actions={[
-                  <Button text="handleSubmit" handleClick={handleSubmit} raised whiteText color="red" />,
-          ]}
-              />
-            </Col>
-          </Row>
-        </Grid>
+        <QuoteRequestForm
+          handleSubmit={()=>alert('yaya')}
+        />
       </Pad>
     </Modal>
   );
