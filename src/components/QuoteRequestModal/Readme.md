@@ -16,8 +16,22 @@ initialState = {
     <QuoteRequestModal
       closeModal={() => setState({ show: false})}
       items={state.items}
-      handleQtyClickChange={(x) => setState({ [items['1']['qty']] : x.value()})}
-      handleQtyTypingChange={(x) => setState({ [items['1']['qty']] : x.value()})}
+      handleQtyClickChange={(x) => setState({ items: {
+        ...state.items,
+        [state.items[x.id]] : {
+          ...state.items[x.id],
+          qty: x.value(),
+        }
+        }
+      })}
+      handleQtyTypingChange={(x) => setState({ items: {
+        ...state.items,
+        [state.items[x.target.id]] : {
+          ...state.items[x.target.id],
+          qty: parseInt(x.target.value, 10),
+        }
+        }
+      })}
       handleSubmit={()=>alert('submit action')}
     />
   }

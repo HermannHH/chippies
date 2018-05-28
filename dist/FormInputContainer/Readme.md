@@ -1,7 +1,7 @@
-FormItemContainer example:
+FormInputContainer example:
 
 ```js
-<FormItemContainer>
+<FormInputContainer>
   <TextInput
         placeholder="I am placeholder"
         handleChange={() => alert('effew')}
@@ -9,5 +9,5 @@ FormItemContainer example:
         label="Hello World"
         id="1"
     />
-</FormItemContainer>
+</FormInputContainer>
 ```

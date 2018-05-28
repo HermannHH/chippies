@@ -52,8 +52,8 @@ var Container = _styledComponents2.default.div(_templateObject3, function (props
   return props.height;
 });
 
-var Modal = function (_PureComponent) {
-  _inherits(Modal, _PureComponent);
+var Modal = function (_Component) {
+  _inherits(Modal, _Component);
 
   function Modal(props) {
     _classCallCheck(this, Modal);
@@ -77,7 +77,7 @@ var Modal = function (_PureComponent) {
   }, {
     key: 'keydownEscape',
     value: function keydownEscape(e) {
-      e.preventDefault();
+      // e.preventDefault();
       if (e.keyCode === 27) {
         this.props.closeModal();
       }
@@ -120,7 +120,7 @@ var Modal = function (_PureComponent) {
   }]);
 
   return Modal;
-}(_react.PureComponent);
+}(_react.Component);
 
 Modal.propTypes = {
   theme: _propTypes2.default.shape(),

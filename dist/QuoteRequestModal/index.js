@@ -34,25 +34,9 @@ var _Divider = require('../Divider');
 
 var _Divider2 = _interopRequireDefault(_Divider);
 
-var _FormInputContainer = require('../FormInputContainer');
+var _QuoteRequestForm = require('../QuoteRequestForm');
 
-var _FormInputContainer2 = _interopRequireDefault(_FormInputContainer);
-
-var _Button = require('../Button');
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _FormActionContainer = require('../FormActionContainer');
-
-var _FormActionContainer2 = _interopRequireDefault(_FormActionContainer);
-
-var _TextInput = require('../TextInput');
-
-var _TextInput2 = _interopRequireDefault(_TextInput);
-
-var _TextArea = require('../TextArea');
-
-var _TextArea2 = _interopRequireDefault(_TextArea);
+var _QuoteRequestForm2 = _interopRequireDefault(_QuoteRequestForm);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -101,142 +85,11 @@ function QuoteRequestModal(_ref) {
         vertical: { xs: 3 },
         bottom: { xs: 6 }
       },
-      _react2.default.createElement(
-        _reactFlexboxGrid.Grid,
-        { fluid: true },
-        _react2.default.createElement(
-          _reactFlexboxGrid.Row,
-          null,
-          _react2.default.createElement(
-            _reactFlexboxGrid.Col,
-            { xs: 12, md: 6 },
-            _react2.default.createElement(
-              _FormInputContainer2.default,
-              null,
-              _react2.default.createElement(_TextInput2.default, {
-                placeholder: 'First Name',
-                handleChange: function handleChange() {
-                  return alert('effew');
-                },
-                value: 'Hello world',
-                label: 'First Name',
-                id: 'firstName',
-                tabIndex: 0
-              })
-            )
-          ),
-          _react2.default.createElement(
-            _reactFlexboxGrid.Col,
-            { xs: 12, md: 6 },
-            _react2.default.createElement(
-              _FormInputContainer2.default,
-              null,
-              _react2.default.createElement(_TextInput2.default, {
-                placeholder: 'Last Name',
-                handleChange: function handleChange() {
-                  return alert('effew');
-                },
-                value: 'Hello world',
-                label: 'Last Name',
-                id: 'lastName',
-                tabIndex: 1
-              })
-            )
-          ),
-          _react2.default.createElement(
-            _reactFlexboxGrid.Col,
-            { xs: 12, md: 6 },
-            _react2.default.createElement(
-              _FormInputContainer2.default,
-              null,
-              _react2.default.createElement(_TextInput2.default, {
-                placeholder: 'Cellphone Number',
-                handleChange: function handleChange() {
-                  return alert('effew');
-                },
-                value: 'Hello world',
-                label: 'Cellphone Number',
-                id: 'cellphoneNumber'
-              })
-            )
-          ),
-          _react2.default.createElement(
-            _reactFlexboxGrid.Col,
-            { xs: 12, md: 6 },
-            _react2.default.createElement(
-              _FormInputContainer2.default,
-              null,
-              _react2.default.createElement(_TextInput2.default, {
-                placeholder: 'Email',
-                handleChange: function handleChange() {
-                  return alert('effew');
-                },
-                value: 'Hello world',
-                label: 'Email',
-                id: 'email'
-              })
-            )
-          ),
-          _react2.default.createElement(
-            _reactFlexboxGrid.Col,
-            { xs: 12, md: 6 },
-            _react2.default.createElement(
-              _FormInputContainer2.default,
-              null,
-              _react2.default.createElement(_TextInput2.default, {
-                placeholder: 'Company Name',
-                handleChange: function handleChange() {
-                  return alert('effew');
-                },
-                value: 'Hello world',
-                label: 'Company Name',
-                id: 'companyName'
-              })
-            )
-          ),
-          _react2.default.createElement(
-            _reactFlexboxGrid.Col,
-            { xs: 12, md: 6 },
-            _react2.default.createElement(
-              _FormInputContainer2.default,
-              null,
-              _react2.default.createElement(_TextInput2.default, {
-                placeholder: 'Business Address',
-                handleChange: function handleChange() {
-                  return alert('effew');
-                },
-                value: 'Hello world',
-                label: 'Business Address',
-                id: 'businessAddress'
-              })
-            )
-          ),
-          _react2.default.createElement(
-            _reactFlexboxGrid.Col,
-            { xs: 12 },
-            _react2.default.createElement(
-              _FormInputContainer2.default,
-              null,
-              _react2.default.createElement(_TextArea2.default, {
-                placeholder: 'Comment',
-                handleChange: function handleChange() {
-                  return alert('effew');
-                },
-                value: 'Hello world',
-                label: 'Comment',
-                id: 'comment'
-              })
-            )
-          ),
-          _react2.default.createElement(
-            _reactFlexboxGrid.Col,
-            { xs: 12 },
-            _react2.default.createElement(_FormActionContainer2.default, {
-              actions: [_react2.default.createElement(_Button2.default, { text: 'handleSubmit', handleClick: handleSubmit, raised: true, whiteText: true, color: 'red' })]
-            })
-          )
-        )
-      )
+      _react2.default.createElement(_QuoteRequestForm2.default, {
+        handleSubmit: function handleSubmit() {
+          return alert('yaya');
+        }
+      })
     )
   );
 }
