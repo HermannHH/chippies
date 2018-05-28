@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -42,7 +42,7 @@ const Container = styled.div`
 `;
 
 
-class Modal extends PureComponent {
+class Modal extends Component {
   constructor(props) {
     super(props);
     this.keydownEscape = this.keydownEscape.bind(this);
@@ -57,7 +57,7 @@ class Modal extends PureComponent {
   }
 
   keydownEscape(e) {
-    e.preventDefault();
+    // e.preventDefault();
     if (e.keyCode === 27) {
       this.props.closeModal();
     }
