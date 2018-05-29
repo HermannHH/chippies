@@ -124,7 +124,7 @@ var Modal = function (_Component) {
 
 Modal.propTypes = {
   theme: _propTypes2.default.shape(),
-  children: _propTypes2.default.element.isRequired,
+  children: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.arrayOf(_propTypes2.default.element)]).isRequired,
   show: _propTypes2.default.bool.isRequired,
   width: _propTypes2.default.number.isRequired,
   height: _propTypes2.default.number.isRequired,

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Shevy from 'shevyjs';
 import kratedTheme from 'krated-theme';
+import { format } from 'libphonenumber-js';
 
 import { shevyConfig } from '../helpers';
 
@@ -76,6 +77,21 @@ function TextInput({
   const hasError = errorArray.length > 0;
   const labelColor = hasError ? 'red' : 'grey';
   const labelShade = hasError ? '0' : '1';
+  function phoneNumber(val) {
+    const mask = format(val, 'ZA', 'International');
+    const trimmed = mask.replace(/ /g, '');
+    if (trimmed.length >= 13) {
+      return mask.substring(0, 13);
+    }
+    return mask;
+  }
+
+  let val = value;
+  let tp = type;
+  if (type === 'phone') {
+    tp = 'text';
+    val = phoneNumber(value);
+  }
   return (
     <div>
       { label &&
@@ -86,13 +102,13 @@ function TextInput({
       <InputTag
         placeholder={placeholder}
         theme={theme}
-        value={value}
+        value={val}
         onChange={handleChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
         hasError={hasError}
         autoComplete="off"
-        type={type}
+        type={tp}
         id={id}
         name={id}
         tabIndex={tabIndex}
@@ -122,6 +138,7 @@ TextInput.propTypes = {
     'text',
     'email',
     'password',
+    'phone',
   ]),
   id: PropTypes.string.isRequired,
   tabIndex: PropTypes.string,

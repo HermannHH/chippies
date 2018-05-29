@@ -28,6 +28,8 @@ var _kratedTheme = require('krated-theme');
 
 var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
 
+var _libphonenumberJs = require('libphonenumber-js');
+
 var _helpers = require('../helpers');
 
 var _Label = require('../Label');
@@ -77,6 +79,21 @@ function TextInput(_ref) {
   var hasError = errorArray.length > 0;
   var labelColor = hasError ? 'red' : 'grey';
   var labelShade = hasError ? '0' : '1';
+  function phoneNumber(val) {
+    var mask = (0, _libphonenumberJs.format)(val, 'ZA', 'International');
+    var trimmed = mask.replace(/ /g, '');
+    if (trimmed.length >= 13) {
+      return mask.substring(0, 13);
+    }
+    return mask;
+  }
+
+  var val = value;
+  var tp = type;
+  if (type === 'phone') {
+    tp = 'text';
+    val = phoneNumber(value);
+  }
   return _react2.default.createElement(
     'div',
     null,
@@ -88,13 +105,13 @@ function TextInput(_ref) {
     _react2.default.createElement(InputTag, {
       placeholder: placeholder,
       theme: theme,
-      value: value,
+      value: val,
       onChange: handleChange,
       onFocus: handleFocus,
       onBlur: handleBlur,
       hasError: hasError,
       autoComplete: 'off',
-      type: type,
+      type: tp,
       id: id,
       name: id,
       tabIndex: tabIndex
@@ -116,7 +133,7 @@ TextInput.propTypes = {
   handleBlur: _propTypes2.default.func,
   errors: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.string), _propTypes2.default.string]),
   label: _propTypes2.default.string,
-  type: _propTypes2.default.oneOf(['text', 'email', 'password']),
+  type: _propTypes2.default.oneOf(['text', 'email', 'password', 'phone']),
   id: _propTypes2.default.string.isRequired,
   tabIndex: _propTypes2.default.string
 };

@@ -160,7 +160,8 @@ function QuoteRequestForm(_ref) {
                   handleChange: handleChange,
                   value: values.cellPhone,
                   handleBlur: handleBlur,
-                  errors: touched.cellPhone && errors.cellPhone && errors.cellPhone
+                  errors: touched.cellPhone && errors.cellPhone && errors.cellPhone,
+                  type: 'phone'
                 })
               )
             ),

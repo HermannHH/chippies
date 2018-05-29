@@ -112,6 +112,7 @@ function QuoteRequestForm({
                       value={values.cellPhone}
                       handleBlur={handleBlur}
                       errors={(touched.cellPhone && errors.cellPhone) && errors.cellPhone}
+                      type="phone"
                     />
                   </FormInputContainer>
                 </Col>
