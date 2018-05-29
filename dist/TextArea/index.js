@@ -67,7 +67,13 @@ function TextArea(_ref) {
       id = _ref.id,
       tabIndex = _ref.tabIndex;
 
-  var hasError = errors.length > 0;
+  var errorArray = [];
+  if (typeof errors === 'string') {
+    errorArray = errorArray.concat(errors);
+  } else {
+    errorArray = errors;
+  }
+  var hasError = errorArray.length > 0;
   var labelColor = hasError ? 'red' : 'grey';
   var labelShade = hasError ? '0' : '1';
   return _react2.default.createElement(
@@ -94,7 +100,7 @@ function TextArea(_ref) {
     hasError && _react2.default.createElement(
       InputErrorsContainer,
       null,
-      _react2.default.createElement(_InputErrors2.default, { errors: errors })
+      _react2.default.createElement(_InputErrors2.default, { errors: errorArray })
     )
   );
 }
@@ -106,7 +112,7 @@ TextArea.propTypes = {
   handleChange: _propTypes2.default.func.isRequired,
   handleFocus: _propTypes2.default.func,
   handleBlur: _propTypes2.default.func,
-  errors: _propTypes2.default.arrayOf(_propTypes2.default.string),
+  errors: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.string), _propTypes2.default.string]),
   label: _propTypes2.default.string,
   id: _propTypes2.default.string.isRequired,
   tabIndex: _propTypes2.default.string

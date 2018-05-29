@@ -113,10 +113,10 @@ TextInput.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleFocus: PropTypes.func,
   handleBlur: PropTypes.func,
-  errors: PropTypes.oneOfType(
+  errors: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.string,
-  ),
+  ]),
   label: PropTypes.string,
   type: PropTypes.oneOf([
     'text',

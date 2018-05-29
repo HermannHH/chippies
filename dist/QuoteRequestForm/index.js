@@ -40,6 +40,10 @@ var _TextArea = require('../TextArea');
 
 var _TextArea2 = _interopRequireDefault(_TextArea);
 
+var _PlacesInput = require('../PlacesInput');
+
+var _PlacesInput2 = _interopRequireDefault(_PlacesInput);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _customLocale.setLocale)({
@@ -59,7 +63,13 @@ function QuoteRequestForm(_ref) {
     lastName: (0, _yup.string)().required(),
     cellPhone: (0, _yup.string)().required(),
     email: (0, _yup.string)().required().email(),
-    companyName: (0, _yup.string)().required().required()
+    companyName: (0, _yup.string)().required().required(),
+    companyAddress: (0, _yup.object)().required().shape({
+      label: (0, _yup.string)().required(),
+      lat: (0, _yup.number)().required(),
+      lng: (0, _yup.number)().required(),
+      placeId: (0, _yup.string)().required()
+    })
   });
 
   return _react2.default.createElement(_formik.Formik, {
@@ -69,7 +79,12 @@ function QuoteRequestForm(_ref) {
       cellPhone: '',
       email: '',
       companyName: '',
-      companyAddress: '',
+      companyAddress: {
+        label: '',
+        lat: '',
+        lng: '',
+        placeId: ''
+      },
       comment: ''
     },
     validationSchema: validationSchema,
@@ -87,7 +102,8 @@ function QuoteRequestForm(_ref) {
           handleBlur = _ref3.handleBlur,
           handleSubmit = _ref3.handleSubmit,
           isSubmitting = _ref3.isSubmitting,
-          isValid = _ref3.isValid;
+          isValid = _ref3.isValid,
+          setFieldValue = _ref3.setFieldValue;
       return _react2.default.createElement(
         _reactFlexboxGrid.Grid,
         null,
@@ -179,6 +195,31 @@ function QuoteRequestForm(_ref) {
                   value: values.companyName,
                   handleBlur: handleBlur,
                   errors: touched.companyName && errors.companyName && errors.companyName
+                })
+              )
+            ),
+            _react2.default.createElement(
+              _reactFlexboxGrid.Col,
+              { md: 12, lg: 6 },
+              _react2.default.createElement(
+                _FormInputContainer2.default,
+                null,
+                _react2.default.createElement(_PlacesInput2.default, {
+                  id: 'companyAddress',
+                  label: 'Company Address',
+                  placeholder: 'Your Company Address',
+                  handleSelect: function handleSelect(_ref4) {
+                    var label = _ref4.label,
+                        placeId = _ref4.placeId,
+                        lat = _ref4.lat,
+                        lng = _ref4.lng;
+                    return setFieldValue('companyAddress', {
+                      label: label, placeId: placeId, lat: lat, lng: lng
+                    });
+                  },
+                  value: values.companyAddress.label,
+                  handleBlur: handleBlur,
+                  errors: touched.companyAddress && errors.companyAddress && errors.companyAddress
                 })
               )
             ),

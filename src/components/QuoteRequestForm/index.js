@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
-import { object, string, email } from 'yup';
+import { object, string, number } from 'yup';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { setLocale } from 'yup/lib/customLocale';
 
@@ -10,6 +10,7 @@ import Button from '../Button';
 import FormActionContainer from '../FormActionContainer';
 import TextInput from '../TextInput';
 import TextArea from '../TextArea';
+import PlacesInput from '../PlacesInput';
 
 
 setLocale({
@@ -30,6 +31,12 @@ function QuoteRequestForm({
     cellPhone: string().required(),
     email: string().required().email(),
     companyName: string().required().required(),
+    companyAddress: object().required().shape({
+      label: string().required(),
+      lat: number().required(),
+      lng: number().required(),
+      placeId: string().required(),
+    }),
   });
 
   return (
@@ -40,7 +47,12 @@ function QuoteRequestForm({
           cellPhone: '',
           email: '',
           companyName: '',
-          companyAddress: '',
+          companyAddress: {
+            label: '',
+            lat: '',
+            lng: '',
+            placeId: '',
+          },
           comment: '',
         }}
       validationSchema={validationSchema}
@@ -48,7 +60,7 @@ function QuoteRequestForm({
           values,
           { setSubmitting, setErrors },
         ) => {
-            submit(values)
+            submit(values);
         }}
       render={({
           values,
@@ -59,6 +71,7 @@ function QuoteRequestForm({
           handleSubmit,
           isSubmitting,
           isValid,
+          setFieldValue,
         }) => (
           <Grid>
             <form onSubmit={handleSubmit}>
@@ -125,6 +138,23 @@ function QuoteRequestForm({
                       value={values.companyName}
                       handleBlur={handleBlur}
                       errors={(touched.companyName && errors.companyName) && errors.companyName}
+                    />
+                  </FormInputContainer>
+                </Col>
+                <Col md={12} lg={6}>
+                  <FormInputContainer>
+                    <PlacesInput
+                      id="companyAddress"
+                      label="Company Address"
+                      placeholder="Your Company Address"
+                      handleSelect={({
+                        label, placeId, lat, lng,
+                      }) => setFieldValue('companyAddress', {
+                        label, placeId, lat, lng,
+                      })}
+                      value={values.companyAddress.label}
+                      handleBlur={handleBlur}
+                      errors={(touched.companyAddress && errors.companyAddress) && errors.companyAddress}
                     />
                   </FormInputContainer>
                 </Col>

@@ -67,7 +67,13 @@ function TextArea({
   id,
   tabIndex,
 }) {
-  const hasError = errors.length > 0;
+  let errorArray = [];
+  if (typeof errors === 'string') {
+    errorArray = errorArray.concat(errors);
+  } else {
+    errorArray = errors;
+  }
+  const hasError = errorArray.length > 0;
   const labelColor = hasError ? 'red' : 'grey';
   const labelShade = hasError ? '0' : '1';
   return (
@@ -92,7 +98,7 @@ function TextArea({
       />
       { hasError &&
         <InputErrorsContainer>
-          <InputErrors errors={errors} />
+          <InputErrors errors={errorArray} />
         </InputErrorsContainer>
         }
     </div>
@@ -106,7 +112,10 @@ TextArea.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleFocus: PropTypes.func,
   handleBlur: PropTypes.func,
-  errors: PropTypes.arrayOf(PropTypes.string),
+  errors: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.string,
+  ]),
   label: PropTypes.string,
   id: PropTypes.string.isRequired,
   tabIndex: PropTypes.string,

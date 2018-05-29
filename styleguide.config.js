@@ -2,6 +2,11 @@ module.exports = {
   components: 'src/components/[A-Z]*/**/*.js',
   template: {
     head: {
+      scripts: [
+        {
+          src: 'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCvHK8yZ11dL4nZ5QtXw97m_Ji9TEqlbkY&libraries=geometry,drawing,places',
+        },
+      ],
       links: [
         {
           rel: 'stylesheet',
