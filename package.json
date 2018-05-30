@@ -59,6 +59,7 @@
     "krated-theme": "^0.0.4",
     "libphonenumber-js": "^1.2.12",
     "prop-types": "^15.6.1",
+    "react-animations": "^1.0.0",
     "react-flexbox-grid": "^2.1.0",
     "react-geosuggest": "^2.7.0",
     "react-ink": "^6.2.0",
