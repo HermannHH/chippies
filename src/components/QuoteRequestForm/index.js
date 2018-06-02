@@ -77,7 +77,7 @@ function QuoteRequestForm({
             <form onSubmit={handleSubmit}>
               <Row>
                 <Col md={12} lg={6}>
-                  <FormInputContainer>
+                  <FormInputContainer position="left">
                     <TextInput
                       id="firstName"
                       label="First Name"
@@ -90,7 +90,7 @@ function QuoteRequestForm({
                   </FormInputContainer>
                 </Col>
                 <Col md={12} lg={6}>
-                  <FormInputContainer>
+                  <FormInputContainer position="right">
                     <TextInput
                       id="lastName"
                       label="Last Name"
@@ -103,7 +103,7 @@ function QuoteRequestForm({
                   </FormInputContainer>
                 </Col>
                 <Col md={12} lg={6}>
-                  <FormInputContainer>
+                  <FormInputContainer position="left">
                     <TextInput
                       id="cellPhone"
                       label="Cellphone"
@@ -117,7 +117,7 @@ function QuoteRequestForm({
                   </FormInputContainer>
                 </Col>
                 <Col md={12} lg={6}>
-                  <FormInputContainer>
+                  <FormInputContainer position="right">
                     <TextInput
                       id="email"
                       label="Email Address"
@@ -130,7 +130,7 @@ function QuoteRequestForm({
                   </FormInputContainer>
                 </Col>
                 <Col md={12} lg={6}>
-                  <FormInputContainer>
+                  <FormInputContainer position="left">
                     <TextInput
                       id="companyName"
                       label="Company Name"
@@ -143,7 +143,7 @@ function QuoteRequestForm({
                   </FormInputContainer>
                 </Col>
                 <Col md={12} lg={6}>
-                  <FormInputContainer>
+                  <FormInputContainer position="right">
                     <PlacesInput
                       id="companyAddress"
                       label="Company Address"
