@@ -118,7 +118,7 @@ function QuoteRequestForm(_ref) {
               { md: 12, lg: 6 },
               _react2.default.createElement(
                 _FormInputContainer2.default,
-                null,
+                { position: 'left' },
                 _react2.default.createElement(_TextInput2.default, {
                   id: 'firstName',
                   label: 'First Name',
@@ -135,7 +135,7 @@ function QuoteRequestForm(_ref) {
               { md: 12, lg: 6 },
               _react2.default.createElement(
                 _FormInputContainer2.default,
-                null,
+                { position: 'right' },
                 _react2.default.createElement(_TextInput2.default, {
                   id: 'lastName',
                   label: 'Last Name',
@@ -152,7 +152,7 @@ function QuoteRequestForm(_ref) {
               { md: 12, lg: 6 },
               _react2.default.createElement(
                 _FormInputContainer2.default,
-                null,
+                { position: 'left' },
                 _react2.default.createElement(_TextInput2.default, {
                   id: 'cellPhone',
                   label: 'Cellphone',
@@ -170,7 +170,7 @@ function QuoteRequestForm(_ref) {
               { md: 12, lg: 6 },
               _react2.default.createElement(
                 _FormInputContainer2.default,
-                null,
+                { position: 'right' },
                 _react2.default.createElement(_TextInput2.default, {
                   id: 'email',
                   label: 'Email Address',
@@ -187,7 +187,7 @@ function QuoteRequestForm(_ref) {
               { md: 12, lg: 6 },
               _react2.default.createElement(
                 _FormInputContainer2.default,
-                null,
+                { position: 'left' },
                 _react2.default.createElement(_TextInput2.default, {
                   id: 'companyName',
                   label: 'Company Name',
@@ -204,7 +204,7 @@ function QuoteRequestForm(_ref) {
               { md: 12, lg: 6 },
               _react2.default.createElement(
                 _FormInputContainer2.default,
-                null,
+                { position: 'right' },
                 _react2.default.createElement(_PlacesInput2.default, {
                   id: 'companyAddress',
                   label: 'Company Address',

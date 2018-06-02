@@ -23,17 +23,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 
 function FormInputContainer(_ref) {
-  var children = _ref.children;
+  var children = _ref.children,
+      position = _ref.position;
 
   return _react2.default.createElement(
     _Mrg2.default,
-    { vertical: { xs: 3 } },
+    { vertical: { xs: 3 }, left: position === 'right' && { lg: 2 }, right: position === 'left' && { lg: 2 } },
     children
   );
 }
 
 FormInputContainer.propTypes = {
-  children: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.arrayOf(_propTypes2.default.element)]).isRequired
+  children: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.arrayOf(_propTypes2.default.element)]).isRequired,
+  position: _propTypes2.default.oneOf(['left', 'right'])
+};
+
+FormInputContainer.defaultProps = {
+  position: undefined
 };
 
 exports.default = FormInputContainer;
