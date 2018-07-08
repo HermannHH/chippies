@@ -6,6 +6,7 @@ const ImageTag = styled.img`
   ${props => `
     width: ${props.width ? `${props.width}px` : 'auto'};
     height: ${props.height ? `${props.height}px` : 'auto'};
+    box-sizing: border-box;
   `};
 `;
 

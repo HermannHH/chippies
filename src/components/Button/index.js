@@ -51,6 +51,7 @@ function Button({
   shade,
   whiteText,
   upcase,
+  large,
 }) {
   let labelColor = 'blue';
   let labelShade = '0';
@@ -73,7 +74,7 @@ function Button({
       shade={shade}
       upcase={upcase}
     >
-      <Pad vertical={{ xs: 2 }} horizontal={{ xs: 4 }}>
+      <Pad vertical={large ? { xs: 2 } : { xs: 1 }} horizontal={large ? { xs: 4 } : { xs: 2 }}>
         {!disabled &&
           <Ink />
         }
@@ -100,6 +101,7 @@ Button.propTypes = {
   color: PropTypes.string,
   shade: PropTypes.string,
   whiteText: PropTypes.bool,
+  large: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -115,6 +117,7 @@ Button.defaultProps = {
   shade: '0',
   whiteText: false,
   upcase: true,
+  large: false,
 };
 
 export default Button;

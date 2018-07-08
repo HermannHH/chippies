@@ -10,6 +10,7 @@ const Block = styled.div`
     height: ${props.height};
     background-color: ${props.theme.colors[props.color][props.shade]};
     display: block;
+    box-sizing: border-box;
   `};
 `;
 

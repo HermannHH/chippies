@@ -21,17 +21,17 @@ const AnchorTag = styled.a`
   text-rendering: optimizeLegibility;
   font-smoothing: antialiased;
   ${props => `
-    color: ${props.theme.colors.blue['0']};
+    color: ${props.theme.colors[props.color]['0']};
     font-weight: ${props.theme.font.weight.standard};
     font-family: ${props.theme.font.family};
 
     &:hover {
       cursor: pointer;
-      color: ${props.theme.colors.grey['2']};
+      color: ${props.theme.colors[props.hoverColor][props.hoverShade]};
       > div {
         > svg {
           > path {
-            fill: ${props.theme.colors.grey['2']};
+            fill: ${props.theme.colors[props.hoverColor][props.hoverShade]};
           }
         };
       };
@@ -46,15 +46,34 @@ const IconContainer = styled.div`
 `;
 
 
-function Hyperlink({ theme, text, href, handleClick, icon, iconPosition, buttonPad }) {
+function Hyperlink({
+  theme,
+  text,
+  href,
+  handleClick,
+  icon,
+  iconPosition,
+  buttonPad,
+  color,
+  hoverColor,
+  hoverShade,
+}) {
   const anchor = (
-    <AnchorTag onClick={handleClick} href={href} theme={theme} buttonPad={buttonPad}>
+    <AnchorTag
+      onClick={handleClick}
+      href={href}
+      theme={theme}
+      buttonPad={buttonPad}
+      color={color}
+      hoverColor={hoverColor}
+      hoverShade={hoverShade}
+    >
       {icon && iconPosition === 'left' &&
         <IconContainer iconPosition={iconPosition}>
           <Icon
             icon={icon}
             size="sm"
-            color="blue"
+            color={color}
           />
         </IconContainer>
       }
@@ -64,7 +83,7 @@ function Hyperlink({ theme, text, href, handleClick, icon, iconPosition, buttonP
           <Icon
             icon={icon}
             size="sm"
-            color="blue"
+            color={color}
           />
         </IconContainer>
       }
@@ -90,6 +109,9 @@ Hyperlink.propTypes = {
   icon: PropTypes.string,
   iconPosition: PropTypes.oneOf(['left', 'right']),
   buttonPad: PropTypes.bool,
+  color: PropTypes.oneOf(['blue', 'grey']),
+  hoverColor: PropTypes.oneOf(['blue', 'grey', 'red']),
+  hoverShade: PropTypes.string,
 };
 
 Hyperlink.defaultProps = {
@@ -99,6 +121,9 @@ Hyperlink.defaultProps = {
   icon: undefined,
   iconPosition: 'left',
   buttonPad: false,
+  color: 'blue',
+  hoverColor: 'grey',
+  hoverShade: '2',
 };
 
 export default Hyperlink;
