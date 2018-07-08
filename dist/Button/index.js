@@ -59,7 +59,8 @@ function Button(_ref) {
       color = _ref.color,
       shade = _ref.shade,
       whiteText = _ref.whiteText,
-      upcase = _ref.upcase;
+      upcase = _ref.upcase,
+      large = _ref.large;
 
   var labelColor = 'blue';
   var labelShade = '0';
@@ -85,7 +86,7 @@ function Button(_ref) {
     },
     _react2.default.createElement(
       _Pad2.default,
-      { vertical: { xs: 2 }, horizontal: { xs: 4 } },
+      { vertical: large ? { xs: 2 } : { xs: 1 }, horizontal: large ? { xs: 4 } : { xs: 2 } },
       !disabled && _react2.default.createElement(_reactInk2.default, null),
       _react2.default.createElement(_Label2.default, { text: isLoading ? loadingText : text, color: labelColor, shade: labelShade })
     )
@@ -107,7 +108,8 @@ Button.propTypes = {
   raised: _propTypes2.default.bool,
   color: _propTypes2.default.string,
   shade: _propTypes2.default.string,
-  whiteText: _propTypes2.default.bool
+  whiteText: _propTypes2.default.bool,
+  large: _propTypes2.default.bool
 };
 
 Button.defaultProps = {
@@ -122,7 +124,8 @@ Button.defaultProps = {
   color: 'blue',
   shade: '0',
   whiteText: false,
-  upcase: true
+  upcase: true,
+  large: false
 };
 
 exports.default = Button;

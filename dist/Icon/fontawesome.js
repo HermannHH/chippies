@@ -6,13 +6,14 @@ Object.defineProperty(exports, "__esModule", {
 
 var _freeSolidSvgIcons = require('@fortawesome/free-solid-svg-icons');
 
-// import * as tt from '@fortawesome/fontawesome-svg-core';
-// import * as yy from '@fortawesome/free-regular-svg-icons';
-// import * as xx from '@fortawesome/free-solid-svg-icons';
-
-// console.log('tttt', tt, yy, xx)
+var _freeBrandsSvgIcons = require('@fortawesome/free-brands-svg-icons');
 
 exports.default = {
   faPlus: _freeSolidSvgIcons.faPlus,
-  faTimes: _freeSolidSvgIcons.faTimes
+  faTimes: _freeSolidSvgIcons.faTimes,
+  faFacebookSquare: _freeBrandsSvgIcons.faFacebookSquare,
+  faTwitter: _freeBrandsSvgIcons.faTwitter
 };
+// import {
+
+// } from '@fortawesome/free-regular-svg-icons';

@@ -51,7 +51,7 @@ var content = shevy.content,
 
 
 var AnchorTag = _styledComponents2.default.a(_templateObject, content.fontSize, content.lineHeight, function (props) {
-  return '\n    color: ' + props.theme.colors.blue['0'] + ';\n    font-weight: ' + props.theme.font.weight.standard + ';\n    font-family: ' + props.theme.font.family + ';\n\n    &:hover {\n      cursor: pointer;\n      color: ' + props.theme.colors.grey['2'] + ';\n      > div {\n        > svg {\n          > path {\n            fill: ' + props.theme.colors.grey['2'] + ';\n          }\n        };\n      };\n    };\n  ';
+  return '\n    color: ' + props.theme.colors[props.color]['0'] + ';\n    font-weight: ' + props.theme.font.weight.standard + ';\n    font-family: ' + props.theme.font.family + ';\n\n    &:hover {\n      cursor: pointer;\n      color: ' + props.theme.colors[props.hoverColor][props.hoverShade] + ';\n      > div {\n        > svg {\n          > path {\n            fill: ' + props.theme.colors[props.hoverColor][props.hoverShade] + ';\n          }\n        };\n      };\n    };\n  ';
 });
 
 var IconContainer = _styledComponents2.default.div(_templateObject2, function (props) {
@@ -67,18 +67,29 @@ function Hyperlink(_ref) {
       handleClick = _ref.handleClick,
       icon = _ref.icon,
       iconPosition = _ref.iconPosition,
-      buttonPad = _ref.buttonPad;
+      buttonPad = _ref.buttonPad,
+      color = _ref.color,
+      hoverColor = _ref.hoverColor,
+      hoverShade = _ref.hoverShade;
 
   var anchor = _react2.default.createElement(
     AnchorTag,
-    { onClick: handleClick, href: href, theme: theme, buttonPad: buttonPad },
+    {
+      onClick: handleClick,
+      href: href,
+      theme: theme,
+      buttonPad: buttonPad,
+      color: color,
+      hoverColor: hoverColor,
+      hoverShade: hoverShade
+    },
     icon && iconPosition === 'left' && _react2.default.createElement(
       IconContainer,
       { iconPosition: iconPosition },
       _react2.default.createElement(_Icon2.default, {
         icon: icon,
         size: 'sm',
-        color: 'blue'
+        color: color
       })
     ),
     text,
@@ -88,7 +99,7 @@ function Hyperlink(_ref) {
       _react2.default.createElement(_Icon2.default, {
         icon: icon,
         size: 'sm',
-        color: 'blue'
+        color: color
       })
     )
   );
@@ -106,14 +117,17 @@ function Hyperlink(_ref) {
 
 Hyperlink.propTypes = {
   theme: _propTypes2.default.shape(),
-  text: _propTypes2.default.string.isRequired,
+  text: _propTypes2.default.string,
   href: _propTypes2.default.string,
   handleClick: (0, _reactRequiredIf2.default)(_propTypes2.default.func, function (props) {
     return !props.href;
   }),
   icon: _propTypes2.default.string,
   iconPosition: _propTypes2.default.oneOf(['left', 'right']),
-  buttonPad: _propTypes2.default.bool
+  buttonPad: _propTypes2.default.bool,
+  color: _propTypes2.default.oneOf(['blue', 'grey']),
+  hoverColor: _propTypes2.default.oneOf(['blue', 'grey', 'red']),
+  hoverShade: _propTypes2.default.string
 };
 
 Hyperlink.defaultProps = {
@@ -122,7 +136,11 @@ Hyperlink.defaultProps = {
   handleClick: undefined,
   icon: undefined,
   iconPosition: 'left',
-  buttonPad: false
+  buttonPad: false,
+  color: 'blue',
+  hoverColor: 'grey',
+  hoverShade: '2',
+  text: undefined
 };
 
 exports.default = Hyperlink;

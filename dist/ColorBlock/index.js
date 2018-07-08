@@ -27,7 +27,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var Block = _styledComponents2.default.div(_templateObject, function (props) {
-  return '\n    width: ' + props.width + ';\n    height: ' + props.height + ';\n    background-color: ' + props.theme.colors[props.color][props.shade] + ';\n    display: block;\n  ';
+  return '\n    width: ' + props.width + ';\n    height: ' + props.height + ';\n    background-color: ' + props.theme.colors[props.color][props.shade] + ';\n    display: block;\n    box-sizing: border-box;\n  ';
 });
 
 function ColorBlock(_ref) {

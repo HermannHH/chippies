@@ -23,7 +23,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var ImageTag = _styledComponents2.default.img(_templateObject, function (props) {
-  return '\n    width: ' + (props.width ? props.width + 'px' : 'auto') + ';\n    height: ' + (props.height ? props.height + 'px' : 'auto') + ';\n  ';
+  return '\n    width: ' + (props.width ? props.width + 'px' : 'auto') + ';\n    height: ' + (props.height ? props.height + 'px' : 'auto') + ';\n    box-sizing: border-box;\n  ';
 });
 
 /**
