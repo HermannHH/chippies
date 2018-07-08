@@ -103,7 +103,7 @@ function Hyperlink({
 
 Hyperlink.propTypes = {
   theme: PropTypes.shape(),
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   href: PropTypes.string,
   handleClick: requiredIf(PropTypes.func, props => !props.href),
   icon: PropTypes.string,
@@ -124,6 +124,7 @@ Hyperlink.defaultProps = {
   color: 'blue',
   hoverColor: 'grey',
   hoverShade: '2',
+  text: undefined,
 };
 
 export default Hyperlink;

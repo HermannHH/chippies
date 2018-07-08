@@ -9,6 +9,10 @@
     core-js "^2.5.6"
     regenerator-runtime "^0.11.1"
 
+"@fortawesome/fontawesome-common-types@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.0.tgz#6bcf6481030f59e7ffd1a40a67cd464d47780f6a"
+
 "@fortawesome/fontawesome-common-types@^0.2.0-8":
   version "0.2.0-8"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.0-8.tgz#50bbcc3d585f2d4423e5269821b6ce6fcca00033"
@@ -18,6 +22,12 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.0-13.tgz#d772f99de6ae3d59b22861abf5188f02161b30c9"
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.0-8"
+
+"@fortawesome/free-brands-svg-icons@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.1.0.tgz#f8a449943784cb59e0400b88cd4f33c81a281328"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.0"
 
 "@fortawesome/free-regular-svg-icons@^5.1.0-10":
   version "5.1.0-10"
@@ -5072,9 +5082,9 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-krated-theme@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/krated-theme/-/krated-theme-0.0.4.tgz#51c39e17e6fa0953e9b1b125397ec16afd96db65"
+krated-theme@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/krated-theme/-/krated-theme-0.0.6.tgz#9a16b0d097d226de035ae83a105cb347627e57c5"
 
 lazy-cache@^1.0.3:
   version "1.0.4"

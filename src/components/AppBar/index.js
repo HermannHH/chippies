@@ -6,8 +6,6 @@ import kratedTheme from 'krated-theme';
 import ColorBlock from '../ColorBlock';
 import BrandedMixedLogo from '../BrandedMixedLogo';
 import Pad from '../Pad';
-import Hyperlink from '../Hyperlink';
-import Button from '../Button';
 
 const InnerWrapper = styled.div`
   width: 100%;
@@ -16,7 +14,7 @@ const InnerWrapper = styled.div`
   box-sizing: border-box;
   ${props => `
     box-shadow: ${props.shadowDropIn && props.theme.box.shadow.shallow};
-    height: 90px;
+    height: ${props.theme.appBar.megaHeight}px;
   `};
 `;
 
@@ -31,44 +29,26 @@ const LogoWrapper = styled.div`
 
 const LinksWrapper = styled.div`
   display: inline-block;
-  height: 90px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
   width: 100%;
   justify-content: flex-end;
+  ${props => `
+    height: ${props.theme.appBar.megaHeight}px;
+  `};
 `;
 
 function AppBar({
-  theme, type, shadowDropIn, navItems,
+  theme,
+  type,
+  shadowDropIn,
+  navItems,
 }) {
-  // const linkItems = links.map((x) => {
-  //   if (x.type === 'link') {
-  //     return (
-  //       <Pad horizontal={{ xs: 3 }} key={x.id}>
-  //         <Hyperlink text={x.body} handleClick={() => alert('Hello Hyperlink')} />
-  //       </Pad>
-  //     );
-  //   } else if (x.type === 'button') {
-  //     return (
-  //       <Pad horizontal={{ xs: 3 }} key={x.id}>
-  //         <Button
-  //           text={x.body}
-  //           handleClick={() => alert('handleClick')}
-  //           raised
-  //           whiteText
-  //           small
-  //           color="red"
-  //         />
-  //       </Pad>
-  //     );
-  //   }
-  // });
-
   return (
     <ColorBlock
       width="100%"
-      height={`90px`}
+      height={`${theme.appBar.megaHeight}px`}
       color={type}
       shade="0"
     >
@@ -81,7 +61,9 @@ function AppBar({
             <BrandedMixedLogo />
           </Pad>
         </LogoWrapper>
-        <LinksWrapper>
+        <LinksWrapper
+          theme={theme}
+        >
           {navItems.map((x, i) => (
             <Pad horizontal={{ xs: 3 }} key={i}>
               {x}

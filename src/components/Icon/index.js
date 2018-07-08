@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Shevy from 'shevyjs';
+// import styled from 'styled-components';
+// import Shevy from 'shevyjs';
 import kratedTheme from 'krated-theme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import fa from './fontawesome';
 
 
-import { shevyConfig } from '../helpers';
+// import { shevyConfig } from '../helpers';
 
-const shevy = new Shevy(shevyConfig);
-const {
-  content,
-} = shevy;
+// const shevy = new Shevy(shevyConfig);
+// const {
+//   content,
+// } = shevy;
 
 
 function Icon({
@@ -32,6 +32,8 @@ Icon.propTypes = {
   icon: PropTypes.oneOf([
     'faPlus',
     'faTimes',
+    'faFacebookSquare',
+    'faTwitter',
   ]).isRequired,
   color: PropTypes.string,
   shade: PropTypes.string,
