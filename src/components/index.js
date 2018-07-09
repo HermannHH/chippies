@@ -64,6 +64,7 @@ import TextSection from './TextSection';
 import Toggle from './Toggle';
 import VerticalMiddle from './VerticalMiddle';
 import Well from './Well';
+import viewPort from './viewPort';
 
 export {
   AcceptQuote,
@@ -132,4 +133,5 @@ export {
   Toggle,
   VerticalMiddle,
   Well,
+  viewPort,
 };

@@ -12,10 +12,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _styledComponents = require('styled-components');
-
-var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
 var _ImageBlock = require('../ImageBlock');
 
 var _ImageBlock2 = _interopRequireDefault(_ImageBlock);
@@ -25,6 +21,8 @@ var _BrandedMixedLogo = require('../BrandedMixedLogo');
 var _BrandedMixedLogo2 = _interopRequireDefault(_BrandedMixedLogo);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import styled from 'styled-components';
 
 function BrandHeader(_ref) {
   var size = _ref.size,

@@ -12,10 +12,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _styledComponents = require('styled-components');
-
-var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
 var _specialPoweredByKrated = require('./special-powered-by-krated-3.png');
 
 var _specialPoweredByKrated2 = _interopRequireDefault(_specialPoweredByKrated);
@@ -25,6 +21,8 @@ var _Image = require('../Image');
 var _Image2 = _interopRequireDefault(_Image);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import styled from 'styled-components';
 
 function PoweredByKrated(_ref) {
   var size = _ref.size;

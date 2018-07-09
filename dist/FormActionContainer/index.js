@@ -12,10 +12,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _styledComponents = require('styled-components');
-
-var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
 var _Mrg = require('../Mrg');
 
 var _Mrg2 = _interopRequireDefault(_Mrg);
@@ -29,6 +25,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Wraps form items such as inputs
  */
+
+// import styled from 'styled-components';
 
 function FormActionContainer(_ref) {
   var actions = _ref.actions,
