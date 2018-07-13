@@ -24,6 +24,7 @@ const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   box-sizing: border-box;
+  cursor: pointer;
 `;
 
 
@@ -44,6 +45,7 @@ function AppBar({
   type,
   shadowDropIn,
   navItems,
+  handleLogoClick,
 }) {
   return (
     <ColorBlock
@@ -56,7 +58,7 @@ function AppBar({
         shadowDropIn={shadowDropIn}
         theme={theme}
       >
-        <LogoWrapper>
+        <LogoWrapper onClick={handleLogoClick}>
           <Pad horizontal={{ xs: 3 }}>
             <BrandedMixedLogo />
           </Pad>
@@ -80,6 +82,7 @@ AppBar.propTypes = {
   type: PropTypes.oneOf(['blue', 'white']),
   shadowDropIn: PropTypes.bool,
   navItems: PropTypes.arrayOf(PropTypes.element).isRequired,
+  handleLogoClick: PropTypes.func.isRequired,
 };
 AppBar.defaultProps = {
   theme: kratedTheme,

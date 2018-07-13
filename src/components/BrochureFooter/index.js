@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Shevy from 'shevyjs';
@@ -11,10 +12,19 @@ import Divider from '../Divider';
 import BrandedWhiteIcon from '../BrandedWhiteIcon';
 import Hyperlink from '../Hyperlink';
 import Small from '../Small';
-import Icon from '../Icon';
+// import Icon from '../Icon';
 
 const shevy = new Shevy(shevyConfig);
 const { baseSpacing: bs } = shevy;
+
+
+const propTypes = {
+  linkItems: PropTypes.arrayOf(PropTypes.element).isRequired,
+  facebookLink: PropTypes.string.isRequired,
+  twitterLink: PropTypes.string.isRequired,
+};
+
+const defaultProps = {};
 
 const LinksWrapper = styled.div`
   width: 100%;
@@ -42,7 +52,7 @@ const SocialLinkItemWrapper = styled.div`
   }
 `;
 
-function BrochureFooter() {
+function BrochureFooter({ linkItems, facebookLink, twitterLink }) {
   return (
     <ColorBlock
       width="100%"
@@ -69,36 +79,11 @@ function BrochureFooter() {
                 vertical={{ xs: 2 }}
               >
                 <LinksWrapper>
-                  <LinkItemWrapper>
-                    <Hyperlink
-                      text="Product"
-                      handleClick={()=>alert('Hello Hyperlink')}
-                      color="white"
-                      hoverColor="grey"
-                      hoverShade="0"
-                    />
-                  </LinkItemWrapper>
-                  <LinkItemWrapper>
-                    <Hyperlink
-                      text="Our Purpose"
-                      handleClick={()=>alert('Hello Hyperlink')}
-                      color="white"
-                    />
-                  </LinkItemWrapper>
-                  <LinkItemWrapper>
-                    <Hyperlink
-                      text="Pricing"
-                      handleClick={()=>alert('Hello Hyperlink')}
-                      color="white"
-                    />
-                  </LinkItemWrapper>
-                  <LinkItemWrapper>
-                    <Hyperlink
-                      text="Blog"
-                      handleClick={()=>alert('Hello Hyperlink')}
-                      color="white"
-                    />
-                  </LinkItemWrapper>
+                  {linkItems.map(x => (
+                    <LinkItemWrapper>
+                      {x}
+                    </LinkItemWrapper>
+                  ))}
                 </LinksWrapper>
               </Pad>
             </Col>
@@ -122,14 +107,14 @@ function BrochureFooter() {
                   <SocialLinkItemWrapper>
                     <Hyperlink
                       icon="faFacebookSquare"
-                      handleClick={()=>alert('Hello Hyperlink')}
+                      handleClick={()=> window.open(facebookLink, '_blank')}
                       color="white"
                     />
                   </SocialLinkItemWrapper>
                   <SocialLinkItemWrapper>
                     <Hyperlink
                       icon="faTwitter"
-                      handleClick={()=>alert('Hello Hyperlink')}
+                      handleClick={()=> window.open(twitterLink, '_blank')}
                       color="white"
                     />
                   </SocialLinkItemWrapper>
@@ -142,5 +127,9 @@ function BrochureFooter() {
     </ColorBlock>
   );
 }
+
+
+BrochureFooter.propTypes = propTypes;
+BrochureFooter.defaultProps = defaultProps;
 
 export default BrochureFooter;

@@ -36,5 +36,6 @@ AppBar default example:
 <AppBar 
   navItems={navItems}
   shadowDropIn
+  handleLogoClick={() => alert('handleClick')}
 />
 ```
