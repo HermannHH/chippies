@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.viewPort = exports.Well = exports.VerticalMiddle = exports.Toggle = exports.TextSection = exports.TextInput = exports.TextArea = exports.TextAlign = exports.Small = exports.SlideBar = exports.Scroller = exports.RejectQuote = exports.QuoteSlideBar = exports.QuoteRequestModal = exports.QuoteRequestForm = exports.QuoteOnboard = exports.PulsingBrandedWhiteIcon = exports.Pulse = exports.ProgressiveImage = exports.ProductCard = exports.PoweredByKrated = exports.PlacesInput = exports.Paragraph = exports.PaletteBlock = exports.Pad = exports.NumericSpin = exports.Mrg = exports.Modal = exports.LonelyIsland = exports.LoadingScreen = exports.LineItems = exports.Label = exports.InteractiveLineItem = exports.InspireMessageHeading = exports.InputErrors = exports.ImageBlock = exports.Image = exports.Icon = exports.Hyperlink = exports.helpers = exports.HeadingGroup = exports.Heading = exports.FormInputContainer = exports.FormActionContainer = exports.FlexPosition = exports.EscapeButton = exports.Divider = exports.Display = exports.ColorPalette = exports.ColorDescription = exports.ColorBlock = exports.CodeSnippet = exports.Checkbox = exports.CardTitle = exports.CardPad = exports.CardGrid = exports.CardCover = exports.CardActions = exports.Card = exports.Button = exports.BrochureFooter = exports.BrandHeader = exports.BrandedWhiteIcon = exports.BrandedMixedLogo = exports.Border = exports.AppBar = exports.AcceptQuote = undefined;
+exports.viewPort = exports.Well = exports.VerticalMiddle = exports.Toggle = exports.TextSection = exports.TextInput = exports.TextArea = exports.TextAlign = exports.Small = exports.SlideBar = exports.Scroller = exports.RejectQuote = exports.QuoteSlideBar = exports.QuoteRequestModal = exports.QuoteRequestForm = exports.QuoteOnboard = exports.PulsingBrandedWhiteIcon = exports.PlatformSummaryImage = exports.Pulse = exports.ProgressiveImage = exports.ProductCard = exports.PoweredByKrated = exports.PlacesInput = exports.Paragraph = exports.PaletteBlock = exports.Pad = exports.NumericSpin = exports.Mrg = exports.Modal = exports.LonelyIsland = exports.LoadingScreen = exports.LineItems = exports.Label = exports.InteractiveLineItem = exports.InspireMessageHeading = exports.InputErrors = exports.ImageBlock = exports.Image = exports.Icon = exports.Hyperlink = exports.helpers = exports.HeadingGroup = exports.Heading = exports.FormInputContainer = exports.FormActionContainer = exports.FlexPosition = exports.EscapeButton = exports.Divider = exports.Display = exports.ColorPalette = exports.ColorDescription = exports.ColorBlock = exports.CodeSnippet = exports.Checkbox = exports.CardTitle = exports.CardPad = exports.CardGrid = exports.CardCover = exports.CardActions = exports.Card = exports.Button = exports.BrochureFooter = exports.BrandHeader = exports.BrandedWhiteIcon = exports.BrandedMixedLogo = exports.Border = exports.AppBar = exports.AcceptQuote = undefined;
 
 var _AcceptQuote = require('./AcceptQuote');
 
@@ -205,6 +205,10 @@ var _Pulse = require('./Pulse');
 
 var _Pulse2 = _interopRequireDefault(_Pulse);
 
+var _PlatformSummaryImage = require('./PlatformSummaryImage');
+
+var _PlatformSummaryImage2 = _interopRequireDefault(_PlatformSummaryImage);
+
 var _PulsingBrandedWhiteIcon = require('./PulsingBrandedWhiteIcon');
 
 var _PulsingBrandedWhiteIcon2 = _interopRequireDefault(_PulsingBrandedWhiteIcon);
@@ -325,6 +329,7 @@ exports.PoweredByKrated = _PoweredByKrated2.default;
 exports.ProductCard = _ProductCard2.default;
 exports.ProgressiveImage = _ProgressiveImage2.default;
 exports.Pulse = _Pulse2.default;
+exports.PlatformSummaryImage = _PlatformSummaryImage2.default;
 exports.PulsingBrandedWhiteIcon = _PulsingBrandedWhiteIcon2.default;
 exports.QuoteOnboard = _QuoteOnboard2.default;
 exports.QuoteRequestForm = _QuoteRequestForm2.default;

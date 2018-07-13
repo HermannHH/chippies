@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactFlexboxGrid = require('react-flexbox-grid');
 
 var _styledComponents = require('styled-components');
@@ -48,17 +52,23 @@ var _Small = require('../Small');
 
 var _Small2 = _interopRequireDefault(_Small);
 
-var _Icon = require('../Icon');
-
-var _Icon2 = _interopRequireDefault(_Icon);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
+// import Icon from '../Icon';
+
 var shevy = new _shevyjs2.default(_helpers.shevyConfig);
 var bs = shevy.baseSpacing;
 
+
+var propTypes = {
+  linkItems: _propTypes2.default.arrayOf(_propTypes2.default.element).isRequired,
+  facebookLink: _propTypes2.default.string.isRequired,
+  twitterLink: _propTypes2.default.string.isRequired
+};
+
+var defaultProps = {};
 
 var LinksWrapper = _styledComponents2.default.div(_templateObject);
 
@@ -66,7 +76,11 @@ var LinkItemWrapper = _styledComponents2.default.div(_templateObject2, bs(0.5));
 
 var SocialLinkItemWrapper = _styledComponents2.default.div(_templateObject3, bs(0.2));
 
-function BrochureFooter() {
+function BrochureFooter(_ref) {
+  var linkItems = _ref.linkItems,
+      facebookLink = _ref.facebookLink,
+      twitterLink = _ref.twitterLink;
+
   return _react2.default.createElement(
     _ColorBlock2.default,
     {
@@ -110,52 +124,13 @@ function BrochureFooter() {
               _react2.default.createElement(
                 LinksWrapper,
                 null,
-                _react2.default.createElement(
-                  LinkItemWrapper,
-                  null,
-                  _react2.default.createElement(_Hyperlink2.default, {
-                    text: 'Product',
-                    handleClick: function handleClick() {
-                      return alert('Hello Hyperlink');
-                    },
-                    color: 'white',
-                    hoverColor: 'grey',
-                    hoverShade: '0'
-                  })
-                ),
-                _react2.default.createElement(
-                  LinkItemWrapper,
-                  null,
-                  _react2.default.createElement(_Hyperlink2.default, {
-                    text: 'Our Purpose',
-                    handleClick: function handleClick() {
-                      return alert('Hello Hyperlink');
-                    },
-                    color: 'white'
-                  })
-                ),
-                _react2.default.createElement(
-                  LinkItemWrapper,
-                  null,
-                  _react2.default.createElement(_Hyperlink2.default, {
-                    text: 'Pricing',
-                    handleClick: function handleClick() {
-                      return alert('Hello Hyperlink');
-                    },
-                    color: 'white'
-                  })
-                ),
-                _react2.default.createElement(
-                  LinkItemWrapper,
-                  null,
-                  _react2.default.createElement(_Hyperlink2.default, {
-                    text: 'Blog',
-                    handleClick: function handleClick() {
-                      return alert('Hello Hyperlink');
-                    },
-                    color: 'white'
-                  })
-                )
+                linkItems.map(function (x) {
+                  return _react2.default.createElement(
+                    LinkItemWrapper,
+                    null,
+                    x
+                  );
+                })
               )
             )
           )
@@ -198,7 +173,7 @@ function BrochureFooter() {
                   _react2.default.createElement(_Hyperlink2.default, {
                     icon: 'faFacebookSquare',
                     handleClick: function handleClick() {
-                      return alert('Hello Hyperlink');
+                      return window.open(facebookLink, '_blank');
                     },
                     color: 'white'
                   })
@@ -209,7 +184,7 @@ function BrochureFooter() {
                   _react2.default.createElement(_Hyperlink2.default, {
                     icon: 'faTwitter',
                     handleClick: function handleClick() {
-                      return alert('Hello Hyperlink');
+                      return window.open(twitterLink, '_blank');
                     },
                     color: 'white'
                   })
@@ -222,5 +197,8 @@ function BrochureFooter() {
     )
   );
 }
+
+BrochureFooter.propTypes = propTypes;
+BrochureFooter.defaultProps = defaultProps;
 
 exports.default = BrochureFooter;

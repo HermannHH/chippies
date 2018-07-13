@@ -48,6 +48,7 @@ import PoweredByKrated from './PoweredByKrated';
 import ProductCard from './ProductCard';
 import ProgressiveImage from './ProgressiveImage';
 import Pulse from './Pulse';
+import PlatformSummaryImage from './PlatformSummaryImage';
 import PulsingBrandedWhiteIcon from './PulsingBrandedWhiteIcon';
 import QuoteOnboard from './QuoteOnboard';
 import QuoteRequestForm from './QuoteRequestForm';
@@ -117,6 +118,7 @@ export {
   ProductCard,
   ProgressiveImage,
   Pulse,
+  PlatformSummaryImage,
   PulsingBrandedWhiteIcon,
   QuoteOnboard,
   QuoteRequestForm,

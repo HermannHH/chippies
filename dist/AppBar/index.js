@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n  ', ';\n'], ['\n  width: 100%;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n  ', ';\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  display: inline-block;\n  padding-top: 5px;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n'], ['\n  display: inline-block;\n  padding-top: 5px;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  display: inline-block;\n  padding-top: 5px;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n  cursor: pointer;\n'], ['\n  display: inline-block;\n  padding-top: 5px;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n  cursor: pointer;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  display: inline-block;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n  width: 100%;\n  justify-content: flex-end;\n  ', ';\n'], ['\n  display: inline-block;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n  width: 100%;\n  justify-content: flex-end;\n  ', ';\n']);
 
 var _react = require('react');
@@ -54,7 +54,8 @@ function AppBar(_ref) {
   var theme = _ref.theme,
       type = _ref.type,
       shadowDropIn = _ref.shadowDropIn,
-      navItems = _ref.navItems;
+      navItems = _ref.navItems,
+      handleLogoClick = _ref.handleLogoClick;
 
   return _react2.default.createElement(
     _ColorBlock2.default,
@@ -72,7 +73,7 @@ function AppBar(_ref) {
       },
       _react2.default.createElement(
         LogoWrapper,
-        null,
+        { onClick: handleLogoClick },
         _react2.default.createElement(
           _Pad2.default,
           { horizontal: { xs: 3 } },
@@ -100,7 +101,8 @@ AppBar.propTypes = {
   theme: _propTypes2.default.shape(),
   type: _propTypes2.default.oneOf(['blue', 'white']),
   shadowDropIn: _propTypes2.default.bool,
-  navItems: _propTypes2.default.arrayOf(_propTypes2.default.element).isRequired
+  navItems: _propTypes2.default.arrayOf(_propTypes2.default.element).isRequired,
+  handleLogoClick: _propTypes2.default.func.isRequired
 };
 AppBar.defaultProps = {
   theme: _kratedTheme2.default,
