@@ -32,7 +32,9 @@ function AcceptQuote({
 }) {
   return (
     <div>
-      <BrandHeader size="2" />
+      <BrandHeader
+        size="2"
+      />
       <Pad horizontal={{ xs: 3, md: 5 }}>
         <HeadingGroup mainText="Accept quotation" subText={`Below is a summary of quotation #${referenceNumber}`} />
         <Mrg vertical={{ xs: 5 }}>

@@ -63,6 +63,7 @@
     "react-animations": "^1.0.0",
     "react-copy-to-clipboard": "^5.0.1",
     "react-flexbox-grid": "^2.1.0",
+    "react-flexview": "^4.0.1",
     "react-geosuggest": "^2.7.0",
     "react-ink": "^6.2.0",
     "react-placeholder": "^3.0.0",

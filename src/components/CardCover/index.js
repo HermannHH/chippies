@@ -17,7 +17,7 @@ function CardCover({ src }) {
       />
     </CardCoverWrapper>
   );
-};
+}
 
 CardCover.propTypes = {
   src: PropTypes.string.isRequired,

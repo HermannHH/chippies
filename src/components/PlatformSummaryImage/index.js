@@ -6,18 +6,13 @@ import Src from './platform-summary.png';
 
 import Image from '../Image';
 
-
-function PlatformSummaryImage({
-  size,
-}) {
+function PlatformSummaryImage({ size }) {
   const widths = {
     1: 300,
     2: 200,
     3: 150,
   };
-  return (
-    <Image src={Src} width="100%" />
-  );
+  return <Image src={Src} width="100%" />;
 }
 
 PlatformSummaryImage.propTypes = {
