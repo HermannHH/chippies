@@ -66,8 +66,10 @@ import Toggle from './Toggle';
 import VerticalMiddle from './VerticalMiddle';
 import Well from './Well';
 import viewPort from './viewPort';
+import FeatureSummaryCard from './FeatureSummaryCard';
 
 export {
+  FeatureSummaryCard,
   AcceptQuote,
   AppBar,
   Border,
