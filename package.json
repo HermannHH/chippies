@@ -1,6 +1,6 @@
 {
   "name": "chippies",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "description": "UI Component library created & maintained by Krated PTY LTD",
   "main": "dist/index.js",
   "scripts": {
