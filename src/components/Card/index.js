@@ -16,23 +16,17 @@ const CardWrapper = styled.div`
   overflow: hidden;
 `;
 
-function Card({
-  handleClick,
-  children,
-  theme,
-}) {
+function Card({ handleClick, children, theme }) {
   return (
     <CardWrapper theme={theme} onClick={handleClick}>
       {children}
     </CardWrapper>
   );
-};
+}
 
 Card.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)])
+    .isRequired,
   handleClick: PropTypes.func,
   theme: PropTypes.shape(),
 };
@@ -40,6 +34,6 @@ Card.propTypes = {
 Card.defaultProps = {
   theme: kratedTheme,
   handleClick: undefined,
-}
+};
 
 export default Card;

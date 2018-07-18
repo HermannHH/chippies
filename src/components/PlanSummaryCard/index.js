@@ -9,7 +9,6 @@ import Divider from '../Divider';
 import HeadingGroup from '../HeadingGroup';
 import Paragraph from '../Paragraph';
 import Button from '../Button';
-import ProgressiveImage from '../ProgressiveImage';
 
 const propTypes = {
   name: PropTypes.string.isRequired,
@@ -18,6 +17,7 @@ const propTypes = {
   explainer: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
   buttonAction: PropTypes.func.isRequired,
+  image: PropTypes.element.isRequired,
 };
 const defaultProps = {};
 
@@ -35,18 +35,22 @@ const ImageWrapper = styled.div`
 `;
 
 function PlanSummaryCard({
-  name, amount, entityVsTerm, explainer, buttonText, buttonAction,
+  image,
+  name,
+  amount,
+  entityVsTerm,
+  explainer,
+  buttonText,
+  buttonAction,
 }) {
   return (
     <Card>
       <CardPad>
         <CardInnerWrapper>
-          <ImageWrapper>
-            <ProgressiveImage src="https://picsum.photos/200/300/?random" rounded/>
-          </ImageWrapper>
-          <Heading text={name} size="3" />
+          <ImageWrapper>{image}</ImageWrapper>
+          <Heading text={name} size="4" />
           <Divider />
-          <HeadingGroup mainText={amount} subText={entityVsTerm} size="3" />
+          <HeadingGroup mainText={amount} subText={entityVsTerm} size="4" />
           <Paragraph>{explainer}</Paragraph>
           <Button text={buttonText} handleClick={buttonAction} raised whiteText color="red" />
         </CardInnerWrapper>

@@ -40,7 +40,7 @@ function Card(_ref) {
     { theme: theme, onClick: handleClick },
     children
   );
-};
+}
 
 Card.propTypes = {
   children: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.arrayOf(_propTypes2.default.element)]).isRequired,

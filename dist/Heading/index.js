@@ -132,7 +132,7 @@ Heading.defaultProps = {
   theme: _kratedTheme2.default,
   size: '1',
   color: 'black',
-  shade: -1,
+  shade: '0',
   withMargin: true
 };
 

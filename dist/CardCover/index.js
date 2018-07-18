@@ -39,7 +39,7 @@ function CardCover(_ref) {
       src: src
     })
   );
-};
+}
 
 CardCover.propTypes = {
   src: _propTypes2.default.string.isRequired

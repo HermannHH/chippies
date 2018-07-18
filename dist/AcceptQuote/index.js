@@ -82,7 +82,9 @@ function AcceptQuote(_ref) {
   return _react2.default.createElement(
     'div',
     null,
-    _react2.default.createElement(_BrandHeader2.default, { size: '2' }),
+    _react2.default.createElement(_BrandHeader2.default, {
+      size: '2'
+    }),
     _react2.default.createElement(
       _Pad2.default,
       { horizontal: { xs: 3, md: 5 } },

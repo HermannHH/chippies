@@ -1,0 +1,5 @@
+PricingTable example:
+
+```js
+<PricingTable />
+```

@@ -30,7 +30,8 @@ function PaletteBlock(_ref) {
   var color = _ref.color,
       hex = _ref.hex,
       inverse = _ref.inverse,
-      shade = _ref.shade;
+      shade = _ref.shade,
+      name = _ref.name;
 
   return _react2.default.createElement(
     _ColorBlock2.default,
@@ -38,13 +39,14 @@ function PaletteBlock(_ref) {
     _react2.default.createElement(
       _Pad2.default,
       { all: { xs: 1 }, top: { xs: 3 } },
-      _react2.default.createElement(_ColorDescription2.default, { name: color, hex: hex, color: color, inverse: inverse })
+      _react2.default.createElement(_ColorDescription2.default, { name: name, hex: hex, color: color, inverse: inverse })
     )
   );
 }
 
 PaletteBlock.propTypes = {
   hex: _propTypes2.default.string.isRequired,
+  name: _propTypes2.default.string.isRequired,
   color: _propTypes2.default.string.isRequired,
   shade: _propTypes2.default.string.isRequired,
   inverse: _propTypes2.default.bool
