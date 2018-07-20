@@ -421,23 +421,6 @@
         "trackDir": "src/components/viewPort",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/hyperlink@1.0.0": {
-        "files": [
-            {
-                "relativePath": "src/components/Hyperlink/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/Hyperlink/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/Hyperlink/index.js",
-        "trackDir": "src/components/Hyperlink",
-        "origin": "AUTHORED"
-    },
     "hermannhh.chippies/components/brand-header@1.0.0": {
         "files": [
             {
@@ -470,28 +453,6 @@
         ],
         "mainFile": "src/components/QuoteOnboard/index.js",
         "trackDir": "src/components/QuoteOnboard",
-        "origin": "AUTHORED"
-    },
-    "hermannhh.chippies/components/icon@1.0.0": {
-        "files": [
-            {
-                "relativePath": "src/components/Icon/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/Icon/fontawesome.js",
-                "test": false,
-                "name": "fontawesome.js"
-            },
-            {
-                "relativePath": "src/components/Icon/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/Icon/index.js",
-        "trackDir": "src/components/Icon",
         "origin": "AUTHORED"
     },
     "hermannhh.chippies/components/label@1.0.0": {
@@ -735,23 +696,6 @@
         ],
         "mainFile": "src/components/CardGrid/index.js",
         "trackDir": "src/components/CardGrid",
-        "origin": "AUTHORED"
-    },
-    "hermannhh.chippies/components/escape-button@1.0.0": {
-        "files": [
-            {
-                "relativePath": "src/components/EscapeButton/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/EscapeButton/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/EscapeButton/index.js",
-        "trackDir": "src/components/EscapeButton",
         "origin": "AUTHORED"
     },
     "hermannhh.chippies/components/small@1.0.0": {
@@ -1024,23 +968,6 @@
         "trackDir": "src/components/PlacesInput",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/feature-table@1.0.0": {
-        "files": [
-            {
-                "relativePath": "src/components/FeatureTable/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/FeatureTable/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/FeatureTable/index.js",
-        "trackDir": "src/components/FeatureTable",
-        "origin": "AUTHORED"
-    },
     "hermannhh.chippies/components/branded-mixed-logo@1.0.0": {
         "files": [
             {
@@ -1287,6 +1214,79 @@
         ],
         "mainFile": "src/components/FeatureSummaryCard/index.js",
         "trackDir": "src/components/FeatureSummaryCard",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/icon@1.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/Icon/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/Icon/fontawesome.js",
+                "test": false,
+                "name": "fontawesome.js"
+            },
+            {
+                "relativePath": "src/components/Icon/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/Icon/index.js",
+        "trackDir": "src/components/Icon",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/feature-table@1.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/FeatureTable/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/FeatureTable/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/FeatureTable/index.js",
+        "trackDir": "src/components/FeatureTable",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/hyperlink@1.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/Hyperlink/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/Hyperlink/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/Hyperlink/index.js",
+        "trackDir": "src/components/Hyperlink",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/escape-button@1.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/EscapeButton/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/EscapeButton/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/EscapeButton/index.js",
+        "trackDir": "src/components/EscapeButton",
         "origin": "AUTHORED"
     },
     "version": "13.0.3"

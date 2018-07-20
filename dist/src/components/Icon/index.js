@@ -31,7 +31,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //   content,
 // } = shevy;
 
-
 function Icon(_ref) {
   var theme = _ref.theme,
       icon = _ref.icon,
@@ -39,11 +38,7 @@ function Icon(_ref) {
       shade = _ref.shade,
       size = _ref.size;
 
-  return _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, {
-    icon: _fontawesome2.default[icon],
-    color: theme.colors[color][shade],
-    size: size
-  });
+  return _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: _fontawesome2.default[icon], color: theme.colors[color][shade], size: size });
 }
 // import styled from 'styled-components';
 // import Shevy from 'shevyjs';
@@ -51,7 +46,7 @@ function Icon(_ref) {
 
 Icon.propTypes = {
   theme: _propTypes2.default.shape(),
-  icon: _propTypes2.default.oneOf(['faPlus', 'faTimes', 'faFacebookSquare', 'faTwitter']).isRequired,
+  icon: _propTypes2.default.oneOf(['faPlus', 'faTimes', 'faFacebookSquare', 'faTwitter', 'faCheckCircle']).isRequired,
   color: _propTypes2.default.string,
   shade: _propTypes2.default.string,
   size: _propTypes2.default.oneOf(['lg', 'xs', 'sm', '1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x'])

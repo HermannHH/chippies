@@ -10,7 +10,11 @@ const cells = [
   { key: "6", elem: null, type: "section" },
   { key: "7", elem: null, type: "section" },
   { key: "8", elem: null, type: "section" },
-  { key: "9", elem: <Heading text="Free" size="5" />, type: "default" },
+  {
+    key: "9",
+    elem: <Icon icon="faCheckCircle" color="blue" />,
+    type: "default"
+  },
   { key: "10", elem: <Heading text="Free" size="5" />, type: "default" },
   { key: "11", elem: <Heading text="Free" size="5" />, type: "default" },
   { key: "12", elem: <Heading text="Free" size="5" />, type: "default" }

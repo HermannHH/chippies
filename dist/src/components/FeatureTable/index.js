@@ -16,9 +16,17 @@ var _reactFlexview = require('react-flexview');
 
 var _reactFlexview2 = _interopRequireDefault(_reactFlexview);
 
+var _kratedTheme = require('krated-theme');
+
+var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
+
 var _Heading = require('../Heading');
 
 var _Heading2 = _interopRequireDefault(_Heading);
+
+var _Icon = require('../Icon');
+
+var _Icon2 = _interopRequireDefault(_Icon);
 
 var _viewPort = require('../viewPort');
 
@@ -27,37 +35,117 @@ var _viewPort2 = _interopRequireDefault(_viewPort);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var propTypes = {
-  cells: _propTypes2.default.arrayOf(_propTypes2.default.shape({
-    key: _propTypes2.default.string.isRequired,
-    elem: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.string]).isRequired,
-    type: _propTypes2.default.oneOf(['heading', 'section', 'default']).isRequired
-  }).isRequired).isRequired
+  theme: _propTypes2.default.shape({})
 };
-var defaultProps = {};
+var defaultProps = {
+  theme: _kratedTheme2.default
+};
 
 function FeatureTable(_ref) {
-  var cells = _ref.cells;
+  var theme = _ref.theme;
 
+  function cell(content, styles) {
+    return _react2.default.createElement(
+      _reactFlexview2.default,
+      { vAlignContent: 'center', hAlignContent: 'center', width: '25%', style: styles },
+      content
+    );
+  }
   return _react2.default.createElement(
     _reactFlexview2.default,
-    { column: true },
-    _react2.default.createElement(_Heading2.default, { text: 'Compare the features', size: '4' }),
-    _react2.default.createElement(
-      _reactFlexview2.default,
-      { width: '100%', column: false, wrap: true },
-      cells.map(function (x) {
-        return _react2.default.createElement(
-          _reactFlexview2.default,
-          {
-            width: '25%',
-            vAlignContent: 'center',
-            key: x.id,
-            style: x.type === 'section' && { backgroundColor: 'red' }
-          },
-          x.elem
-        );
-      })
-    )
+    { wrap: true },
+    cell(),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'Puppy', size: '6' })),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'Beagle', size: '6' })),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'Rottweiler', size: '6' })),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'General', size: '6', color: 'white' }), {
+      backgroundColor: theme.colors.blue['0']
+    }),
+    cell(undefined, {
+      backgroundColor: theme.colors.blue['0']
+    }),
+    cell(undefined, {
+      backgroundColor: theme.colors.blue['0']
+    }),
+    cell(undefined, {
+      backgroundColor: theme.colors.blue['0']
+    }),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'Access', size: '6' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'Access', size: '6' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'General', size: '6', color: 'white' }), {
+      backgroundColor: theme.colors.blue['0']
+    }),
+    cell(undefined, {
+      backgroundColor: theme.colors.blue['0']
+    }),
+    cell(undefined, {
+      backgroundColor: theme.colors.blue['0']
+    }),
+    cell(undefined, {
+      backgroundColor: theme.colors.blue['0']
+    }),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'Access', size: '6' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'Access', size: '6' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    }),
+    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+      borderBottom: 'thin solid',
+      borderColor: theme.colors.grey['-1']
+    })
   );
 }
 
