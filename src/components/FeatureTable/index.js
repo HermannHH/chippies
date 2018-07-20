@@ -1,35 +1,125 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FlexView from 'react-flexview';
+import kratedTheme from 'krated-theme';
 
 import Heading from '../Heading';
+import Icon from '../Icon';
 import viewPort from '../viewPort';
 
 const propTypes = {
-  cells: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.string.isRequired,
-    elem: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
-    type: PropTypes.oneOf(['heading', 'section', 'default']).isRequired,
-  }).isRequired).isRequired,
+  theme: PropTypes.shape({}),
 };
-const defaultProps = {};
+const defaultProps = {
+  theme: kratedTheme,
+};
 
-function FeatureTable({ cells }) {
-  return (
-    <FlexView column>
-      <Heading text="Compare the features" size="4" />
-      <FlexView width="100%" column={false} wrap>
-        {cells.map(x => (
-          <FlexView
-            width="25%"
-            vAlignContent="center"
-            key={x.id}
-            style={x.type === 'section' && { backgroundColor: 'red' }}
-          >
-            {x.elem}
-          </FlexView>
-        ))}
+function FeatureTable({ theme }) {
+  function cell(content, styles) {
+    return (
+      <FlexView vAlignContent="center" hAlignContent="center" width="25%" style={styles}>
+        {content}
       </FlexView>
+    );
+  }
+  return (
+    <FlexView wrap>
+      {cell()}
+      {cell(<Heading text="Puppy" size="6" />)}
+      {cell(<Heading text="Beagle" size="6" />)}
+      {cell(<Heading text="Rottweiler" size="6" />)}
+      {cell(<Heading text="General" size="6" color="white" />, {
+        backgroundColor: theme.colors.blue['0'],
+      })}
+      {cell(undefined, {
+        backgroundColor: theme.colors.blue['0'],
+      })}
+      {cell(undefined, {
+        backgroundColor: theme.colors.blue['0'],
+      })}
+      {cell(undefined, {
+        backgroundColor: theme.colors.blue['0'],
+      })}
+      {/* Access */}
+      {cell(<Heading text="Access" size="6" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {/* Access */}
+      {cell(<Heading text="Access" size="6" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {cell(<Heading text="General" size="6" color="white" />, {
+        backgroundColor: theme.colors.blue['0'],
+      })}
+      {cell(undefined, {
+        backgroundColor: theme.colors.blue['0'],
+      })}
+      {cell(undefined, {
+        backgroundColor: theme.colors.blue['0'],
+      })}
+      {cell(undefined, {
+        backgroundColor: theme.colors.blue['0'],
+      })}
+      {/* Access */}
+      {cell(<Heading text="Access" size="6" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {/* Access */}
+      {cell(<Heading text="Access" size="6" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
+      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+        borderBottom: 'thin solid',
+        borderColor: theme.colors.grey['-1'],
+      })}
     </FlexView>
   );
 }
