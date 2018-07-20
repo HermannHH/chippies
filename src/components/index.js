@@ -67,6 +67,7 @@ import VerticalMiddle from './VerticalMiddle';
 import Well from './Well';
 import viewPort from './viewPort';
 import FeatureSummaryCard from './FeatureSummaryCard';
+import PlanSummaryCard from './PlanSummaryCard';
 
 export {
   FeatureSummaryCard,
@@ -138,4 +139,5 @@ export {
   VerticalMiddle,
   Well,
   viewPort,
+  PlanSummaryCard,
 };
