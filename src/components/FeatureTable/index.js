@@ -5,6 +5,7 @@ import kratedTheme from 'krated-theme';
 
 import Heading from '../Heading';
 import Icon from '../Icon';
+import Label from '../Label';
 import viewPort from '../viewPort';
 
 const propTypes = {
@@ -25,9 +26,9 @@ function FeatureTable({ theme }) {
   return (
     <FlexView wrap>
       {cell()}
-      {cell(<Heading text="Puppy" size="6" />)}
-      {cell(<Heading text="Beagle" size="6" />)}
-      {cell(<Heading text="Rottweiler" size="6" />)}
+      {cell(<Heading text="Pupper" size="6" />)}
+      {cell(<Heading text="Doggo" size="6" />)}
+      {cell(<Heading text="Woofer" size="6" />)}
       {cell(<Heading text="General" size="6" color="white" />, {
         backgroundColor: theme.colors.blue['0'],
       })}
@@ -49,11 +50,21 @@ function FeatureTable({ theme }) {
         borderBottom: 'thin solid',
         borderColor: theme.colors.grey['-1'],
       })}
-      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+      {cell(<Label
+      text="Coming soon"
+      backgroundColor="green"
+      backgroundShade="0"
+      color="white"
+      shade="0" />, {
         borderBottom: 'thin solid',
         borderColor: theme.colors.grey['-1'],
       })}
-      {cell(<Icon icon="faCheckCircle" color="blue" />, {
+      {cell(<Label
+      text="Coming soon"
+      backgroundColor="green"
+      backgroundShade="0"
+      color="white"
+      shade="0" />, {
         borderBottom: 'thin solid',
         borderColor: theme.colors.grey['-1'],
       })}
