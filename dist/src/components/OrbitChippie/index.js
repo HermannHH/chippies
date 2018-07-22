@@ -4,16 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  border: thin solid red;\n  width: 400px;\n  height: 400px;\n'], ['\n  border: thin solid red;\n  width: 400px;\n  height: 400px;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  position: absolute;\n'], ['\n  position: absolute;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  position: absolute;\n'], ['\n  position: absolute;\n']);
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _styledComponents = require('styled-components');
 
@@ -33,20 +28,16 @@ var _BrandedBlockIcon2 = _interopRequireDefault(_BrandedBlockIcon);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
-
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+// import PropTypes from 'prop-types';
+
 
 var propTypes = {};
 var defaultProps = {};
 
-var OrbitWrapper = _styledComponents2.default.div(_templateObject);
+var ChannelWrapper = _styledComponents2.default.div(_templateObject);
 
-var ChannelWrapper = _styledComponents2.default.div(_templateObject2);
-
-function OrbitChippie(_ref) {
-  _objectDestructuringEmpty(_ref);
-
+function OrbitChippie() {
   return _react2.default.createElement(
     _reactFlexview2.default,
     {

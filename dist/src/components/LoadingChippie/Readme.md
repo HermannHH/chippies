@@ -1,0 +1,5 @@
+LoadingChippie example:
+
+```js
+<LoadingChippie />
+```

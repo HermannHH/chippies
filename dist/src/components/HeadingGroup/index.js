@@ -53,15 +53,16 @@ function HeadingGroup(_ref) {
   var size = _ref.size,
       mainText = _ref.mainText,
       subText = _ref.subText,
-      withMargin = _ref.withMargin;
+      withMargin = _ref.withMargin,
+      white = _ref.white;
 
   return _react2.default.createElement(
     Container,
     { withMargin: withMargin, size: size },
-    _react2.default.createElement(_Heading2.default, { text: mainText, size: size, withMargin: false }),
+    _react2.default.createElement(_Heading2.default, { text: mainText, size: size, withMargin: false, color: white && "white" }),
     _react2.default.createElement(
       _Paragraph2.default,
-      { withMargin: false },
+      { withMargin: false, color: white && "white", shade: white && "0" },
       subText
     )
   );
@@ -71,12 +72,14 @@ HeadingGroup.propTypes = {
   mainText: _propTypes2.default.string.isRequired,
   subText: _propTypes2.default.string.isRequired,
   size: _propTypes2.default.oneOf(['1', '2', '3', '4', '5', '6']),
-  withMargin: _propTypes2.default.bool
+  withMargin: _propTypes2.default.bool,
+  white: _propTypes2.default.bool
 };
 
 HeadingGroup.defaultProps = {
   size: '3',
-  withMargin: true
+  withMargin: true,
+  white: false
 };
 
 exports.default = HeadingGroup;

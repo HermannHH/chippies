@@ -27,12 +27,12 @@ const Container = styled.div`
 `;
 
 function HeadingGroup({
-  size, mainText, subText, withMargin,
+  size, mainText, subText, withMargin, white
 }) {
   return (
     <Container withMargin={withMargin} size={size}>
-      <Heading text={mainText} size={size} withMargin={false} />
-      <Paragraph withMargin={false}>{subText}</Paragraph>
+      <Heading text={mainText} size={size} withMargin={false} color={white ? "white" : "black"} />
+      <Paragraph withMargin={false} color={white ? "white" :"grey"} shade={white ? "0" : "2"}>{subText}</Paragraph>
     </Container>
   );
 }
@@ -42,11 +42,13 @@ HeadingGroup.propTypes = {
   subText: PropTypes.string.isRequired,
   size: PropTypes.oneOf(['1', '2', '3', '4', '5', '6']),
   withMargin: PropTypes.bool,
+  white: PropTypes.bool,
 };
 
 HeadingGroup.defaultProps = {
   size: '3',
   withMargin: true,
+  white: false,
 };
 
 export default HeadingGroup;

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import FlexView from 'react-flexview';
 
@@ -9,17 +9,11 @@ import BrandedBlockIcon from '../BrandedBlockIcon';
 const propTypes = {};
 const defaultProps = {};
 
-const OrbitWrapper = styled.div`
-  border: thin solid red;
-  width: 400px;
-  height: 400px;
-`;
-
 const ChannelWrapper = styled.div`
   position: absolute;
 `;
 
-function OrbitChippie({}) {
+function OrbitChippie() {
   return (
     <FlexView
       style={{
