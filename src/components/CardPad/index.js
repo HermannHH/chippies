@@ -13,20 +13,15 @@ import Pad from '../Pad';
 
 function CardPad({ children }) {
   return (
-    <Pad
-      horizontal={{ xs: 3 }}
-      vertical={{ xs: 3 }}
-    >
+    <Pad horizontal={{ xs: 4 }} vertical={{ xs: 4 }}>
       {children}
     </Pad>
   );
 }
 
 CardPad.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)])
+    .isRequired,
 };
 
 export default CardPad;

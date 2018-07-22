@@ -14,6 +14,7 @@ const CardWrapper = styled.div`
     position: relative;
   `};
   overflow: hidden;
+  width: 100%;
 `;
 
 function Card({ handleClick, children, theme }) {

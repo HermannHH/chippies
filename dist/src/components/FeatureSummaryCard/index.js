@@ -36,6 +36,10 @@ var _CardActions = require('../CardActions');
 
 var _CardActions2 = _interopRequireDefault(_CardActions);
 
+var _Pad = require('../Pad');
+
+var _Pad2 = _interopRequireDefault(_Pad);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var propTypes = {
@@ -56,9 +60,9 @@ function FeatureSummaryCard(_ref) {
     _Card2.default,
     null,
     _react2.default.createElement(
-      _CardPad2.default,
-      null,
-      _react2.default.createElement(_ProgressiveImage2.default, { width: '80px', height: '80px', src: imgSrc })
+      _Pad2.default,
+      { top: { xs: 4 }, left: { xs: 4 } },
+      _react2.default.createElement(_ProgressiveImage2.default, { width: '70px', height: '70px', src: imgSrc, size: 'contain' })
     ),
     _react2.default.createElement(
       _CardPad2.default,

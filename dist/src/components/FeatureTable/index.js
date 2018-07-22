@@ -28,6 +28,10 @@ var _Icon = require('../Icon');
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
+var _Label = require('../Label');
+
+var _Label2 = _interopRequireDefault(_Label);
+
 var _viewPort = require('../viewPort');
 
 var _viewPort2 = _interopRequireDefault(_viewPort);
@@ -55,9 +59,9 @@ function FeatureTable(_ref) {
     _reactFlexview2.default,
     { wrap: true },
     cell(),
-    cell(_react2.default.createElement(_Heading2.default, { text: 'Puppy', size: '6' })),
-    cell(_react2.default.createElement(_Heading2.default, { text: 'Beagle', size: '6' })),
-    cell(_react2.default.createElement(_Heading2.default, { text: 'Rottweiler', size: '6' })),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'Pupper', size: '6' })),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'Doggo', size: '6' })),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'Woofer', size: '6' })),
     cell(_react2.default.createElement(_Heading2.default, { text: 'General', size: '6', color: 'white' }), {
       backgroundColor: theme.colors.blue['0']
     }),
@@ -78,11 +82,21 @@ function FeatureTable(_ref) {
       borderBottom: 'thin solid',
       borderColor: theme.colors.grey['-1']
     }),
-    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+    cell(_react2.default.createElement(_Label2.default, {
+      text: 'Coming soon',
+      backgroundColor: 'green',
+      backgroundShade: '0',
+      color: 'white',
+      shade: '0' }), {
       borderBottom: 'thin solid',
       borderColor: theme.colors.grey['-1']
     }),
-    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+    cell(_react2.default.createElement(_Label2.default, {
+      text: 'Coming soon',
+      backgroundColor: 'green',
+      backgroundShade: '0',
+      color: 'white',
+      shade: '0' }), {
       borderBottom: 'thin solid',
       borderColor: theme.colors.grey['-1']
     }),

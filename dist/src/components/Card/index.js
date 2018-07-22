@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  ', ';\n  overflow: hidden;\n'], ['\n  ', ';\n  overflow: hidden;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  ', ';\n  overflow: hidden;\n  width: 100%;\n'], ['\n  ', ';\n  overflow: hidden;\n  width: 100%;\n']);
 
 var _react = require('react');
 

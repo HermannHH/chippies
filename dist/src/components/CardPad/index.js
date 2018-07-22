@@ -27,10 +27,7 @@ function CardPad(_ref) {
 
   return _react2.default.createElement(
     _Pad2.default,
-    {
-      horizontal: { xs: 3 },
-      vertical: { xs: 3 }
-    },
+    { horizontal: { xs: 4 }, vertical: { xs: 4 } },
     children
   );
 }

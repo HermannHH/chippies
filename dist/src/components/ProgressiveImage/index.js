@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  height: ', ';\n  width: ', ';\n  background-color: ', ';\n  ', ';\n  background-size: ', ';\n  background-position: center center;\n  background-repeat: no-repeat;\n  ', ';\n'], ['\n  height: ', ';\n  width: ', ';\n  background-color: ', ';\n  ', ';\n  background-size: ', ';\n  background-position: center center;\n  background-repeat: no-repeat;\n  ', ';\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  height: ', ';\n  width: ', ';\n  background-color: inherit;\n  ', ';\n  background-size: ', ';\n  background-position: center center;\n  background-repeat: no-repeat;\n  ', ';\n'], ['\n  height: ', ';\n  width: ', ';\n  background-color: inherit;\n  ', ';\n  background-size: ', ';\n  background-position: center center;\n  background-repeat: no-repeat;\n  ', ';\n']);
 
 var _react = require('react');
 
@@ -30,8 +30,6 @@ var Wrapper = _styledComponents2.default.div(_templateObject, function (props) {
   return props.height;
 }, function (props) {
   return props.width;
-}, function (props) {
-  return props.theme.colors.grey['-1'];
 }, function (props) {
   return props.rounded && 'border-radius: 50%';
 }, function (props) {

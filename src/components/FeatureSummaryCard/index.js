@@ -7,6 +7,7 @@ import HeadingGroup from '../HeadingGroup';
 import ProgressiveImage from '../ProgressiveImage';
 import Button from '../Button';
 import CardActions from '../CardActions';
+import Pad from '../Pad';
 
 const propTypes = {
   mainText: PropTypes.string.isRequired,
@@ -21,9 +22,9 @@ function FeatureSummaryCard({
 }) {
   return (
     <Card>
-      <CardPad>
-        <ProgressiveImage width="80px" height="80px" src={imgSrc} />
-      </CardPad>
+      <Pad top={{ xs: 4 }} left={{ xs: 4 }}>
+        <ProgressiveImage width="70px" height="70px" src={imgSrc} size="contain" />
+      </Pad>
       <CardPad>
         <HeadingGroup size="5" mainText={mainText} subText={subText} withMargin={false} />
       </CardPad>

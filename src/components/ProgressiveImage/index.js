@@ -6,7 +6,7 @@ import kratedTheme from 'krated-theme';
 const Wrapper = styled.div`
   height: ${props => props.height};
   width: ${props => props.width};
-  background-color: ${props => props.theme.colors.grey['-1']};
+  background-color: inherit;
   ${props => (props.rounded && 'border-radius: 50%')};
   background-size: ${props => props.size};
   background-position: center center;
