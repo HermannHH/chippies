@@ -4,19 +4,15 @@ MobileNavMenu example:
 initialState = {
   show: false
 };
-<div>
-  <Button
-    text={state.show ? "Hide" : "Show"}
-    handleClick={() => setState({ show: !state.show })}
-    raised
-    whiteText
-    color="red"
-  />
-  <MobileNavMenu
-    closeMobileNavMenu={() => setState({ show: false })}
-    show={state.show}
-  >
-    Hello World
-  </MobileNavMenu>
-</div>;
+<MobileNavMenu
+  openMobileNavMenu={() => setState({ show: true })}
+  closeMobileNavMenu={() => setState({ show: false })}
+  show={state.show}
+  linkItems={[
+    { text: "Hello One", handleClick: () => alert("okay") },
+    { text: "Hello Two", handleClick: () => alert("okay") },
+    { text: "Hello Three", handleClick: () => alert("okay") },
+    { text: "Hello Four", handleClick: () => alert("okay"), type: "button" }
+  ]}
+/>;
 ```

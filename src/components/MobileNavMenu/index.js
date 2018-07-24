@@ -7,6 +7,7 @@ import kratedTheme from 'krated-theme';
 
 import Icon from '../Icon';
 import EscapeButton from '../EscapeButton';
+import Button from '../Button';
 import Pad from '../Pad';
 import Hyperlink from '../Hyperlink';
 import viewPort from '../viewPort';
@@ -21,6 +22,7 @@ const propTypes = {
   linkItems: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string,
     handleClick: PropTypes.func,
+    type: PropTypes.oneOf(['button']),
   })).isRequired,
 };
 const defaultProps = {
@@ -71,13 +73,23 @@ function MobileNavMenu({
             {linkItems.map((x, i) => (
               <FlexView key={i} width="100%" style={{ cursor: 'pointer' }} onClick={x.handleClick}>
                 <Pad vertical={{ xs: 2 }} horizontal={{ xs: 4 }} key={i}>
-                  <Hyperlink
-                    text={x.text}
-                    handleClick={x.handleClick}
-                    color="grey"
-                    hoverColor="blue"
-                    hoverShade="0"
-                  />
+                  {x.type === 'button' ? (
+                    <Button
+                      text={x.text}
+                      handleClick={x.handleClick}
+                      raised
+                      whiteText
+                      color="red"
+                    />
+                  ) : (
+                    <Hyperlink
+                      text={x.text}
+                      handleClick={x.handleClick}
+                      color="grey"
+                      hoverColor="blue"
+                      hoverShade="0"
+                    />
+                  )}
                 </Pad>
               </FlexView>
             ))}

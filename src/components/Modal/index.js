@@ -41,7 +41,6 @@ const Container = styled.div`
   height: ${props => props.height}px;
 `;
 
-
 class Modal extends Component {
   constructor(props) {
     super(props);
@@ -65,42 +64,23 @@ class Modal extends Component {
 
   render() {
     const {
-      show,
-      width,
-      height,
-      children,
-      theme,
-      closeModal,
+      show, width, height, children, theme, closeModal,
     } = this.props;
     return (
-      <Wrapper
-        show={show}
-        width={width}
-        height={height}
-        theme={theme}
-      >
+      <Wrapper show={show} width={width} height={height} theme={theme}>
         <EscapeWrapper>
-          <EscapeButton
-            handleClick={closeModal}
-          />
+          <EscapeButton handleClick={closeModal} />
         </EscapeWrapper>
-        <Container
-          height={height}
-        >
-          {children}
-        </Container>
+        <Container height={height}>{children}</Container>
       </Wrapper>
-
     );
   }
 }
 
 Modal.propTypes = {
   theme: PropTypes.shape(),
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)])
+    .isRequired,
   show: PropTypes.bool.isRequired,
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,

@@ -11,3 +11,8 @@
 2.  bit status
 3.  bit tag --all [optional version]
 4.  bit export hermannhh.chippies
+
+# TODO
+
+- [x] Create messy responsive mobile nav
+- [ ] Create ESC key binding HOC. Add to Modal & MobileNavMenu
