@@ -60,8 +60,8 @@ function FeatureTable(_ref) {
     { wrap: true },
     cell(),
     cell(_react2.default.createElement(_Heading2.default, { text: 'Pupper', size: '6' })),
-    cell(_react2.default.createElement(_Heading2.default, { text: 'Doggo', size: '6' })),
-    cell(_react2.default.createElement(_Heading2.default, { text: 'Woofer', size: '6' })),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'Beagle', size: '6' })),
+    cell(_react2.default.createElement(_Heading2.default, { text: 'Rottweiler', size: '6' })),
     cell(_react2.default.createElement(_Heading2.default, { text: 'General', size: '6', color: 'white' }), {
       backgroundColor: theme.colors.blue['0']
     }),
@@ -84,19 +84,21 @@ function FeatureTable(_ref) {
     }),
     cell(_react2.default.createElement(_Label2.default, {
       text: 'Coming soon',
-      backgroundColor: 'green',
-      backgroundShade: '0',
+      backgroundColor: 'grey',
+      backgroundShade: '-1',
       color: 'white',
-      shade: '0' }), {
+      shade: '0'
+    }), {
       borderBottom: 'thin solid',
       borderColor: theme.colors.grey['-1']
     }),
     cell(_react2.default.createElement(_Label2.default, {
       text: 'Coming soon',
-      backgroundColor: 'green',
-      backgroundShade: '0',
+      backgroundColor: 'grey',
+      backgroundShade: '-1',
       color: 'white',
-      shade: '0' }), {
+      shade: '0'
+    }), {
       borderBottom: 'thin solid',
       borderColor: theme.colors.grey['-1']
     }),
@@ -108,11 +110,23 @@ function FeatureTable(_ref) {
       borderBottom: 'thin solid',
       borderColor: theme.colors.grey['-1']
     }),
-    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+    cell(_react2.default.createElement(_Label2.default, {
+      text: 'Coming soon',
+      backgroundColor: 'grey',
+      backgroundShade: '-1',
+      color: 'white',
+      shade: '0'
+    }), {
       borderBottom: 'thin solid',
       borderColor: theme.colors.grey['-1']
     }),
-    cell(_react2.default.createElement(_Icon2.default, { icon: 'faCheckCircle', color: 'blue' }), {
+    cell(_react2.default.createElement(_Label2.default, {
+      text: 'Coming soon',
+      backgroundColor: 'grey',
+      backgroundShade: '-1',
+      color: 'white',
+      shade: '0'
+    }), {
       borderBottom: 'thin solid',
       borderColor: theme.colors.grey['-1']
     }),

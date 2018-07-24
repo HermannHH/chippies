@@ -59,10 +59,10 @@ function HeadingGroup(_ref) {
   return _react2.default.createElement(
     Container,
     { withMargin: withMargin, size: size },
-    _react2.default.createElement(_Heading2.default, { text: mainText, size: size, withMargin: false, color: white && "white" }),
+    _react2.default.createElement(_Heading2.default, { text: mainText, size: size, withMargin: false, color: white ? "white" : "black" }),
     _react2.default.createElement(
       _Paragraph2.default,
-      { withMargin: false, color: white && "white", shade: white && "0" },
+      { withMargin: false, color: white ? "white" : "grey", shade: white ? "0" : "2" },
       subText
     )
   );

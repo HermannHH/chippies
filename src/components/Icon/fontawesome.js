@@ -1,4 +1,4 @@
-import { faPlus, faTimes, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faTimes, faCheckCircle, faBars } from '@fortawesome/free-solid-svg-icons';
 // import {
 
 // } from '@fortawesome/free-regular-svg-icons';
@@ -11,4 +11,5 @@ export default {
   faFacebookSquare,
   faTwitter,
   faCheckCircle,
+  faBars
 };

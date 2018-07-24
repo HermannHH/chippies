@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import withSizes from 'react-sizes';
 
 export default function viewPort(WrappedComponent) {
-  function ViewPort(props) {
-    return (<WrappedComponent {...props} />);
+  class ViewPort extends PureComponent {
+    constructor(props) {
+      super(props);
+      this.state = {
+        distanceToTop: 0,
+      };
+    }
+    componentWillMount() {
+      window.addEventListener('scroll', () => {
+        const root = document.getElementById('root');
+        const distanceToTop = root.getBoundingClientRect().top;
+        this.setState({ distanceToTop });
+      });
+    }
+    render() {
+      return <WrappedComponent {...this.props} distanceToTop={this.state.distanceToTop} />;
+    }
   }
 
   const mapSizesToProps = ({ width, height }) => {
@@ -23,26 +38,19 @@ export default function viewPort(WrappedComponent) {
     const desktopAndUp = ['desktop', 'large_desktop'].includes(device);
     const phone = ['landscape_phone', 'phone'].includes(device);
 
-    return (
-      {
-        width,
-        height,
-        device,
-        tabletAndUp,
-        desktopAndUp,
-        phone,
-      }
-    );
+    return {
+      width,
+      height,
+      device,
+      tabletAndUp,
+      desktopAndUp,
+      phone,
+    };
   };
 
   ViewPort.propTypes = {
-    device: PropTypes.oneOf([
-      'phone',
-      'large_desktop',
-      'desktop',
-      'tablet',
-      'landscape_phone',
-    ]).isRequired,
+    device: PropTypes.oneOf(['phone', 'large_desktop', 'desktop', 'tablet', 'landscape_phone'])
+      .isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
     tabletAndUp: PropTypes.bool.isRequired,

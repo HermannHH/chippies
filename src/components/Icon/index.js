@@ -21,8 +21,14 @@ function Icon({
 
 Icon.propTypes = {
   theme: PropTypes.shape(),
-  icon: PropTypes.oneOf(['faPlus', 'faTimes', 'faFacebookSquare', 'faTwitter', 'faCheckCircle'])
-    .isRequired,
+  icon: PropTypes.oneOf([
+    'faBars',
+    'faPlus',
+    'faTimes',
+    'faFacebookSquare',
+    'faTwitter',
+    'faCheckCircle',
+  ]).isRequired,
   color: PropTypes.string,
   shade: PropTypes.string,
   size: PropTypes.oneOf([

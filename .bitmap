@@ -239,18 +239,6 @@
         "trackDir": "src/components/Display",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/view-port@1.0.0": {
-        "files": [
-            {
-                "relativePath": "src/components/viewPort/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/viewPort/index.js",
-        "trackDir": "src/components/viewPort",
-        "origin": "AUTHORED"
-    },
     "hermannhh.chippies/components/brand-header@1.0.0": {
         "files": [
             {
@@ -266,23 +254,6 @@
         ],
         "mainFile": "src/components/BrandHeader/index.js",
         "trackDir": "src/components/BrandHeader",
-        "origin": "AUTHORED"
-    },
-    "hermannhh.chippies/components/quote-onboard@1.0.0": {
-        "files": [
-            {
-                "relativePath": "src/components/QuoteOnboard/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/QuoteOnboard/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/QuoteOnboard/index.js",
-        "trackDir": "src/components/QuoteOnboard",
         "origin": "AUTHORED"
     },
     "hermannhh.chippies/components/label@1.0.0": {
@@ -640,23 +611,6 @@
         "trackDir": "src/components/BrandedWhiteIcon",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/layout-pricing-plan@1.0.0": {
-        "files": [
-            {
-                "relativePath": "src/components/LayoutPricingPlan/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/LayoutPricingPlan/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/LayoutPricingPlan/index.js",
-        "trackDir": "src/components/LayoutPricingPlan",
-        "origin": "AUTHORED"
-    },
     "hermannhh.chippies/components/color-palette@1.0.0": {
         "files": [
             {
@@ -961,23 +915,6 @@
         "trackDir": "src/components/BrochureFooter",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/feature-table@1.0.2": {
-        "files": [
-            {
-                "relativePath": "src/components/FeatureTable/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/FeatureTable/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/FeatureTable/index.js",
-        "trackDir": "src/components/FeatureTable",
-        "origin": "AUTHORED"
-    },
     "hermannhh.chippies/components/progressive-image@1.0.1": {
         "files": [
             {
@@ -1029,40 +966,6 @@
         "trackDir": "src/components/InteractiveLineItem",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/card-pad@1.0.1": {
-        "files": [
-            {
-                "relativePath": "src/components/CardPad/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/CardPad/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/CardPad/index.js",
-        "trackDir": "src/components/CardPad",
-        "origin": "AUTHORED"
-    },
-    "hermannhh.chippies/components/card-actions@1.0.1": {
-        "files": [
-            {
-                "relativePath": "src/components/CardActions/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/CardActions/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/CardActions/index.js",
-        "trackDir": "src/components/CardActions",
-        "origin": "AUTHORED"
-    },
     "hermannhh.chippies/components/card@1.0.1": {
         "files": [
             {
@@ -1078,23 +981,6 @@
         ],
         "mainFile": "src/components/Card/index.js",
         "trackDir": "src/components/Card",
-        "origin": "AUTHORED"
-    },
-    "hermannhh.chippies/components/product-card@1.0.3": {
-        "files": [
-            {
-                "relativePath": "src/components/ProductCard/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/ProductCard/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/ProductCard/index.js",
-        "trackDir": "src/components/ProductCard",
         "origin": "AUTHORED"
     },
     "hermannhh.chippies/components/orbit-channel@0.0.1": {
@@ -1275,23 +1161,6 @@
         "trackDir": "src/components/BuyerManagementImage",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/heading-group@1.0.1": {
-        "files": [
-            {
-                "relativePath": "src/components/HeadingGroup/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/HeadingGroup/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/HeadingGroup/index.js",
-        "trackDir": "src/components/HeadingGroup",
-        "origin": "AUTHORED"
-    },
     "hermannhh.chippies/components/product-management-image@0.0.2": {
         "files": [
             {
@@ -1314,7 +1183,24 @@
         "trackDir": "src/components/ProductManagementImage",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/pricing-table@1.0.1": {
+    "hermannhh.chippies/components/heading-group@1.0.2": {
+        "files": [
+            {
+                "relativePath": "src/components/HeadingGroup/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/HeadingGroup/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/HeadingGroup/index.js",
+        "trackDir": "src/components/HeadingGroup",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/pricing-table@1.0.2": {
         "files": [
             {
                 "relativePath": "src/components/PricingTable/Readme.md",
@@ -1331,24 +1217,7 @@
         "trackDir": "src/components/PricingTable",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/reject-quote@1.0.1": {
-        "files": [
-            {
-                "relativePath": "src/components/RejectQuote/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/RejectQuote/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/RejectQuote/index.js",
-        "trackDir": "src/components/RejectQuote",
-        "origin": "AUTHORED"
-    },
-    "hermannhh.chippies/components/text-section@1.0.1": {
+    "hermannhh.chippies/components/text-section@1.0.2": {
         "files": [
             {
                 "relativePath": "src/components/TextSection/Readme.md",
@@ -1365,24 +1234,7 @@
         "trackDir": "src/components/TextSection",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/accept-quote@1.0.1": {
-        "files": [
-            {
-                "relativePath": "src/components/AcceptQuote/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/AcceptQuote/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/AcceptQuote/index.js",
-        "trackDir": "src/components/AcceptQuote",
-        "origin": "AUTHORED"
-    },
-    "hermannhh.chippies/components/quote-request-modal@1.0.3": {
+    "hermannhh.chippies/components/quote-request-modal@1.0.4": {
         "files": [
             {
                 "relativePath": "src/components/QuoteRequestModal/Readme.md",
@@ -1399,7 +1251,92 @@
         "trackDir": "src/components/QuoteRequestModal",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/card-title@1.0.2": {
+    "hermannhh.chippies/components/quote-onboard@1.0.2": {
+        "files": [
+            {
+                "relativePath": "src/components/QuoteOnboard/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/QuoteOnboard/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/QuoteOnboard/index.js",
+        "trackDir": "src/components/QuoteOnboard",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/reject-quote@1.0.3": {
+        "files": [
+            {
+                "relativePath": "src/components/RejectQuote/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/RejectQuote/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/RejectQuote/index.js",
+        "trackDir": "src/components/RejectQuote",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/accept-quote@1.0.3": {
+        "files": [
+            {
+                "relativePath": "src/components/AcceptQuote/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/AcceptQuote/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/AcceptQuote/index.js",
+        "trackDir": "src/components/AcceptQuote",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/card-pad@1.0.2": {
+        "files": [
+            {
+                "relativePath": "src/components/CardPad/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/CardPad/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/CardPad/index.js",
+        "trackDir": "src/components/CardPad",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/card-actions@1.0.2": {
+        "files": [
+            {
+                "relativePath": "src/components/CardActions/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/CardActions/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/CardActions/index.js",
+        "trackDir": "src/components/CardActions",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/card-title@1.0.4": {
         "files": [
             {
                 "relativePath": "src/components/CardTitle/Readme.md",
@@ -1416,7 +1353,70 @@
         "trackDir": "src/components/CardTitle",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/feature-summary-card@1.0.7": {
+    "hermannhh.chippies/components/plan-summary-card@1.0.6": {
+        "files": [
+            {
+                "relativePath": "src/components/PlanSummaryCard/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/PlanSummaryCard/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/PlanSummaryCard/index.js",
+        "trackDir": "src/components/PlanSummaryCard",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/mobile-nav-menu@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/MobileNavMenu/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/MobileNavMenu/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/MobileNavMenu/index.js",
+        "trackDir": "src/components/MobileNavMenu",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/view-port@1.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/viewPort/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/viewPort/index.js",
+        "trackDir": "src/components/viewPort",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/product-card@1.0.6": {
+        "files": [
+            {
+                "relativePath": "src/components/ProductCard/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/ProductCard/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/ProductCard/index.js",
+        "trackDir": "src/components/ProductCard",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/feature-summary-card@1.0.10": {
         "files": [
             {
                 "relativePath": "src/components/FeatureSummaryCard/Readme.md",
@@ -1433,21 +1433,55 @@
         "trackDir": "src/components/FeatureSummaryCard",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/plan-summary-card@1.0.3": {
+    "hermannhh.chippies/components/blog-summary-card@0.0.2": {
         "files": [
             {
-                "relativePath": "src/components/PlanSummaryCard/Readme.md",
+                "relativePath": "src/components/BlogSummaryCard/Readme.md",
                 "test": false,
                 "name": "Readme.md"
             },
             {
-                "relativePath": "src/components/PlanSummaryCard/index.js",
+                "relativePath": "src/components/BlogSummaryCard/index.js",
                 "test": false,
                 "name": "index.js"
             }
         ],
-        "mainFile": "src/components/PlanSummaryCard/index.js",
-        "trackDir": "src/components/PlanSummaryCard",
+        "mainFile": "src/components/BlogSummaryCard/index.js",
+        "trackDir": "src/components/BlogSummaryCard",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/layout-pricing-plan@1.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/LayoutPricingPlan/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/LayoutPricingPlan/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/LayoutPricingPlan/index.js",
+        "trackDir": "src/components/LayoutPricingPlan",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/feature-table@1.0.4": {
+        "files": [
+            {
+                "relativePath": "src/components/FeatureTable/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/FeatureTable/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/FeatureTable/index.js",
+        "trackDir": "src/components/FeatureTable",
         "origin": "AUTHORED"
     },
     "version": "13.0.3"
