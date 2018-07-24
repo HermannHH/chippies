@@ -3,36 +3,29 @@ import PropTypes from 'prop-types';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Shevy from 'shevyjs';
-
+import FlexView from 'react-flexview';
+import kratedTheme from 'krated-theme';
 
 import { shevyConfig } from '../helpers';
-import ColorBlock from '../ColorBlock';
-import Pad from '../Pad';
-import Divider from '../Divider';
 import BrandedWhiteIcon from '../BrandedWhiteIcon';
 import Hyperlink from '../Hyperlink';
 import Small from '../Small';
-// import Icon from '../Icon';
+import viewPort from '../viewPort';
 
 const shevy = new Shevy(shevyConfig);
 const { baseSpacing: bs } = shevy;
-
 
 const propTypes = {
   linkItems: PropTypes.arrayOf(PropTypes.element).isRequired,
   facebookLink: PropTypes.string.isRequired,
   twitterLink: PropTypes.string.isRequired,
+  theme: PropTypes.shape({}),
+  desktopAndUp: PropTypes.bool.isRequired,
 };
 
-const defaultProps = {};
-
-const LinksWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  justify-content: flex-end;
-`;
+const defaultProps = {
+  theme: kratedTheme,
+};
 
 const LinkItemWrapper = styled.div`
   display: inline-block;
@@ -52,84 +45,87 @@ const SocialLinkItemWrapper = styled.div`
   }
 `;
 
-function BrochureFooter({ linkItems, facebookLink, twitterLink }) {
+function BrochureFooter({
+  theme, linkItems, facebookLink, twitterLink, desktopAndUp,
+}) {
   return (
-    <ColorBlock
+    <FlexView
+      column
       width="100%"
-      color="blue"
-      shade="0"
-      height="auto"
+      style={{ padding: '5%', backgroundColor: theme.colors.blue['0'] }}
     >
-      <Pad
-        horizontal={{ xs: 5 }}
-        vertical={{ xs: 4 }}
+      <FlexView
+        row
+        column={!desktopAndUp}
+        width="100%"
+        vAlignContent="center"
+        style={{
+          borderBottom: 'thin solid',
+          borderColor: theme.colors.white['0'],
+          paddingBottom: '15px',
+        }}
       >
-        <Grid fluid>
-          <Row middle="xs">
-            <Col xs={12} md={3}>
-              <Pad
-                top={{ xs: 2 }}
-                bottom={{ xs: 3 }}
-              >
-                <BrandedWhiteIcon size="6" />
-              </Pad>
-            </Col>
-            <Col xs={12} md={9}>
-              <Pad
-                vertical={{ xs: 2 }}
-              >
-                <LinksWrapper>
-                  {linkItems.map(x => (
-                    <LinkItemWrapper>
-                      {x}
-                    </LinkItemWrapper>
-                  ))}
-                </LinksWrapper>
-              </Pad>
-            </Col>
-          </Row>
-          <Divider />
-          <Row middle="xs">
-            <Col xs={12} md={3}>
-              <Pad
-                top={{ xs: 2 }}
-                bottom={{ xs: 1 }}
-              >
-                <Small color="white" shade="0">{`© ${new Date().getFullYear()} Krated (PTY) Ltd.`}</Small>
-              </Pad>
-            </Col>
-            <Col xs={12} md={9}>
-              <Pad
-                top={{ xs: 1 }}
-                bottom={{ xs: 2 }}
-              >
-                <LinksWrapper>
-                  <SocialLinkItemWrapper>
-                    <Hyperlink
-                      icon="faFacebookSquare"
-                      handleClick={()=> window.open(facebookLink, '_blank')}
-                      color="white"
-                    />
-                  </SocialLinkItemWrapper>
-                  <SocialLinkItemWrapper>
-                    <Hyperlink
-                      icon="faTwitter"
-                      handleClick={()=> window.open(twitterLink, '_blank')}
-                      color="white"
-                    />
-                  </SocialLinkItemWrapper>
-                </LinksWrapper>
-              </Pad>
-            </Col>
-          </Row>
-        </Grid>
-      </Pad>
-    </ColorBlock>
+        <FlexView
+          hAlignContent="center"
+          vAlignContent="center"
+          style={!desktopAndUp && { padding: '3%' }}
+        >
+          <div>
+            <BrandedWhiteIcon size="6" />
+          </div>
+        </FlexView>
+        <FlexView
+          width="100%"
+          vAlignContent="center"
+          hAlignContent={!desktopAndUp ? 'center' : 'right'}
+          style={{ padding: '15px' }}
+        >
+          {linkItems.map((x, i) => <LinkItemWrapper key={i}>{x}</LinkItemWrapper>)}
+        </FlexView>
+      </FlexView>
+      <FlexView
+        wrap={!desktopAndUp}
+        width="100%"
+        vAlignContent="center"
+        style={{ padding: '15px' }}
+      >
+        <FlexView
+          width={!desktopAndUp ? '100%' : '280px'}
+          style={{}}
+          hAlignContent={!desktopAndUp && 'center'}
+        >
+          <div>
+            <Small color="white" shade="0">
+              {`© ${new Date().getFullYear()} Krated (PTY) Ltd.`}
+            </Small>
+          </div>
+        </FlexView>
+        <FlexView
+          width="100%"
+          hAlignContent={!desktopAndUp ? 'center' : 'right'}
+          style={!desktopAndUp && { padding: '3%' }}
+        >
+          <SocialLinkItemWrapper>
+            <Hyperlink
+              icon="faFacebookSquare"
+              handleClick={() => window.open(facebookLink, '_blank')}
+              color="white"
+            />
+          </SocialLinkItemWrapper>
+          <SocialLinkItemWrapper>
+            <Hyperlink
+              icon="faTwitter"
+              handleClick={() => window.open(twitterLink, '_blank')}
+              color="white"
+            />
+          </SocialLinkItemWrapper>
+        </FlexView>
+      </FlexView>
+    </FlexView>
   );
 }
-
 
 BrochureFooter.propTypes = propTypes;
 BrochureFooter.defaultProps = defaultProps;
 
-export default BrochureFooter;
+export default viewPort(BrochureFooter);
