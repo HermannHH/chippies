@@ -1399,40 +1399,6 @@
         "trackDir": "src/components/AppBar",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/modal@1.0.2": {
-        "files": [
-            {
-                "relativePath": "src/components/Modal/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/Modal/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/Modal/index.js",
-        "trackDir": "src/components/Modal",
-        "origin": "AUTHORED"
-    },
-    "hermannhh.chippies/components/brochure-footer@1.0.2": {
-        "files": [
-            {
-                "relativePath": "src/components/BrochureFooter/Readme.md",
-                "test": false,
-                "name": "Readme.md"
-            },
-            {
-                "relativePath": "src/components/BrochureFooter/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/BrochureFooter/index.js",
-        "trackDir": "src/components/BrochureFooter",
-        "origin": "AUTHORED"
-    },
     "hermannhh.chippies/components/product-card@1.0.7": {
         "files": [
             {
@@ -1467,7 +1433,41 @@
         "trackDir": "src/components/MobileNavMenu",
         "origin": "AUTHORED"
     },
-    "hermannhh.chippies/components/quote-request-modal@1.0.5": {
+    "hermannhh.chippies/components/modal@1.0.3": {
+        "files": [
+            {
+                "relativePath": "src/components/Modal/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/Modal/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/Modal/index.js",
+        "trackDir": "src/components/Modal",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/brochure-footer@1.0.3": {
+        "files": [
+            {
+                "relativePath": "src/components/BrochureFooter/Readme.md",
+                "test": false,
+                "name": "Readme.md"
+            },
+            {
+                "relativePath": "src/components/BrochureFooter/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/BrochureFooter/index.js",
+        "trackDir": "src/components/BrochureFooter",
+        "origin": "AUTHORED"
+    },
+    "hermannhh.chippies/components/quote-request-modal@1.0.6": {
         "files": [
             {
                 "relativePath": "src/components/QuoteRequestModal/Readme.md",

@@ -4,9 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n  justify-content: flex-end;\n'], ['\n  width: 100%;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n  justify-content: flex-end;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  display: inline-block;\n  text-align: center;\n  padding: 0px ', ';\n  &:last-child {\n    padding-right: 0px;\n  }\n'], ['\n  display: inline-block;\n  text-align: center;\n  padding: 0px ', ';\n  &:last-child {\n    padding-right: 0px;\n  }\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  text-align: center;\n  display: inline-block;\n  padding: 0px ', ';\n  &:last-child {\n    padding-right: 0px;\n  }\n'], ['\n  text-align: center;\n  display: inline-block;\n  padding: 0px ', ';\n  &:last-child {\n    padding-right: 0px;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  display: inline-block;\n  text-align: center;\n  padding: 0px ', ';\n  &:last-child {\n    padding-right: 0px;\n  }\n'], ['\n  display: inline-block;\n  text-align: center;\n  padding: 0px ', ';\n  &:last-child {\n    padding-right: 0px;\n  }\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  text-align: center;\n  display: inline-block;\n  padding: 0px ', ';\n  &:last-child {\n    padding-right: 0px;\n  }\n'], ['\n  text-align: center;\n  display: inline-block;\n  padding: 0px ', ';\n  &:last-child {\n    padding-right: 0px;\n  }\n']);
 
 var _react = require('react');
 
@@ -26,19 +25,15 @@ var _shevyjs = require('shevyjs');
 
 var _shevyjs2 = _interopRequireDefault(_shevyjs);
 
+var _reactFlexview = require('react-flexview');
+
+var _reactFlexview2 = _interopRequireDefault(_reactFlexview);
+
+var _kratedTheme = require('krated-theme');
+
+var _kratedTheme2 = _interopRequireDefault(_kratedTheme);
+
 var _helpers = require('../helpers');
-
-var _ColorBlock = require('../ColorBlock');
-
-var _ColorBlock2 = _interopRequireDefault(_ColorBlock);
-
-var _Pad = require('../Pad');
-
-var _Pad2 = _interopRequireDefault(_Pad);
-
-var _Divider = require('../Divider');
-
-var _Divider2 = _interopRequireDefault(_Divider);
 
 var _BrandedWhiteIcon = require('../BrandedWhiteIcon');
 
@@ -52,11 +47,13 @@ var _Small = require('../Small');
 
 var _Small2 = _interopRequireDefault(_Small);
 
+var _viewPort = require('../viewPort');
+
+var _viewPort2 = _interopRequireDefault(_viewPort);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-// import Icon from '../Icon';
 
 var shevy = new _shevyjs2.default(_helpers.shevyConfig);
 var bs = shevy.baseSpacing;
@@ -65,133 +62,129 @@ var bs = shevy.baseSpacing;
 var propTypes = {
   linkItems: _propTypes2.default.arrayOf(_propTypes2.default.element).isRequired,
   facebookLink: _propTypes2.default.string.isRequired,
-  twitterLink: _propTypes2.default.string.isRequired
+  twitterLink: _propTypes2.default.string.isRequired,
+  theme: _propTypes2.default.shape({}),
+  desktopAndUp: _propTypes2.default.bool.isRequired
 };
 
-var defaultProps = {};
+var defaultProps = {
+  theme: _kratedTheme2.default
+};
 
-var LinksWrapper = _styledComponents2.default.div(_templateObject);
+var LinkItemWrapper = _styledComponents2.default.div(_templateObject, bs(0.5));
 
-var LinkItemWrapper = _styledComponents2.default.div(_templateObject2, bs(0.5));
-
-var SocialLinkItemWrapper = _styledComponents2.default.div(_templateObject3, bs(0.2));
+var SocialLinkItemWrapper = _styledComponents2.default.div(_templateObject2, bs(0.2));
 
 function BrochureFooter(_ref) {
-  var linkItems = _ref.linkItems,
+  var theme = _ref.theme,
+      linkItems = _ref.linkItems,
       facebookLink = _ref.facebookLink,
-      twitterLink = _ref.twitterLink;
+      twitterLink = _ref.twitterLink,
+      desktopAndUp = _ref.desktopAndUp;
 
   return _react2.default.createElement(
-    _ColorBlock2.default,
+    _reactFlexview2.default,
     {
+      column: true,
       width: '100%',
-      color: 'blue',
-      shade: '0',
-      height: 'auto'
+      style: { padding: '5%', backgroundColor: theme.colors.blue['0'] }
     },
     _react2.default.createElement(
-      _Pad2.default,
+      _reactFlexview2.default,
       {
-        horizontal: { xs: 5 },
-        vertical: { xs: 4 }
+        row: true,
+        column: !desktopAndUp,
+        width: '100%',
+        vAlignContent: 'center',
+        style: {
+          borderBottom: 'thin solid',
+          borderColor: theme.colors.white['0'],
+          paddingBottom: '15px'
+        }
       },
       _react2.default.createElement(
-        _reactFlexboxGrid.Grid,
-        { fluid: true },
+        _reactFlexview2.default,
+        {
+          hAlignContent: 'center',
+          vAlignContent: 'center',
+          style: !desktopAndUp && { padding: '3%' }
+        },
         _react2.default.createElement(
-          _reactFlexboxGrid.Row,
-          { middle: 'xs' },
+          'div',
+          null,
+          _react2.default.createElement(_BrandedWhiteIcon2.default, { size: '6' })
+        )
+      ),
+      _react2.default.createElement(
+        _reactFlexview2.default,
+        {
+          width: '100%',
+          vAlignContent: 'center',
+          hAlignContent: !desktopAndUp ? 'center' : 'right',
+          style: { padding: '15px' }
+        },
+        linkItems.map(function (x, i) {
+          return _react2.default.createElement(
+            LinkItemWrapper,
+            { key: i },
+            x
+          );
+        })
+      )
+    ),
+    _react2.default.createElement(
+      _reactFlexview2.default,
+      {
+        wrap: !desktopAndUp,
+        width: '100%',
+        vAlignContent: 'center',
+        style: { padding: '15px' }
+      },
+      _react2.default.createElement(
+        _reactFlexview2.default,
+        {
+          width: !desktopAndUp ? '100%' : '280px',
+          style: {},
+          hAlignContent: !desktopAndUp && 'center'
+        },
+        _react2.default.createElement(
+          'div',
+          null,
           _react2.default.createElement(
-            _reactFlexboxGrid.Col,
-            { xs: 12, md: 3 },
-            _react2.default.createElement(
-              _Pad2.default,
-              {
-                top: { xs: 2 },
-                bottom: { xs: 3 }
-              },
-              _react2.default.createElement(_BrandedWhiteIcon2.default, { size: '6' })
-            )
-          ),
-          _react2.default.createElement(
-            _reactFlexboxGrid.Col,
-            { xs: 12, md: 9 },
-            _react2.default.createElement(
-              _Pad2.default,
-              {
-                vertical: { xs: 2 }
-              },
-              _react2.default.createElement(
-                LinksWrapper,
-                null,
-                linkItems.map(function (x) {
-                  return _react2.default.createElement(
-                    LinkItemWrapper,
-                    null,
-                    x
-                  );
-                })
-              )
-            )
+            _Small2.default,
+            { color: 'white', shade: '0' },
+            '\xA9 ' + new Date().getFullYear() + ' Krated (PTY) Ltd.'
           )
+        )
+      ),
+      _react2.default.createElement(
+        _reactFlexview2.default,
+        {
+          width: '100%',
+          hAlignContent: !desktopAndUp ? 'center' : 'right',
+          style: !desktopAndUp && { padding: '3%' }
+        },
+        _react2.default.createElement(
+          SocialLinkItemWrapper,
+          null,
+          _react2.default.createElement(_Hyperlink2.default, {
+            icon: 'faFacebookSquare',
+            handleClick: function handleClick() {
+              return window.open(facebookLink, '_blank');
+            },
+            color: 'white'
+          })
         ),
-        _react2.default.createElement(_Divider2.default, null),
         _react2.default.createElement(
-          _reactFlexboxGrid.Row,
-          { middle: 'xs' },
-          _react2.default.createElement(
-            _reactFlexboxGrid.Col,
-            { xs: 12, md: 3 },
-            _react2.default.createElement(
-              _Pad2.default,
-              {
-                top: { xs: 2 },
-                bottom: { xs: 1 }
-              },
-              _react2.default.createElement(
-                _Small2.default,
-                { color: 'white', shade: '0' },
-                '\xA9 ' + new Date().getFullYear() + ' Krated (PTY) Ltd.'
-              )
-            )
-          ),
-          _react2.default.createElement(
-            _reactFlexboxGrid.Col,
-            { xs: 12, md: 9 },
-            _react2.default.createElement(
-              _Pad2.default,
-              {
-                top: { xs: 1 },
-                bottom: { xs: 2 }
-              },
-              _react2.default.createElement(
-                LinksWrapper,
-                null,
-                _react2.default.createElement(
-                  SocialLinkItemWrapper,
-                  null,
-                  _react2.default.createElement(_Hyperlink2.default, {
-                    icon: 'faFacebookSquare',
-                    handleClick: function handleClick() {
-                      return window.open(facebookLink, '_blank');
-                    },
-                    color: 'white'
-                  })
-                ),
-                _react2.default.createElement(
-                  SocialLinkItemWrapper,
-                  null,
-                  _react2.default.createElement(_Hyperlink2.default, {
-                    icon: 'faTwitter',
-                    handleClick: function handleClick() {
-                      return window.open(twitterLink, '_blank');
-                    },
-                    color: 'white'
-                  })
-                )
-              )
-            )
-          )
+          SocialLinkItemWrapper,
+          null,
+          _react2.default.createElement(_Hyperlink2.default, {
+            icon: 'faTwitter',
+            handleClick: function handleClick() {
+              return window.open(twitterLink, '_blank');
+            },
+            color: 'white'
+          })
         )
       )
     )
@@ -201,6 +194,6 @@ function BrochureFooter(_ref) {
 BrochureFooter.propTypes = propTypes;
 BrochureFooter.defaultProps = defaultProps;
 
-exports.default = BrochureFooter;
+exports.default = (0, _viewPort2.default)(BrochureFooter);
 
 //# sourceMappingURL=index.js.map
