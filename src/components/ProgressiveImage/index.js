@@ -1,46 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import kratedTheme from 'krated-theme';
+import FlexView from 'react-flexview';
 
-const Wrapper = styled.div`
-  height: ${props => props.height};
-  width: ${props => props.width};
-  background-color: inherit;
-  ${props => (props.rounded && 'border-radius: 50%')};
-  background-size: ${props => props.size};
-  background-position: center center;
-  background-repeat: no-repeat;
-  ${props => `
-    background-image: url(${props.src});
-  `};
-`;
+const propTypes = {
+  rounded: PropTypes.bool,
+  src: PropTypes.string.isRequired,
+  height: PropTypes.string,
+  width: PropTypes.string,
+  size: PropTypes.oneOf(['cover', 'contain']),
+};
+const defaultProps = {
+  rounded: false,
+  height: '100%',
+  width: '100%',
+  size: 'cover',
+};
 
 /**
  * Progressive image uses css background to cover or contain given div with src image
  */
 
-function ProgressiveImage(props) {
+function ProgressiveImage({
+  height, width, rounded, size, src,
+}) {
   return (
-    <Wrapper {...props} />
+    <FlexView
+      style={{
+        height: `${height}`,
+        width: `${width}`,
+        borderRadius: `${rounded && '50%'}`,
+        backgroundColor: 'inherit',
+        backgroundSize: size,
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundImage: `url(${src})`,
+      }}
+    />
   );
 }
 
-ProgressiveImage.propTypes = {
-  src: PropTypes.string.isRequired,
-  height: PropTypes.string,
-  width: PropTypes.string,
-  size: PropTypes.oneOf(['cover', 'contain']),
-  rounded: PropTypes.bool,
-  theme: PropTypes.shape(),
-};
+ProgressiveImage.propTypes = propTypes;
 
-ProgressiveImage.defaultProps = {
-  theme: kratedTheme,
-  height: '100%',
-  width: '100%',
-  size: 'cover',
-  rounded: false,
-};
+ProgressiveImage.defaultProps = defaultProps;
 
 export default ProgressiveImage;

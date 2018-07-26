@@ -8,24 +8,31 @@ import ProgressiveImage from '../ProgressiveImage';
 import HeadingGroup from '../HeadingGroup';
 import CardActions from '../CardActions';
 import Button from '../Button';
+import viewPort from '../viewPort';
 
 const propTypes = {
   imgSrc: PropTypes.string.isRequired,
   heading: PropTypes.string.isRequired,
   contentSummary: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
+  desktopAndUp: PropTypes.bool.isRequired,
 };
 const defaultProps = {};
 
-function BlogSummaryCard({ imgSrc, heading, contentSummary, handleClick }) {
+function BlogSummaryCard({
+  imgSrc, heading, contentSummary, handleClick, desktopAndUp,
+}) {
   return (
     <Card>
-      <FlexView>
-        <FlexView basis="200px">
+      <FlexView column={!desktopAndUp}>
+        <FlexView
+          width={!desktopAndUp ? '100%' : '300px'}
+          height={!desktopAndUp ? '200px' : 'auto'}
+        >
           <ProgressiveImage src={imgSrc} />
         </FlexView>
-        <FlexView width="100%" style={{  }} wrap>
-          <FlexView width="100%" style={{ }}>
+        <FlexView width="100%" style={{}} wrap>
+          <FlexView width="100%" style={{}}>
             <CardPad>
               <HeadingGroup
                 size="4"
@@ -36,9 +43,7 @@ function BlogSummaryCard({ imgSrc, heading, contentSummary, handleClick }) {
             </CardPad>
           </FlexView>
           <CardActions
-            comps={[
-                <Button text="Read more" handleClick={handleClick} />
-            ]}
+            comps={[<Button text="Read more" handleClick={handleClick} />]}
             layout="right"
           />
         </FlexView>
@@ -50,4 +55,4 @@ function BlogSummaryCard({ imgSrc, heading, contentSummary, handleClick }) {
 BlogSummaryCard.propTypes = propTypes;
 BlogSummaryCard.defaultProps = defaultProps;
 
-export default BlogSummaryCard;
+export default viewPort(BlogSummaryCard);

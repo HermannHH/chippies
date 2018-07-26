@@ -40,13 +40,18 @@ var _Button = require('../Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
+var _viewPort = require('../viewPort');
+
+var _viewPort2 = _interopRequireDefault(_viewPort);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var propTypes = {
   imgSrc: _propTypes2.default.string.isRequired,
   heading: _propTypes2.default.string.isRequired,
   contentSummary: _propTypes2.default.string.isRequired,
-  handleClick: _propTypes2.default.func.isRequired
+  handleClick: _propTypes2.default.func.isRequired,
+  desktopAndUp: _propTypes2.default.bool.isRequired
 };
 var defaultProps = {};
 
@@ -54,17 +59,21 @@ function BlogSummaryCard(_ref) {
   var imgSrc = _ref.imgSrc,
       heading = _ref.heading,
       contentSummary = _ref.contentSummary,
-      handleClick = _ref.handleClick;
+      handleClick = _ref.handleClick,
+      desktopAndUp = _ref.desktopAndUp;
 
   return _react2.default.createElement(
     _Card2.default,
     null,
     _react2.default.createElement(
       _reactFlexview2.default,
-      null,
+      { column: !desktopAndUp },
       _react2.default.createElement(
         _reactFlexview2.default,
-        { basis: '200px' },
+        {
+          width: !desktopAndUp ? '100%' : '300px',
+          height: !desktopAndUp ? '200px' : 'auto'
+        },
         _react2.default.createElement(_ProgressiveImage2.default, { src: imgSrc })
       ),
       _react2.default.createElement(
@@ -96,6 +105,6 @@ function BlogSummaryCard(_ref) {
 BlogSummaryCard.propTypes = propTypes;
 BlogSummaryCard.defaultProps = defaultProps;
 
-exports.default = BlogSummaryCard;
+exports.default = (0, _viewPort2.default)(BlogSummaryCard);
 
 //# sourceMappingURL=index.js.map
