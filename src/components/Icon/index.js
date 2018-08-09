@@ -6,7 +6,7 @@ import kratedTheme from 'krated-theme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import fa from './fontawesome';
 
-// import { shevyConfig } from '../helpers';
+// import shevyConfig from '../shevyConfig';
 
 // const shevy = new Shevy(shevyConfig);
 // const {

@@ -5,7 +5,7 @@ import Shevy from 'shevyjs';
 import kratedTheme from 'krated-theme';
 import requiredIf from 'react-required-if';
 
-import { shevyConfig } from '../helpers';
+import shevyConfig from '../shevyConfig';
 import Icon from '../Icon';
 import Pad from '../Pad';
 

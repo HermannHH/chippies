@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Shevy from 'shevyjs';
 import kratedTheme from 'krated-theme';
 
-import { shevyConfig } from '../helpers';
+import shevyConfig from '../shevyConfig';
 
 const shevy = new Shevy(shevyConfig);
 const {
@@ -64,7 +64,7 @@ const LabelTag = styled.label`
     > input:checked ~ span {
         background-color: ${props => props.theme.colors.blue['0']};
     };
-    
+
       > input:checked ~ span:after {
         display: block;
       };

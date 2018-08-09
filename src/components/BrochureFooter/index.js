@@ -6,7 +6,7 @@ import Shevy from 'shevyjs';
 import FlexView from 'react-flexview';
 import kratedTheme from 'krated-theme';
 
-import { shevyConfig } from '../helpers';
+import shevyConfig from '../shevyConfig';
 import BrandedWhiteIcon from '../BrandedWhiteIcon';
 import Hyperlink from '../Hyperlink';
 import Small from '../Small';

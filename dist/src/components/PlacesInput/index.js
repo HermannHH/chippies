@@ -32,7 +32,9 @@ var _reactGeosuggest = require('react-geosuggest');
 
 var _reactGeosuggest2 = _interopRequireDefault(_reactGeosuggest);
 
-var _helpers = require('../helpers');
+var _shevyConfig = require('../shevyConfig');
+
+var _shevyConfig2 = _interopRequireDefault(_shevyConfig);
 
 var _Label = require('../Label');
 
@@ -46,7 +48,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var shevy = new _shevyjs2.default(_helpers.shevyConfig);
+var shevy = new _shevyjs2.default(_shevyConfig2.default);
 var content = shevy.content,
     bs = shevy.baseSpacing;
 

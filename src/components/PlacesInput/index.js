@@ -5,7 +5,7 @@ import Shevy from 'shevyjs';
 import kratedTheme from 'krated-theme';
 import Geosuggest from 'react-geosuggest';
 
-import { shevyConfig } from '../helpers';
+import shevyConfig from '../shevyConfig';
 
 import Label from '../Label';
 import InputErrors from '../InputErrors';

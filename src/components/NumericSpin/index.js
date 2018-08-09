@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import kratedTheme from 'krated-theme';
 import Shevy from 'shevyjs';
 
-import { shevyConfig } from '../helpers';
+import shevyConfig from '../shevyConfig';
 
 const shevy = new Shevy(shevyConfig);
 const {

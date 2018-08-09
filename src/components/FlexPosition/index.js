@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Shevy from 'shevyjs';
 
 
-import { shevyConfig } from '../helpers';
+import shevyConfig from '../shevyConfig';
 
 const shevy = new Shevy(shevyConfig);
 const { baseSpacing: bs } = shevy;

@@ -5,7 +5,7 @@ import Shevy from 'shevyjs';
 import kratedTheme from 'krated-theme';
 import { format } from 'libphonenumber-js';
 
-import { shevyConfig } from '../helpers';
+import shevyConfig from '../shevyConfig';
 
 import Label from '../Label';
 import InputErrors from '../InputErrors';

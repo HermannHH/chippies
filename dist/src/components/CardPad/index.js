@@ -27,7 +27,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 // import ReactPlaceholder from 'react-placeholder';
 // import kratedTheme from 'krated-theme';
-// import { shevyConfig } from '../helpers';
+// import shevyConfig from '../shevyConfig';
 
 var Wrapper = _styledComponents2.default.div(_templateObject);
 

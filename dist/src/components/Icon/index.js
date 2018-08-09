@@ -24,7 +24,7 @@ var _fontawesome2 = _interopRequireDefault(_fontawesome);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import { shevyConfig } from '../helpers';
+// import shevyConfig from '../shevyConfig';
 
 // const shevy = new Shevy(shevyConfig);
 // const {

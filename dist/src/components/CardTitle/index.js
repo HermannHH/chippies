@@ -39,7 +39,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 // import ReactPlaceholder from 'react-placeholder';
 
-// import { shevyConfig } from '../helpers';
+// import shevyConfig from '../shevyConfig';
 
 // const shevy = new Shevy(shevyConfig);
 // const {

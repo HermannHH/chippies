@@ -5088,9 +5088,9 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-krated-theme@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/krated-theme/-/krated-theme-0.0.6.tgz#9a16b0d097d226de035ae83a105cb347627e57c5"
+krated-theme@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/krated-theme/-/krated-theme-0.0.7.tgz#8092bb346202a44ef106517d8c4594f956054b13"
 
 lazy-cache@^1.0.3:
   version "1.0.4"

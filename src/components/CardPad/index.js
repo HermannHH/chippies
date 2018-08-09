@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 // import ReactPlaceholder from 'react-placeholder';
 // import kratedTheme from 'krated-theme';
-// import { shevyConfig } from '../helpers';
+// import shevyConfig from '../shevyConfig';
 
 import Pad from '../Pad';
 
