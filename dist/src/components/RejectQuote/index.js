@@ -81,7 +81,10 @@ function RejectQuote(_ref) {
     _react2.default.createElement(
       _Pad2.default,
       { horizontal: { xs: 3, md: 5 } },
-      _react2.default.createElement(_HeadingGroup2.default, { mainText: 'Reject quotation', subText: 'Please confirm the details below in order to reject quotation #' + referenceNumber }),
+      _react2.default.createElement(_HeadingGroup2.default, {
+        mainText: 'Reject quotation',
+        subText: 'Please confirm the details below in order to reject quotation #' + referenceNumber
+      }),
       _react2.default.createElement(
         _Mrg2.default,
         { vertical: { xs: 5 } },
@@ -90,11 +93,8 @@ function RejectQuote(_ref) {
           null,
           _react2.default.createElement(
             _TextSection2.default,
-            {
-              heading: 'Krated\'s Disclaimer',
-              size: '6'
-            },
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            { heading: 'Krated\'s Disclaimer', size: '6' },
+            'Krated will not be liable for any loss or damage which you may suffer in any way at\n            all, however it may arise at all, which results from: phishing, fraud, a loss, theft\n            or compromise of any of your passwords, cards or codes; any mistakes made by you in\n            giving us any instructions, including (but not only) any incorrect information given\n            to Krated by you; any interruption, malfunction, downtime or other failure of the\n            Krated\u2019s Website or any third party system or part of it for any reason; anything at\n            all to do with your dealings and transactions with any third parties found or\n            mentioned on the Krated website as these are strictly between you and such third\n            parties; any loss or damage of your personal information or other data that occurs,\n            directly or indirectly as a result of interception, systems malfunction, data theft,\n            third party systems, unlawful access to or theft of data; computer viruses,\n            programming defects or destructive code on our system or third party systems; any\n            event (also known as events of force majeure) which are beyond our control; LIMITATION\n            OF LIABILITY: Under no circumstances shall Krated be liable for any indirect or\n            consequential damages, or amounts for loss of income, profits, or savings arising out\n            of or relating to the performance or failure to perform of the third party under the\n            Agreement with them. DISPUTE REGARDING AGREEMENT WITH THIRD PARTIES: Krated only runs\n            the WEBSITE in conjunction with certain third parties, so you agree that you will not\n            hold it liable in any way for any dispute that you may have with ' + seller + '. Any such\n            dispute must be taken up directly with ' + seller + ' without involving Krated in any way.\n            Krated will in no way be responsible or liable for anything said to you, correct or\n            otherwise, by ' + seller + ' or for any actions or omissions by ' + seller + '.'
           )
         )
       ),
@@ -127,7 +127,11 @@ function RejectQuote(_ref) {
         _Mrg2.default,
         { all: { xs: 5 } },
         _react2.default.createElement(_FlexPosition2.default, {
-          comps: [_react2.default.createElement(_Checkbox2.default, { isChecked: termsChecked, handleChange: handleTermsChecked, label: 'I agree to the terms of this quotation' })],
+          comps: [_react2.default.createElement(_Checkbox2.default, {
+            isChecked: termsChecked,
+            handleChange: handleTermsChecked,
+            label: 'I agree to the terms of this quotation'
+          })],
           layout: 'right'
         })
       ),
@@ -136,7 +140,18 @@ function RejectQuote(_ref) {
         _Mrg2.default,
         { vertical: { xs: 5 } },
         _react2.default.createElement(_FlexPosition2.default, {
-          comps: [_react2.default.createElement(_Button2.default, { text: 'I want to accept this quotation', handleClick: handleAccept, upcase: false }), _react2.default.createElement(_Button2.default, { text: 'Reject', raised: true, whiteText: true, disabled: !termsChecked, handleClick: handleReject, color: 'red' })],
+          comps: [_react2.default.createElement(_Button2.default, {
+            text: 'I want to accept this quotation',
+            handleClick: handleAccept,
+            upcase: false
+          }), _react2.default.createElement(_Button2.default, {
+            text: 'Reject',
+            raised: true,
+            whiteText: true,
+            disabled: !termsChecked,
+            handleClick: handleReject,
+            color: 'red'
+          })],
           layout: 'spread'
         })
       )

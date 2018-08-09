@@ -15,7 +15,6 @@ import Toggle from '../Toggle';
 import TextArea from '../TextArea';
 import Well from '../Well';
 
-
 function AcceptQuote({
   lineItemData,
   referenceNumber,
@@ -28,30 +27,43 @@ function AcceptQuote({
   handleReject,
   handleCommentChange,
   commentValue,
-
 }) {
   return (
     <div>
-      <BrandHeader
-        size="2"
-      />
+      <BrandHeader size="2" />
       <Pad horizontal={{ xs: 3, md: 5 }}>
-        <HeadingGroup mainText="Accept quotation" subText={`Below is a summary of quotation #${referenceNumber}`} />
+        <HeadingGroup
+          mainText="Accept quotation"
+          subText={`Below is a summary of quotation #${referenceNumber}`}
+        />
         <Mrg vertical={{ xs: 5 }}>
           <LineItems data={lineItemData} />
         </Mrg>
         <Mrg vertical={{ xs: 5 }}>
           <Well>
-            <TextSection
-              heading="Krated's Disclaimer"
-              size="6"
-            >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                in culpa qui officia deserunt mollit anim id est laborum.
+            <TextSection heading="Krated's Disclaimer" size="6">
+              {`Krated will not be liable for any loss or damage which you may suffer in any way at
+              all, however it may arise at all, which results from: phishing, fraud, a loss, theft
+              or compromise of any of your passwords, cards or codes; any mistakes made by you in
+              giving us any instructions, including (but not only) any incorrect information given
+              to Krated by you; any interruption, malfunction, downtime or other failure of the
+              Krated’s Website or any third party system or part of it for any reason; anything at
+              all to do with your dealings and transactions with any third parties found or
+              mentioned on the Krated website as these are strictly between you and such third
+              parties; any loss or damage of your personal information or other data that occurs,
+              directly or indirectly as a result of interception, systems malfunction, data theft,
+              third party systems, unlawful access to or theft of data; computer viruses,
+              programming defects or destructive code on our system or third party systems; any
+              event (also known as events of force majeure) which are beyond our control; LIMITATION
+              OF LIABILITY: Under no circumstances shall Krated be liable for any indirect or
+              consequential damages, or amounts for loss of income, profits, or savings arising out
+              of or relating to the performance or failure to perform of the third party under the
+              Agreement with them. DISPUTE REGARDING AGREEMENT WITH THIRD PARTIES: Krated only runs
+              the WEBSITE in conjunction with certain third parties, so you agree that you will not
+              hold it liable in any way for any dispute that you may have with ${seller}. Any such
+              dispute must be taken up directly with ${seller} without involving Krated in any way.
+              Krated will in no way be responsible or liable for anything said to you, correct or
+              otherwise, by ${seller} or for any actions or omissions by ${seller}.`}
             </TextSection>
           </Well>
         </Mrg>
@@ -63,7 +75,7 @@ function AcceptQuote({
             label={commentToggled ? 'Remove comment' : `Leave ${seller} a comment`}
           />
         </Mrg>
-        {commentToggled &&
+        {commentToggled && (
           <Mrg vertical={{ xs: 5 }}>
             <TextArea
               placeholder={`Provide ${seller} with any additional details that will make it easier for them to provide the best quotation experience possible`}
@@ -72,14 +84,18 @@ function AcceptQuote({
               value={commentValue}
             />
           </Mrg>
-        }
+        )}
         <Mrg vertical={{ xs: 5 }}>
           <Divider />
         </Mrg>
         <Mrg all={{ xs: 5 }}>
           <FlexPosition
             comps={[
-              <Checkbox isChecked={termsChecked} handleChange={handleTermsChecked} label="I agree to the terms of this quotation" />,
+              <Checkbox
+                isChecked={termsChecked}
+                handleChange={handleTermsChecked}
+                label="I agree to the terms of this quotation"
+              />,
             ]}
             layout="right"
           />
@@ -88,8 +104,19 @@ function AcceptQuote({
         <Mrg vertical={{ xs: 5 }}>
           <FlexPosition
             comps={[
-              <Button text="I want to reject this quotation" handleClick={handleReject} upcase={false}/>,
-              <Button text="Accept" raised whiteText disabled={!termsChecked} handleClick={handleAccept} color="red" />,
+              <Button
+                text="I want to reject this quotation"
+                handleClick={handleReject}
+                upcase={false}
+              />,
+              <Button
+                text="Accept"
+                raised
+                whiteText
+                disabled={!termsChecked}
+                handleClick={handleAccept}
+                color="red"
+              />,
             ]}
             layout="spread"
           />
@@ -123,8 +150,6 @@ AcceptQuote.propTypes = {
   commentValue: PropTypes.string.isRequired,
 };
 
-AcceptQuote.defaultProps = {
-
-};
+AcceptQuote.defaultProps = {};
 
 export default AcceptQuote;
