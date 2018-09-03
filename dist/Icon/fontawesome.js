@@ -12,7 +12,9 @@ exports.default = {
   faPlus: _freeSolidSvgIcons.faPlus,
   faTimes: _freeSolidSvgIcons.faTimes,
   faFacebookSquare: _freeBrandsSvgIcons.faFacebookSquare,
-  faTwitter: _freeBrandsSvgIcons.faTwitter
+  faTwitter: _freeBrandsSvgIcons.faTwitter,
+  faCheckCircle: _freeSolidSvgIcons.faCheckCircle,
+  faBars: _freeSolidSvgIcons.faBars
 };
 // import {
 

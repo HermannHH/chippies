@@ -95,24 +95,15 @@ var Modal = function (_Component) {
 
       return _react2.default.createElement(
         Wrapper,
-        {
-          show: show,
-          width: width,
-          height: height,
-          theme: theme
-        },
+        { show: show, width: width, height: height, theme: theme },
         _react2.default.createElement(
           EscapeWrapper,
           null,
-          _react2.default.createElement(_EscapeButton2.default, {
-            handleClick: closeModal
-          })
+          _react2.default.createElement(_EscapeButton2.default, { handleClick: closeModal })
         ),
         _react2.default.createElement(
           Container,
-          {
-            height: height
-          },
+          { height: height },
           children
         )
       );

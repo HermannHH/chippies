@@ -43,7 +43,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 
 function QuoteOnboard(_ref) {
-  var handleClick = _ref.handleClick;
+  var handleClick = _ref.handleClick,
+      text = _ref.text;
 
   return _react2.default.createElement(
     'div',
@@ -61,10 +62,8 @@ function QuoteOnboard(_ref) {
         { vertical: { xs: 5 } },
         _react2.default.createElement(
           _TextSection2.default,
-          {
-            heading: 'Would you like to streamline your business workflow?'
-          },
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          { heading: 'Would you like to streamline your business workflow?' },
+          text
         )
       ),
       _react2.default.createElement(
@@ -80,7 +79,8 @@ function QuoteOnboard(_ref) {
 }
 
 QuoteOnboard.propTypes = {
-  handleClick: _propTypes2.default.func.isRequired
+  handleClick: _propTypes2.default.func.isRequired,
+  text: _propTypes2.default.string.isRequired
 };
 
 QuoteOnboard.defaultProps = {};

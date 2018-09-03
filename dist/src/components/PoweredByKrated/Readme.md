@@ -1,5 +1,0 @@
-PoweredByKrated example:
-
-```js
-<PoweredByKrated/>
-```

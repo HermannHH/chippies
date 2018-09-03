@@ -1,5 +1,0 @@
-PricingTable example:
-
-```js
-<PricingTable />
-```

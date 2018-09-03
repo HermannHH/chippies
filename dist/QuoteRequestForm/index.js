@@ -18,8 +18,6 @@ var _yup = require('yup');
 
 var _reactFlexboxGrid = require('react-flexbox-grid');
 
-var _customLocale = require('yup/lib/customLocale');
-
 var _FormInputContainer = require('../FormInputContainer');
 
 var _FormInputContainer2 = _interopRequireDefault(_FormInputContainer);
@@ -46,7 +44,7 @@ var _PlacesInput2 = _interopRequireDefault(_PlacesInput);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _customLocale.setLocale)({
+(0, _yup.setLocale)({
   mixed: {
     required: 'Is required'
   },

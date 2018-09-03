@@ -19,6 +19,10 @@ var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
+var _reactRequiredIf = require('react-required-if');
+
+var _reactRequiredIf2 = _interopRequireDefault(_reactRequiredIf);
+
 var _Card = require('../Card');
 
 var _Card2 = _interopRequireDefault(_Card);
@@ -47,20 +51,45 @@ var _Button = require('../Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
+var _Label = require('../Label');
+
+var _Label2 = _interopRequireDefault(_Label);
+
+var _Mrg = require('../Mrg');
+
+var _Mrg2 = _interopRequireDefault(_Mrg);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var propTypes = {
   name: _propTypes2.default.string.isRequired,
-  amount: _propTypes2.default.string.isRequired,
-  entityVsTerm: _propTypes2.default.string.isRequired,
+  amount: _propTypes2.default.string,
+  entityVsTerm: _propTypes2.default.string,
   explainer: _propTypes2.default.string.isRequired,
-  buttonText: _propTypes2.default.string.isRequired,
-  buttonAction: _propTypes2.default.func.isRequired,
+  buttonText: (0, _reactRequiredIf2.default)(_propTypes2.default.string, function (props) {
+    return props.amount && props.entityVsTerm;
+  }),
+  buttonAction: (0, _reactRequiredIf2.default)(_propTypes2.default.func, function (props) {
+    return props.amount && props.entityVsTerm;
+  }),
+  waitingButtonText: (0, _reactRequiredIf2.default)(_propTypes2.default.string, function (props) {
+    return !props.amount && !props.entityVsTerm;
+  }),
+  waitingButtonAction: (0, _reactRequiredIf2.default)(_propTypes2.default.func, function (props) {
+    return !props.amount && !props.entityVsTerm;
+  }),
   image: _propTypes2.default.element.isRequired
 };
-var defaultProps = {};
+var defaultProps = {
+  amount: null,
+  entityVsTerm: null,
+  waitingButtonAction: null,
+  waitingButtonText: null,
+  buttonAction: null,
+  buttonText: null
+};
 
 var CardInnerWrapper = _styledComponents2.default.div(_templateObject);
 
@@ -73,8 +102,11 @@ function PlanSummaryCard(_ref) {
       entityVsTerm = _ref.entityVsTerm,
       explainer = _ref.explainer,
       buttonText = _ref.buttonText,
-      buttonAction = _ref.buttonAction;
+      buttonAction = _ref.buttonAction,
+      waitingButtonText = _ref.waitingButtonText,
+      waitingButtonAction = _ref.waitingButtonAction;
 
+  var isActive = amount && entityVsTerm;
   return _react2.default.createElement(
     _Card2.default,
     null,
@@ -91,13 +123,23 @@ function PlanSummaryCard(_ref) {
         ),
         _react2.default.createElement(_Heading2.default, { text: name, size: '4' }),
         _react2.default.createElement(_Divider2.default, null),
-        _react2.default.createElement(_HeadingGroup2.default, { mainText: amount, subText: entityVsTerm, size: '4' }),
+        isActive ? _react2.default.createElement(_HeadingGroup2.default, { mainText: amount, subText: entityVsTerm, size: '4' }) : _react2.default.createElement(
+          _Mrg2.default,
+          { top: { xs: 5 }, bottom: { xs: 5 } },
+          _react2.default.createElement(_Label2.default, {
+            text: 'Coming soon',
+            backgroundColor: 'grey',
+            backgroundShade: '-1',
+            color: 'white',
+            shade: '0'
+          })
+        ),
         _react2.default.createElement(
           _Paragraph2.default,
           null,
           explainer
         ),
-        _react2.default.createElement(_Button2.default, { text: buttonText, handleClick: buttonAction, raised: true, whiteText: true, color: 'red' })
+        isActive ? _react2.default.createElement(_Button2.default, { text: buttonText, handleClick: buttonAction, raised: true, whiteText: true, color: 'red' }) : _react2.default.createElement(_Button2.default, { text: waitingButtonText, handleClick: waitingButtonAction })
       )
     )
   );

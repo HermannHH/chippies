@@ -10,6 +10,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactFlexboxGrid = require('react-flexbox-grid');
 
+var _reactFlexview = require('react-flexview');
+
+var _reactFlexview2 = _interopRequireDefault(_reactFlexview);
+
 var _ColorBlock = require('../ColorBlock');
 
 var _ColorBlock2 = _interopRequireDefault(_ColorBlock);
@@ -18,21 +22,19 @@ var _InspireMessageHeading = require('../InspireMessageHeading');
 
 var _InspireMessageHeading2 = _interopRequireDefault(_InspireMessageHeading);
 
-var _PulsingBrandedWhiteIcon = require('../PulsingBrandedWhiteIcon');
+var _LoadingChippie = require('../LoadingChippie');
 
-var _PulsingBrandedWhiteIcon2 = _interopRequireDefault(_PulsingBrandedWhiteIcon);
+var _LoadingChippie2 = _interopRequireDefault(_LoadingChippie);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import PropTypes from 'prop-types';
 function LoadingScreen() {
-
-  var colors = ['blue', 'purple', 'ocean', 'green'];
-  var col = colors[Math.floor(Math.random() * colors.length)];
+  // const colors = ['blue', 'purple', 'ocean', 'green'];
+  // const col = colors[Math.floor(Math.random() * colors.length)];
 
   return _react2.default.createElement(
     _ColorBlock2.default,
-    { color: col, shade: '0', width: '100%', height: '100%' },
+    { color: 'blue', shade: '0', width: '100%', height: '100%' },
     _react2.default.createElement(
       _reactFlexboxGrid.Grid,
       { style: { height: '100%' } },
@@ -42,17 +44,19 @@ function LoadingScreen() {
         _react2.default.createElement(
           _reactFlexboxGrid.Col,
           { xs: 6 },
-          _react2.default.createElement(_PulsingBrandedWhiteIcon2.default, null),
-          _react2.default.createElement(_InspireMessageHeading2.default, {
-            size: '4',
-            color: 'white',
-            shade: '0'
-          })
+          _react2.default.createElement(
+            _reactFlexview2.default,
+            { hAlignContent: 'center', vAlignContent: 'center' },
+            _react2.default.createElement(_LoadingChippie2.default, null)
+          ),
+          _react2.default.createElement(_InspireMessageHeading2.default, { size: '4', color: 'white', shade: '0' })
         )
       )
     )
   );
 }
+// import PropTypes from 'prop-types';
+
 
 LoadingScreen.propTypes = {};
 

@@ -30,13 +30,15 @@ var _shevyjs = require('shevyjs');
 
 var _shevyjs2 = _interopRequireDefault(_shevyjs);
 
-var _helpers = require('../helpers');
+var _shevyConfig = require('../shevyConfig');
+
+var _shevyConfig2 = _interopRequireDefault(_shevyConfig);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var shevy = new _shevyjs2.default(_helpers.shevyConfig);
+var shevy = new _shevyjs2.default(_shevyConfig2.default);
 var content = shevy.content;
 
 var NumericSpinContainer = _styledComponents2.default.div(_templateObject);
