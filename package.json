@@ -73,6 +73,6 @@
     "react-switch": "^2.3.2",
     "shevyjs": "^1.1.0",
     "styled-components-spacing": "^3.0.0",
-    "yup": "^0.25.1"
+    "yup": "^0.26.3"
   }
 }
