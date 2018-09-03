@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
-import { object, string, number } from 'yup';
+import { object, string, number, setLocale } from 'yup';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { setLocale } from 'yup/lib/customLocale';
 
 import FormInputContainer from '../FormInputContainer';
 import Button from '../Button';
