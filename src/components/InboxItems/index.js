@@ -25,7 +25,7 @@ function InboxItems({ messages, handleClick }) {
             <CardPad>
               <Paragraph withMargin={false}>{x.text}</Paragraph>
               <FlexView hAlignContent="right">
-                <Hyperlink text="See more..." handleClick={handleClick} />
+                <Hyperlink text="See more..." handleClick={() => handleClick(x.id)} />
               </FlexView>
             </CardPad>
           </Card>
