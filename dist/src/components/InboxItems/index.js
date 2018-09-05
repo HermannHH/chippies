@@ -45,7 +45,7 @@ var defaultProps = {};
 
 function InboxItems(_ref) {
   var messages = _ref.messages,
-      handleClick = _ref.handleClick;
+      _handleClick = _ref.handleClick;
 
   return _react2.default.createElement(
     'div',
@@ -68,7 +68,9 @@ function InboxItems(_ref) {
             _react2.default.createElement(
               _reactFlexview2.default,
               { hAlignContent: 'right' },
-              _react2.default.createElement(_Hyperlink2.default, { text: 'See more...', handleClick: handleClick })
+              _react2.default.createElement(_Hyperlink2.default, { text: 'See more...', handleClick: function handleClick() {
+                  return _handleClick(x.id);
+                } })
             )
           )
         )

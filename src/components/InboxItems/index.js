@@ -11,6 +11,7 @@ const propTypes = {
   messages: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
+    data: PropTypes.shape({}),
   })).isRequired,
   handleClick: PropTypes.func.isRequired,
 };
@@ -25,7 +26,7 @@ function InboxItems({ messages, handleClick }) {
             <CardPad>
               <Paragraph withMargin={false}>{x.text}</Paragraph>
               <FlexView hAlignContent="right">
-                <Hyperlink text="See more..." handleClick={() => handleClick(x.id)} />
+                <Hyperlink text="See more..." handleClick={() => handleClick(x)} />
               </FlexView>
             </CardPad>
           </Card>
